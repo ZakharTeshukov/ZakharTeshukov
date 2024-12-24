@@ -4,9 +4,30 @@
   </a>
 </h1>
 
-# Zakhar Teshukov | Full-Satack Developer
+# Zakhar Teshukov </> Full-Satack Developer
 
 ## About Me
+I am a high school student at Saigon South International School in Vietnam. I am a full-stack developer with expiriance in web developemt and systems design.
+
+## My Stack
+
+[![HTML Badge](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white&labelColor=cc3f1f)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS Badge](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white&labelColor=0c4a7c)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black&labelColor=ccac1f)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Python Badge](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=2a5a8d)](https://www.python.org/)
+[![Node.js Badge](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white&labelColor=267a2b)](https://nodejs.org/)
+[![PHP Badge](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white&labelColor=5e5a8a)](https://www.php.net/)
+[![Go Badge](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white&labelColor=0091b3)](https://golang.org/)
+[![Scala Badge](https://img.shields.io/badge/Scala-DC322F?style=for-the-badge&logo=scala&logoColor=white&labelColor=9c1e24)](https://www.scala-lang.org/)
+[![Linux Badge](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black&labelColor=cc9a1f)](https://www.kernel.org/)
+
+
+
+## My GitHub Wrapped
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github-readme-stats.vercel.app/api?username=ZakharTeshukov&show_icons=true&theme=radical&rank_icon=progress&hide=issues" width="500" height="200" alt="ZakharTeshukov's GitHub stats">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZakharTeshukov&layout=compact&theme=radical" width="330" height="200" alt="Top Languages">
+</div>
 
 ## Connect With Me
 
@@ -15,17 +36,6 @@
 [![Instagram Badge](https://img.shields.io/badge/-@zakharteshukov-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=b0354c)](https://www.instagram.com/zakharteshukov/)
 [![X Badge](https://img.shields.io/badge/-@zakhar63707-808080?style=for-the-badge&logo=x&logoColor=white&labelColor=666666)](https://x.com/zakhar63707)
 [![Mail Badge](https://img.shields.io/badge/-zakharteshukov@gmail.com-9B4DFF?style=for-the-badge&logo=gmail&logoColor=white&labelColor=7A2EDD)](mailto:zakharteshukov@gmail.com)
-
-
-
-![ZakharTeshukov's GitHub stats](https://github-readme-stats.vercel.app/api?username=ZakharTeshukov&show_icons=true&theme=radical&rank_icon=github)
-![ZakharTeshukov's GitHub stats](https://github-readme-stats.vercel.app/api?username=ZakharTeshukov&show_icons=true&theme=radical&rank_icon=github)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ZakharTeshukov&layout=compact&theme=radical)
-
-
-
-
-
 
 
 
