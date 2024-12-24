@@ -21,6 +21,7 @@ I am a high school student at Saigon South International School in Vietnam. I am
 [![Scala Badge](https://img.shields.io/badge/Scala-DC322F?style=for-the-badge&logo=scala&logoColor=white&labelColor=9c1e24)](https://www.scala-lang.org/)
 [![Linux Badge](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black&labelColor=cc9a1f)](https://www.kernel.org/)
 
+## Projects
 
 
 ## My GitHub Wrapped
@@ -28,6 +29,7 @@ I am a high school student at Saigon South International School in Vietnam. I am
   <img src="https://github-readme-stats.vercel.app/api?username=ZakharTeshukov&show_icons=true&theme=radical&rank_icon=progress&hide=issues" width="500" height="200" alt="ZakharTeshukov's GitHub stats">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZakharTeshukov&layout=compact&theme=radical" width="330" height="200" alt="Top Languages">
 </div>
+
 
 ## Connect With Me
 
@@ -39,6 +41,16 @@ I am a high school student at Saigon South International School in Vietnam. I am
 
 
 
+## Top Repositories
+
+<div style="display: flex; justify-content: space-between;">
+  <a href="https://github.com/said7388/developer-portfolio" style="flex: 1; margin-right: 0px;">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=said7388&repo=developer-portfolio&theme=algolia" width="49%" />
+  </a>
+  <a href="https://github.com/said7388/Express-Postgres-blog" style="flex: 1; margin-left: 0px;">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=said7388&repo=Express-Postgres-blog&theme=algolia" width="49%" />
+  </a>
+</div>
 
 
 
