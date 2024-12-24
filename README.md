@@ -26,8 +26,8 @@ I am a high school student at Saigon South International School in Vietnam. I am
 
 ## My GitHub Wrapped
 <div style="display: flex; justify-content: space-between;">
-  <img src="https://github-readme-stats.vercel.app/api?username=ZakharTeshukov&show_icons=true&theme=radical&rank_icon=progress&hide=issues" width="500" height="200" alt="ZakharTeshukov's GitHub stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZakharTeshukov&layout=compact&theme=radical" width="330" height="200" alt="Top Languages">
+  <img src="https://github-readme-stats.vercel.app/api?username=ZakharTeshukov&show_icons=true&theme=radical&rank_icon=progress&hide=issues" width="595" height="300" alt="ZakharTeshukov's GitHub stats">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZakharTeshukov&layout=compact&theme=radical" width="393" height="300" alt="Top Languages">
 </div>
 
 
