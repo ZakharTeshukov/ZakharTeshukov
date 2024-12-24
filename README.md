@@ -38,6 +38,7 @@ I am a high school student at Saigon South International School in Vietnam. I am
 [![LinkedIn Badge](https://img.shields.io/badge/-@ZakharTeshukov-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=005b8e)](https://www.linkedin.com/in/zakharteshukov)
 [![Instagram Badge](https://img.shields.io/badge/-@zakharteshukov-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=b0354c)](https://www.instagram.com/zakharteshukov/)
 [![X Badge](https://img.shields.io/badge/-@zakhar63707-808080?style=for-the-badge&logo=x&logoColor=white&labelColor=666666)](https://x.com/zakhar63707)
+![Static Badge](https://img.shields.io/badge/LeetCode-black?style=for-the-badge&logo=leetcode&logoColor=white&labelColor=%23A17F00&color=%23F8C300&link=https%3A%2F%2Fx.com%2Fzakharteshukov)
 [![Mail Badge](https://img.shields.io/badge/-zakharteshukov@gmail.com-9B4DFF?style=for-the-badge&logo=gmail&logoColor=white&labelColor=7A2EDD)](mailto:zakharteshukov@gmail.com)
 
 
