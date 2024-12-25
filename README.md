@@ -34,12 +34,10 @@ I am a high school student at Saigon South International School in Vietnam. I am
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZakharTeshukov&layout=compact&theme=radical" width="330" height="200" alt="Top Languages">
 </a>
 </div>
-
 <div>
   <a href="https://git.io/streak-stats">
   <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=neon-dark&border_radius=5&card_width=150&card_height=180&hide_total_contributions=true&hide_longest_streak=true" alt="GitHub Streak)" />
 </div>
-
 
 ## Connect With Me
 
