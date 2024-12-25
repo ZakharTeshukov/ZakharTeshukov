@@ -32,7 +32,14 @@ I am a high school student at Saigon South International School in Vietnam. I am
 <div style="display: flex; justify-content: space-between;">
   <img src="https://github-readme-stats.vercel.app/api?username=ZakharTeshukov&show_icons=true&theme=radical&rank_icon=progress&hide=issues" width="500" height="200" alt="ZakharTeshukov's GitHub stats">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZakharTeshukov&layout=compact&theme=radical" width="330" height="200" alt="Top Languages">
+  <a href="https://git.io/streak-stats">
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=neon-dark&border_radius=5&card_width=150&card_height=200&hide_total_contributions=true&hide_longest_streak=true" width="150" height="200" alt="GitHub Streak" />
+</a>
+
+
 </div>
+
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=neon-dark&border_radius=5&card_width=150&card_height=200&hide_total_contributions=true&hide_longest_streak=true)](https://git.io/streak-stats)
 
 
 ## Connect With Me
