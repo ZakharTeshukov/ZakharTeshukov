@@ -1,12 +1,14 @@
 <div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=33&duration=5500&pause=200&width=435&lines=Hello+world!+.+.+.;Zakhar+Teshukov+.+.+.;Full-Stack+Developer+.+.+." alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=50&duration=6500&pause=500&color=18ABF7&width=920&height=75&lines=console.log(%22Hello+World!%22);print(%22Zakhar+Teshukov%22);return(%22Full-StackDeveloper%22)" alt="Typing SVG" />
   </a>
 </div>
 
-
+##
 
 # Zakhar Teshukov </> Full-Satack Developer
+
+
 
 ## About Me
 I am a high school student at Saigon South International School in Vietnam. I am a full-stack developer with expiriance in web developemt and systems design.
