@@ -39,9 +39,6 @@ I am a high school student at Saigon South International School in Vietnam. I am
 
 </div>
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=neon-dark&border_radius=5&card_width=150&card_height=200&hide_total_contributions=true&hide_longest_streak=true)](https://git.io/streak-stats)
-
-
 ## Connect With Me
 
 [![Facebook Badge](https://img.shields.io/badge/-@ZakharTeshukov-1877F2?style=for-the-badge&logo=facebook&logoColor=white&labelColor=145bbf)](https://www.facebook.com/ZakharTeshukov/following/)
