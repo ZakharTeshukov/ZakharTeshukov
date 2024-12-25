@@ -1,9 +1,10 @@
-
-<h1 align="center">
+<div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&duration=4000&pause=200&width=435&lines=Zakhar+Teshukov...;Full+Stack+Developer...;Problem+Solver...;&center=true&size=30" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=33&duration=5500&pause=200&width=435&lines=Hello+world!+.+.+.;Zakhar+Teshukov+.+.+.;Full-Stack+Developer+.+.+." alt="Typing SVG" />
   </a>
-</h1>
+</div>
+
+
 
 # Zakhar Teshukov </> Full-Satack Developer
 
