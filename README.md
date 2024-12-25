@@ -35,11 +35,11 @@ I am a high school student at Saigon South International School in Vietnam. I am
 </a>
 </div>
 <div>
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=165&hide_total_contributions=true&hide_longest_streak=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=165&hide_total_contributions=true&hide_longest_streak=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=165&hide_total_contributions=true&hide_longest_streak=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=165&hide_total_contributions=true&hide_longest_streak=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=165&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=160&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=160&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=160&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=160&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=160&hide_total_contributions=true&hide_longest_streak=true" />
 
 
 
