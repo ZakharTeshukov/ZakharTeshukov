@@ -35,11 +35,11 @@ I am a high school student at Saigon South International School in Vietnam. I am
 </a>
 </div>
 <div>
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=neon-dark&border_radius=5&card_width=150&card_height=180&hide_total_contributions=true&hide_longest_streak=true" alt="GitHub Streak)" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=neon-dark&border_radius=5&card_width=150&card_height=180&hide_total_contributions=true&hide_longest_streak=true" alt="GitHub Streak)" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=neon-dark&border_radius=5&card_width=150&card_height=180&hide_total_contributions=true&hide_longest_streak=true" alt="GitHub Streak)" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=neon-dark&border_radius=5&card_width=150&card_height=180&hide_total_contributions=true&hide_longest_streak=true" alt="GitHub Streak)" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=neon-dark&border_radius=5&card_width=150&card_height=180&hide_total_contributions=true&hide_longest_streak=true" alt="GitHub Streak)" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=170&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=170&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=170&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=170&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=170&hide_total_contributions=true&hide_longest_streak=true" />
 
 
 
