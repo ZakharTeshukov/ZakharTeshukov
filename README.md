@@ -1,13 +1,18 @@
-<div align="center">
+# Zakhar Teshukov </> Full-Satack Developer
+
+<div>
+  <br />
+  <br />
+</div>
+
+
+<div align="center" margin: 3000>
   <a href="https://git.io/typing-svg">
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=50&duration=6500&pause=500&color=18ABF7&width=920&height=75&lines=console.log(%22Hello+World!%22);print(%22Zakhar+Teshukov%22);return(%22Full-StackDeveloper%22)" alt="Typing SVG" />
   </a>
 </div>
 
 #
-
-# Zakhar Teshukov </> Full-Satack Developer
-
 
 
 ## About Me
