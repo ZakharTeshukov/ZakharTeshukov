@@ -35,16 +35,16 @@ I am a high school student at Saigon South International School in Vietnam. I am
 
 ## My GitHub Wrapped
 <div style="display: flex; justify-content: space-between;">
-  <img src="https://github-readme-stats.vercel.app/api?username=ZakharTeshukov&show_icons=true&theme=radical&rank_icon=progress&hide=issues" width="500" height="200" alt="ZakharTeshukov's GitHub stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZakharTeshukov&layout=compact&theme=radical" width="330" height="200" alt="Top Languages">
+  <img src="https://github-readme-stats.vercel.app/api?username=ZakharTeshukov&show_icons=true&theme=nightowl&rank_icon=progress&hide=issues&hide_border=true" width="500" height="200" alt="ZakharTeshukov's GitHub stats">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZakharTeshukov&layout=compact&theme=highcontrast&hide_border=true" width="330" height="200" alt="Top Languages">
 </a>
 </div>
 <div>
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true&hide_border=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=java-dark&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true&hide_border=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=java-dark&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true&hide_border=true" />
 
 
 
