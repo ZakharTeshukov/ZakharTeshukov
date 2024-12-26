@@ -14,11 +14,10 @@
 
 #
 
-
-## About Me
+# About Me
 I am a high school student at Saigon South International School in Vietnam. I am a full-stack developer with expiriance in web developemt and systems design.
 
-## My Stack
+# My Stack
 
 [![HTML Badge](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white&labelColor=cc3f1f)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS Badge](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white&labelColor=0c4a7c)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -30,10 +29,15 @@ I am a high school student at Saigon South International School in Vietnam. I am
 [![Scala Badge](https://img.shields.io/badge/Scala-DC322F?style=for-the-badge&logo=scala&logoColor=white&labelColor=9c1e24)](https://www.scala-lang.org/)
 [![Linux Badge](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black&labelColor=cc9a1f)](https://www.kernel.org/)
 
-## Projects
+# Projects
 
+## Debate Card Suite
 
-## My GitHub Wrapped
+## Personal Website
+
+## Global Debate Society
+
+# My GitHub Wrapped
 <div style="display: flex; justify-content: space-between;">
   <img src="https://github-readme-stats.vercel.app/api?username=ZakharTeshukov&show_icons=true&theme=nightowl&rank_icon=progress&hide=issues&hide_border=true" width="500" height="200" alt="ZakharTeshukov's GitHub stats">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZakharTeshukov&layout=compact&theme=highcontrast&hide_border=true" width="330" height="200" alt="Top Languages">
@@ -51,7 +55,7 @@ I am a high school student at Saigon South International School in Vietnam. I am
 
 </div>
 
-## Connect With Me
+# Connect With Me
 
 [![Facebook Badge](https://img.shields.io/badge/-@ZakharTeshukov-1877F2?style=for-the-badge&logo=facebook&logoColor=white&labelColor=145bbf)](https://www.facebook.com/ZakharTeshukov/following/)
 [![LinkedIn Badge](https://img.shields.io/badge/-@ZakharTeshukov-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=005b8e)](https://www.linkedin.com/in/zakharteshukov)
@@ -62,7 +66,7 @@ I am a high school student at Saigon South International School in Vietnam. I am
 
 
 
-## Top Repositories
+# Top Repositories
 
 <div style="display: flex; justify-content: space-between;">
   <a href="https://github.com/ZakharTeshukov/ZakharTeshukov.git" style="flex: 1; margin-right: 0px;">
