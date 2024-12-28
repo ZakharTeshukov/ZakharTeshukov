@@ -35,7 +35,9 @@ I am a high school student at Saigon South International School in Vietnam. I am
 
 ## Personal Website
 
-## Global Debate Society
+## Global Debate Society Website
+
+
 
 # My GitHub Wrapped
 <div style="display: flex; justify-content: space-between;">
