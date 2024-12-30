@@ -33,9 +33,34 @@ I am a high school student at Saigon South International School in Vietnam. I am
 
 ## Debate Card Suite
 
+### Overview
+A web application developed for Public Forum, Licoln Douglas and Policy debaters. 
+
+### Feature List
+- Rich text editor for card-cutting;
+- In-round flow sheet;
+- Advanced blockfile search functionality;
+- In-round efficint card import.
+
 ## Personal Website
 
+### Overview
+A basic personal portfolio website built using HTML, CSS, JavaScript and Next.js.
+
+### Feature List
+- Simplistic and elegant design;
+- Past employment information;
+- Project directory.
+
 ## Global Debate Society Website
+
+### Overview
+The purpose of Global Debate Society (GDS), is to promote equitable access to debate leaning and preparation reasources for no cost. This website is the distribution center of all our digital content and serves as the platform where we host lectures, labs and community events.
+
+### Feature List
+- Real-time messanger;
+- Video conferencing software;
+- File shearing.
 
 
 
