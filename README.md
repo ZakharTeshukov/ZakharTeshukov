@@ -71,11 +71,6 @@ The purpose of Global Debate Society (GDS), is to promote equitable access to de
 </a>
 </div>
 <div>
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true&hide_border=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=java-dark&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true&hide_border=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=java-dark&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ZakharTeshukov&theme=highcontrast&border_radius=6&card_width=161&hide_total_contributions=true&hide_longest_streak=true&hide_border=true" />
 
 
 
