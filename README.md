@@ -91,18 +91,17 @@ The purpose of Global Debate Society (GDS), is to promote equitable access to de
 # Top Repositories
 
 <div style="display: flex; justify-content: space-between;">
+      <a href="https://github.com/ZakharTeshukov/ZakharTeshukov.git" style="flex: 1; margin-left: 0px;">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=ZakharTeshukov&theme=highcontrast" width="49%" />
+  </a>
   <a href="https://github.com/ZakharTeshukov/GlobalDebateSociety.git" style="flex: 1; margin-right: 0px;">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=GlobalDebateSociety&theme=highcontrast" width="49%" />
   </a>
-  <a href="https://github.com/ZakharTeshukov/docs-tutorial.git" style="flex: 1; margin-left: 0px;">
+  <a href="https://github.com/ZakharTeshukov/DebateRTE.git" style="flex: 1; margin-left: 0px;">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=DebateRTE&theme=highcontrast" width="49%" />
   </a>
-    <a href="https://github.com/ZakharTeshukov/docs-tutorial.git" style="flex: 1; margin-left: 0px;">
+    <a href="https://github.com/ZakharTeshukov/Experimental" style="flex: 1; margin-left: 0px;">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=Experimental&theme=highcontrast" width="49%" />
-  </a>
-    <a href="https://github.com/ZakharTeshukov/docs-tutorial.git" style="flex: 1; margin-left: 0px;">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=Experimental&theme=highcontrast" width="49%" />
-  </a>
 </div>
 
 
