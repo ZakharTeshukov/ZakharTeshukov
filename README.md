@@ -95,13 +95,13 @@ The purpose of Global Debate Society (GDS), is to promote equitable access to de
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=GlobalDebateSociety&theme=highcontrast" width="49%" />
   </a>
   <a href="https://github.com/ZakharTeshukov/docs-tutorial.git" style="flex: 1; margin-left: 0px;">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=docs-tutorial&theme=highcontrast" width="49%" />
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=DebateRTE&theme=highcontrast" width="49%" />
   </a>
     <a href="https://github.com/ZakharTeshukov/docs-tutorial.git" style="flex: 1; margin-left: 0px;">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=docs-tutorial&theme=highcontrast" width="49%" />
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=DebateRTE&theme=highcontrast" width="49%" />
   </a>
     <a href="https://github.com/ZakharTeshukov/docs-tutorial.git" style="flex: 1; margin-left: 0px;">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=docs-tutorial&theme=highcontrast" width="49%" />
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=ZakharTeshukov&repo=DebateRTE&theme=highcontrast" width="49%" />
   </a>
 </div>
 
