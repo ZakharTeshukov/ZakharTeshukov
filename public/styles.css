@@ -1,0 +1,237 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 30px; /* Adds margin below the header */
+}
+
+.header .logo h1 {
+    margin-bottom: 5px;
+    font-size: 2.5em;
+}
+
+.header .logo p {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-decoration-line: underline;
+    cursor: pointer;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    transition: text-shadow 0.3s ease;
+    text-decoration-color: #ccc;
+
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1.1em;
+    font-weight: 400;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #6a4c93;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px; /* Adds space below the hero section */
+}
+
+.hero h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #f8d56b;
+    color: #222;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #e2c34b;
+}
+
+/* Featured Work Section */
+.featured-work {
+    background-color: #fff;
+    padding: 60px 0;
+    margin-bottom: 40px; /* Adds margin between sections */
+    text-align: center;
+}
+
+.featured-work h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.work-item {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px; /* Adds margin below each work item */
+}
+
+.work-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    height: auto;
+    margin-bottom: 20px; /* Adds space below image */
+}
+
+.work-item h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.work-item p {
+    margin-bottom: 20px;
+    color: #777;
+}
+
+.work-item .cta-button {
+    margin-top: 10px;
+}
+
+/* Skills Section */
+.skills {
+    background-color: #f4f4f4;
+    padding: 60px 0;
+    margin-bottom: 40px; /* Adds margin between sections */
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    background-color: #fff;
+    padding: 30px;
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px; /* Adds margin below each skill */
+}
+
+.skill h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.skill p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #6a4c93;
+    color: white;
+    padding: 60px 0;
+    margin-bottom: 40px; /* Adds margin between sections */
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.testimonial-card {
+    background-color: white;
+    color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 40px; /* Adds space above the footer */
+}
