@@ -3,35 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Zakhar Teshukov</title>
+    <title>Real-time Chat App - Portfolio</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="styles/blog.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/projects.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">ZAKHAR TESHUKOV</div>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="logo">PORTFOLIO</div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../projects.html">Projects</a></li>
-                <li><a href="index.html">Blog</a></li>
+                <li><a href="../blog/index.html">Blog</a></li>
                 <li><a href="../contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="blog-page">
-        <div class="blog-header">
-            <h1>Blog</h1>
-            <p>Thoughts, insights, and explorations in technology and development.</p>
+    <main class="project-detail">
+        <div class="project-header">
+            <h1>Real-time Chat Application</h1>
+            <div class="project-meta">
+                <span class="date">2024</span>
+                <span class="category">Web Development</span>
+            </div>
         </div>
 
-        <div class="blog-grid">
-            <!-- Blog posts will be loaded here dynamically -->
+        <div class="project-content">
+            <div class="project-image">
+                <img src="../images/chat-app.jpg" alt="Real-time Chat Application Interface">
+            </div>
+
+            <div class="project-description">
+                <h2>Overview</h2>
+                <p>A modern real-time chat application with features like group chats, file sharing, and message encryption. Built with WebSocket technology for instant communication.</p>
+
+                <h2>Features</h2>
+                <ul>
+                    <li>Real-time messaging</li>
+                    <li>Group chat rooms</li>
+                    <li>File and image sharing</li>
+                    <li>Message encryption</li>
+                    <li>Online status indicators</li>
+                    <li>Message history</li>
+                </ul>
+
+                <h2>Technologies Used</h2>
+                <div class="tech-stack">
+                    <span>Vue.js</span>
+                    <span>Socket.io</span>
+                    <span>Express</span>
+                    <span>PostgreSQL</span>
+                    <span>Redis</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" class="project-link">Live Demo</a>
+                    <a href="#" class="project-link">GitHub</a>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -42,7 +72,7 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../projects.html">Projects</a></li>
-                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="../blog/index.html">Blog</a></li>
                     <li><a href="../contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -50,7 +80,7 @@
                 <h3>Pages</h3>
                 <ul>
                     <li><a href="../projects.html">All Projects</a></li>
-                    <li><a href="index.html">Blog Posts</a></li>
+                    <li><a href="../blog/index.html">Blog Posts</a></li>
                     <li><a href="../contact.html">Contact Me</a></li>
                 </ul>
             </div>
@@ -75,6 +105,5 @@
     </footer>
 
     <script src="../script.js"></script>
-    <script src="blog.js"></script>
 </body>
 </html> 

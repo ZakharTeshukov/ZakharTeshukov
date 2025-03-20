@@ -1,0 +1,26 @@
+[
+    {
+        "url": "getting-started-with-web-development.html",
+        "title": "Getting Started with Web Development",
+        "date": "2024-03-15",
+        "category": "development"
+    },
+    {
+        "url": "exploring-cursor-ai.html",
+        "title": "Exploring Cursor AI: The Future of Development",
+        "date": "2024-03-18",
+        "category": "technology"
+    },
+    {
+        "url": "exploring-openai.html",
+        "title": "Exploring OpenAI: The AI Revolution",
+        "date": "2024-03-19",
+        "category": "technology"
+    },
+    {
+        "url": "exploring-claude.html",
+        "title": "Exploring Claude AI: The Future of Conversational AI",
+        "date": "2024-03-20",
+        "category": "technology"
+    }
+] 

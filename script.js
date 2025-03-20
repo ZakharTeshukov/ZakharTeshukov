@@ -1,24 +1,44 @@
-// Mobile menu functionality
+// Mobile Menu Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.createElement('button');
-    menuButton.className = 'menu-button';
-    menuButton.innerHTML = '☰';
-    menuButton.setAttribute('aria-label', 'Toggle menu');
-    
-    const navContent = document.querySelector('.nav-content');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
-    
-    if (navContent && navLinks) {
-        navContent.insertBefore(menuButton, navLinks);
-        
-        menuButton.addEventListener('click', function() {
+    const body = document.body;
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
+            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            
+            // Update menu icon
+            this.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : 
+                '<i class="fas fa-bars"></i>';
         });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!navContent.contains(event.target) && navLinks.classList.contains('active')) {
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                body.style.overflow = '';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                body.style.overflow = '';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                body.style.overflow = '';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
     }
@@ -102,7 +122,7 @@ if (document.querySelector('.blog-grid')) {
     loadBlogPosts();
 }
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -116,16 +136,47 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handling
-const contactForm = document.querySelector('#contact-form');
+// Form handling
+const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        // Add your form submission logic here
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Here you would typically send the data to a server
+        console.log('Form submitted:', data);
+        
+        // Show success message
+        const successMessage = document.querySelector('.form-success');
+        if (successMessage) {
+            successMessage.classList.add('show');
+            this.reset();
+        }
     });
 }
+
+// Scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.project-card, .blog-card').forEach(el => {
+    observer.observe(el);
+});
+
 // Navbar background change on scroll
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {

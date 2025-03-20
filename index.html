@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Zakhar Teshukov - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">PORTFOLIO</div>
+            <div class="logo">ZAKHAR TESHUKOV</div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog/index.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Hello, I'm <span class="highlight">Your Name</span></h1>
+            <h1>Hello, I'm <span class="highlight">Zakhar Teshukov</span></h1>
             <p>Full Stack Developer & Designer</p>
             <a href="projects.html" class="cta-button">View My Work</a>
         </div>
@@ -49,30 +53,106 @@
     </section>
 
     <section id="blog" class="blog">
-        <h2>Latest Blog Posts</h2>
+        <div class="blog-header">
+            <h2>Latest Blog Posts</h2>
+            <p>Thoughts, insights, and explorations in technology and development.</p>
+        </div>
         <div class="blog-grid">
-            <article class="blog-post">
-                <h3>Latest Post Title</h3>
-                <p class="date">March 15, 2024</p>
-                <p>Preview of your latest blog post content goes here...</p>
-                <a href="blog/index.html" class="read-more">Read More</a>
+            <article class="blog-card">
+                <div class="blog-image" style="background-image: url('blog/images/cursor-ai.jpg')"></div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="date">March 15, 2024</span>
+                        <span class="category">Development</span>
+                        <span class="read-time">5 min read</span>
+                    </div>
+                    <h3>Exploring Cursor AI</h3>
+                    <p>Discover how Cursor AI is revolutionizing the way developers write code with its advanced AI-powered features and seamless integration.</p>
+                    <div class="blog-tags">
+                        <span>AI</span>
+                        <span>Development</span>
+                        <span>Tools</span>
+                    </div>
+                    <a href="blog/posts/exploring-cursor-ai.html" class="read-more">Read More</a>
+                </div>
             </article>
-            <article class="blog-post">
-                <h3>Another Post Title</h3>
-                <p class="date">March 10, 2024</p>
-                <p>Preview of another blog post content goes here...</p>
-                <a href="blog/index.html" class="read-more">Read More</a>
+            <article class="blog-card">
+                <div class="blog-image" style="background-image: url('blog/images/openai.jpg')"></div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="date">March 10, 2024</span>
+                        <span class="category">AI</span>
+                        <span class="read-time">6 min read</span>
+                    </div>
+                    <h3>OpenAI's Impact on Technology</h3>
+                    <p>An in-depth look at how OpenAI's innovations are shaping the future of artificial intelligence and technology.</p>
+                    <div class="blog-tags">
+                        <span>OpenAI</span>
+                        <span>AI</span>
+                        <span>Technology</span>
+                    </div>
+                    <a href="blog/posts/openai-impact.html" class="read-more">Read More</a>
+                </div>
             </article>
+            <article class="blog-card">
+                <div class="blog-image" style="background-image: url('blog/images/claude.jpg')"></div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="date">March 5, 2024</span>
+                        <span class="category">AI</span>
+                        <span class="read-time">4 min read</span>
+                    </div>
+                    <h3>Understanding Claude AI</h3>
+                    <p>Exploring the capabilities and unique features of Claude AI, and how it's advancing the field of artificial intelligence.</p>
+                    <div class="blog-tags">
+                        <span>Claude</span>
+                        <span>AI</span>
+                        <span>Technology</span>
+                    </div>
+                    <a href="blog/posts/understanding-claude.html" class="read-more">Read More</a>
+                </div>
+            </article>
+        </div>
+        <div class="blog-cta">
+            <a href="blog/index.html" class="cta-button">View All Posts</a>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#">GitHub</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Twitter</a>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Pages</h3>
+                <ul>
+                    <li><a href="projects.html">All Projects</a></li>
+                    <li><a href="blog/index.html">Blog Posts</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Resume</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://leetcode.com" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                </div>
             </div>
         </div>
     </footer>
