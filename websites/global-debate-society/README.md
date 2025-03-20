@@ -131,3 +131,4 @@ For questions or support, please contact:
 - Font Awesome for icons
 - Google Fonts for typography
 - Contributors and maintainers 
+- 
