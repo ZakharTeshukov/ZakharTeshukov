@@ -117,12 +117,40 @@ body {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #000;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #000 }
 }
 
 .hero-content p {
     font-size: 1.25rem;
     color: #666;
     margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: 3s;
+}
+
+.hero-content .cta-button {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: 3.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .highlight {

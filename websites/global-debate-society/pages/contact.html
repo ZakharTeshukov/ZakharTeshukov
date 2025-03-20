@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Global Debate Society</title>
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <h1>Global Debate Society</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Get in touch with us for any inquiries about membership, events, or collaboration opportunities</p>
+            </div>
+        </section>
+
+        <section class="contact-info container">
+            <div class="grid grid-3">
+                <div class="contact-card animate-on-scroll">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>info@globaldebatesociety.org</p>
+                    <p>support@globaldebatesociety.org</p>
+                </div>
+                <div class="contact-card animate-on-scroll">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+65 6789 0123</p>
+                    <p>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="contact-card animate-on-scroll">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>123 Orchard Road</p>
+                    <p>Singapore 238876</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="grid grid-2">
+                    <div class="form-content animate-on-scroll">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="membership">Membership Inquiry</option>
+                                    <option value="event">Event Information</option>
+                                    <option value="resources">Resource Access</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="map-container animate-on-scroll">
+                        <h2>Visit Our Office</h2>
+                        <div class="map">
+                            <!-- Replace with actual map embed code -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7897332582733!2d103.83119851475403!3d1.3019779990470066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da198c9e0d0f8d%3A0x82c3660d46766d2!2sOrchard%20Road!5e0!3m2!1sen!2ssg!4v1645523456789!5m2!1sen!2ssg" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="office-hours">
+                            <h3>Office Hours</h3>
+                            <ul>
+                                <li><span>Monday - Friday:</span> 9:00 AM - 6:00 PM</li>
+                                <li><span>Saturday:</span> 10:00 AM - 2:00 PM</li>
+                                <li><span>Sunday:</span> Closed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="text-center">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item animate-on-scroll">
+                        <h3>How can I become a member?</h3>
+                        <p>Visit our membership page to learn about different membership options and sign up online.</p>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <h3>Where are your events held?</h3>
+                        <p>Our events are held at various locations across Southeast Asia and online. Check our events page for details.</p>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <h3>Do you offer training programs?</h3>
+                        <p>Yes, we offer various training programs for different skill levels. Visit our resources page to learn more.</p>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <h3>Can I volunteer with GDS?</h3>
+                        <p>We welcome volunteers! Contact us with your interests and availability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-connect">
+            <div class="container text-center">
+                <h2>Connect With Us</h2>
+                <p>Follow us on social media for updates and announcements</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="resources.html#guides">Debate Guides</a></li>
+                    <li><a href="resources.html#materials">Training Materials</a></li>
+                    <li><a href="resources.html#videos">Video Library</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="contact.html">Get in Touch</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/contact.js"></script>
+</body>
+</html> 
