@@ -1,0 +1,28 @@
+{
+    "posts": [
+        {
+            "url": "posts/exploring-cursor-ai.html",
+            "title": "Exploring Cursor AI: The Future of Code Editing",
+            "date": "2024-03-20",
+            "category": "technology"
+        },
+        {
+            "url": "posts/exploring-openai.html",
+            "title": "Exploring OpenAI: The AI Revolution",
+            "date": "2024-03-19",
+            "category": "technology"
+        },
+        {
+            "url": "posts/exploring-claude.html",
+            "title": "Exploring Claude: Anthropic's AI Assistant",
+            "date": "2024-03-18",
+            "category": "technology"
+        },
+        {
+            "url": "posts/getting-started-with-web-development.html",
+            "title": "Getting Started with Web Development",
+            "date": "2024-03-15",
+            "category": "development"
+        }
+    ]
+} 
