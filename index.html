@@ -14,12 +14,13 @@
             <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="blog/index.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </div>
     </nav>
 
@@ -52,66 +53,69 @@
         </div>
     </section>
 
-    <section id="blog" class="blog">
+    <section id="blog" class="home-blog">
         <div class="blog-header">
             <h2>Latest Blog Posts</h2>
             <p>Thoughts, insights, and explorations in technology and development.</p>
         </div>
         <div class="blog-grid">
-            <article class="blog-card">
-                <div class="blog-image" style="background-image: url('blog/images/cursor-ai.jpg')"></div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="date">March 15, 2024</span>
-                        <span class="category">Development</span>
-                        <span class="read-time">5 min read</span>
+            <a href="blog/posts/exploring-cursor-ai.html" class="blog-card-link">
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('blog/images/cursor-ai.jpg')"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="date">March 15, 2024</span>
+                            <span class="category">Development</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h3>Exploring Cursor AI</h3>
+                        <p>Discover how Cursor AI is revolutionizing the way developers write code with its advanced AI-powered features and seamless integration.</p>
+                        <div class="blog-tags">
+                            <span>AI</span>
+                            <span>Development</span>
+                            <span>Tools</span>
+                        </div>
                     </div>
-                    <h3>Exploring Cursor AI</h3>
-                    <p>Discover how Cursor AI is revolutionizing the way developers write code with its advanced AI-powered features and seamless integration.</p>
-                    <div class="blog-tags">
-                        <span>AI</span>
-                        <span>Development</span>
-                        <span>Tools</span>
+                </article>
+            </a>
+            <a href="blog/posts/openai-impact.html" class="blog-card-link">
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('blog/images/openai.jpg')"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="date">March 10, 2024</span>
+                            <span class="category">AI</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                        <h3>OpenAI's Impact on Technology</h3>
+                        <p>An in-depth look at how OpenAI's innovations are shaping the future of artificial intelligence and technology.</p>
+                        <div class="blog-tags">
+                            <span>OpenAI</span>
+                            <span>AI</span>
+                            <span>Technology</span>
+                        </div>
                     </div>
-                    <a href="blog/posts/exploring-cursor-ai.html" class="read-more">Read More</a>
-                </div>
-            </article>
-            <article class="blog-card">
-                <div class="blog-image" style="background-image: url('blog/images/openai.jpg')"></div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="date">March 10, 2024</span>
-                        <span class="category">AI</span>
-                        <span class="read-time">6 min read</span>
+                </article>
+            </a>
+            <a href="blog/posts/understanding-claude.html" class="blog-card-link">
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('blog/images/claude.jpg')"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="date">March 5, 2024</span>
+                            <span class="category">AI</span>
+                            <span class="read-time">4 min read</span>
+                        </div>
+                        <h3>Understanding Claude AI</h3>
+                        <p>Exploring the capabilities and unique features of Claude AI, and how it's advancing the field of artificial intelligence.</p>
+                        <div class="blog-tags">
+                            <span>Claude</span>
+                            <span>AI</span>
+                            <span>Technology</span>
+                        </div>
                     </div>
-                    <h3>OpenAI's Impact on Technology</h3>
-                    <p>An in-depth look at how OpenAI's innovations are shaping the future of artificial intelligence and technology.</p>
-                    <div class="blog-tags">
-                        <span>OpenAI</span>
-                        <span>AI</span>
-                        <span>Technology</span>
-                    </div>
-                    <a href="blog/posts/openai-impact.html" class="read-more">Read More</a>
-                </div>
-            </article>
-            <article class="blog-card">
-                <div class="blog-image" style="background-image: url('blog/images/claude.jpg')"></div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="date">March 5, 2024</span>
-                        <span class="category">AI</span>
-                        <span class="read-time">4 min read</span>
-                    </div>
-                    <h3>Understanding Claude AI</h3>
-                    <p>Exploring the capabilities and unique features of Claude AI, and how it's advancing the field of artificial intelligence.</p>
-                    <div class="blog-tags">
-                        <span>Claude</span>
-                        <span>AI</span>
-                        <span>Technology</span>
-                    </div>
-                    <a href="blog/posts/understanding-claude.html" class="read-more">Read More</a>
-                </div>
-            </article>
+                </article>
+            </a>
         </div>
         <div class="blog-cta">
             <a href="blog/index.html" class="cta-button">View All Posts</a>
@@ -123,10 +127,11 @@
             <div class="footer-section">
                 <h3>Navigation</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">

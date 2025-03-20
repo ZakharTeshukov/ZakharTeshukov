@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Zakhar Teshukov</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -16,9 +17,10 @@
             </button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="blog/index.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -26,52 +28,104 @@
     <main class="contact-page">
         <div class="contact-container">
             <div class="contact-info">
-                <h2>Get in Touch</h2>
+                <div class="contact-header">
+                    <h2>Get in Touch</h2>
+                    <p class="location-tag"><i class="fas fa-map-marker-alt"></i> Ho Chi Minh City, Vietnam</p>
+                </div>
+                
                 <div class="contact-details">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>contact@zakharteshukov.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>San Francisco, CA</p>
+                            <p>zakharteshukov@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>Phone</h3>
-                            <p>+1 (555) 123-4567</p>
+                            <p>+84 90 184 41 97</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Ho Chi Minh City, Vietnam</p>
+                            <span class="location-detail">Originally from Russia, based in Vietnam for 8+ years</span>
                         </div>
                     </div>
                 </div>
+                
+                <div class="bio-snippet">
+                    <h3>About Me</h3>
+                    <p>15-year-old student passionate about computer science, entrepreneurship, and debate. Currently developing AI-powered tools and leading a transnational debate organization across Southeast Asia.</p>
+                    <div class="expertise-tags">
+                        <span>AI Development</span>
+                        <span>Web Development</span>
+                        <span>Statistical Analysis</span>
+                        <span>Public Speaking</span>
+                    </div>
+                </div>
+                
+                <div class="contact-social">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub" class="github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://notion.so" target="_blank" aria-label="Notion" class="notion">
+                        <i class="fas fa-cube"></i>
+                    </a>
+                </div>
             </div>
-            <div class="contact-form">
+            
+            <div class="contact-form-section">
                 <h2>Send a Message</h2>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                <p class="form-intro">Have a project in mind or interested in collaboration? I'm always open to discussing new opportunities and ideas.</p>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message">Please enter your name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message">Please enter a valid email</span>
+                        </div>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                        <span class="error-message">Please enter a subject</span>
                     </div>
+                    
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" required></textarea>
+                        <span class="error-message">Please enter your message</span>
                     </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    
+                    <button type="submit" class="submit-btn">
+                        Send Message
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="spinner"></span>
+                    </button>
                 </form>
+                
                 <div class="form-success">
-                    <h3>Thank you!</h3>
-                    <p>Your message has been sent successfully.</p>
-                    <button onclick="this.parentElement.classList.remove('show')">Close</button>
+                    <h3><i class="fas fa-check-circle"></i> Thank you!</h3>
+                    <p>Your message has been sent successfully. I'll get back to you as soon as possible.</p>
+                    <button>Close</button>
                 </div>
             </div>
         </div>
@@ -83,39 +137,41 @@
                 <h3>Navigation</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Pages</h3>
+                <h3>Projects</h3>
                 <ul>
-                    <li><a href="projects.html">All Projects</a></li>
-                    <li><a href="blog/index.html">Blog Posts</a></li>
-                    <li><a href="contact.html">Contact Me</a></li>
+                    <li><a href="#">AI Note-Taking App</a></li>
+                    <li><a href="#">Debate AI Assistant</a></li>
+                    <li><a href="#">School Club Websites</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Resources</h3>
+                <h3>Activities</h3>
                 <ul>
-                    <li><a href="#">Resume</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Global Debate Society</a></li>
+                    <li><a href="#">Tutoring Dragons</a></li>
+                    <li><a href="#">Research Papers</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Connect</h3>
                 <div class="social-links">
-                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
                     <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://leetcode.com" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://notion.so" target="_blank" aria-label="Notion"><i class="fas fa-cube"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="scripts/contact.js"></script>
 </body>
 </html> 

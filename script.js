@@ -187,4 +187,20 @@ window.addEventListener('scroll', () => {
         navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
         navbar.style.boxShadow = 'none';
     }
+});
+
+// Navbar scroll handling
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+        navbar.classList.add('hidden');
+    } else {
+        navbar.classList.remove('hidden');
+    }
+
+    lastScrollY = currentScrollY;
 }); 
