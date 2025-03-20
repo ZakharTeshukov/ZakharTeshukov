@@ -1,0 +1,28 @@
+{
+    "projects": [
+        {
+            "id": "ai-image-generator",
+            "title": "AI Image Generator",
+            "description": "Advanced AI-powered image generation using DALL-E API. Create unique images from text descriptions.",
+            "image": "/src/assets/projects/ai-generator.jpg",
+            "technologies": ["React", "Node.js", "OpenAI"],
+            "link": "/projects/ai-image-generator.html"
+        },
+        {
+            "id": "ai-code-assistant",
+            "title": "AI Code Assistant",
+            "description": "Intelligent coding assistant powered by machine learning. Helps developers write better code faster.",
+            "image": "/src/assets/projects/code-assistant.jpg",
+            "technologies": ["Python", "TensorFlow", "GPT-3"],
+            "link": "/projects/ai-code-assistant.html"
+        },
+        {
+            "id": "real-time-chat",
+            "title": "Real-time Chat App",
+            "description": "Feature-rich chat application with real-time messaging, file sharing, and end-to-end encryption.",
+            "image": "/src/assets/projects/chat-app.jpg",
+            "technologies": ["Socket.io", "Express", "MongoDB"],
+            "link": "/projects/real-time-chat-app.html"
+        }
+    ]
+} 

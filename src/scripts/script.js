@@ -44,84 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Blog post loading functionality
-async function loadBlogPosts() {
-    try {
-        const response = await fetch('/blog/posts.json');
-        const data = await response.json();
-        const blogGrid = document.querySelector('.blog-grid');
-        
-        if (blogGrid) {
-            blogGrid.innerHTML = data.posts.map(post => `
-                <article class="blog-card">
-                    <img src="${post.image || '../images/default-blog.jpg'}" alt="${post.title}">
-                    <div class="blog-card-content">
-                        <h2><a href="/blog/${post.url}">${post.title}</a></h2>
-                        <div class="blog-card-meta">
-                            <span>${new Date(post.date).toLocaleDateString('en-US', { 
-                                year: 'numeric', 
-                                month: 'long', 
-                                day: 'numeric' 
-                            })}</span>
-                            <span>${post.readingTime || '5 min read'}</span>
-                        </div>
-                        <p class="blog-card-description">${post.description || ''}</p>
-                        <div class="blog-card-tags">
-                            ${post.tags ? post.tags.map(tag => `
-                                <span class="blog-card-tag">${tag}</span>
-                            `).join('') : ''}
-                        </div>
-                    </div>
-                </article>
-            `).join('');
-
-            // Add filter functionality
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const searchInput = document.querySelector('#search-input');
-            let currentCategory = 'all';
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    currentCategory = button.dataset.category;
-                    filterPosts();
-                });
-            });
-
-            searchInput.addEventListener('input', filterPosts);
-
-            function filterPosts() {
-                const searchQuery = searchInput.value.toLowerCase();
-                const posts = document.querySelectorAll('.blog-card');
-                
-                posts.forEach(post => {
-                    const title = post.querySelector('h2').textContent.toLowerCase();
-                    const description = post.querySelector('.blog-card-description').textContent.toLowerCase();
-                    const tags = Array.from(post.querySelectorAll('.blog-card-tag'))
-                        .map(tag => tag.textContent.toLowerCase());
-                    
-                    const matchesSearch = title.includes(searchQuery) || 
-                                        description.includes(searchQuery) ||
-                                        tags.some(tag => tag.includes(searchQuery));
-                    
-                    const category = post.dataset.category || 'all';
-                    const matchesCategory = currentCategory === 'all' || category === currentCategory;
-                    
-                    post.style.display = matchesSearch && matchesCategory ? 'block' : 'none';
-                });
-            }
-        }
-    } catch (error) {
-        console.error('Error loading blog posts:', error);
-    }
-}
-
-// Load blog posts when on the blog page
-if (document.querySelector('.blog-grid')) {
-    loadBlogPosts();
-}
-
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -173,8 +95,14 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.project-card, .blog-card').forEach(el => {
+document.querySelectorAll('.project-card').forEach(el => {
     observer.observe(el);
+    el.addEventListener('mouseenter', () => {
+        el.classList.add('hover');
+    });
+    el.addEventListener('mouseleave', () => {
+        el.classList.remove('hover');
+    });
 });
 
 // Navbar background change on scroll
