@@ -10,16 +10,17 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-flow: column wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
     max-height: 350px; /* Adjust to fit your content */
-    gap: 1.5rem;
     align-content: flex-start;
 }
 
 .footer-section {
-    width: 200px;
-    margin-right: 2rem;
-    margin-bottom: 1rem;
+    flex: 1 1 200px;
+    margin-bottom: 1.5rem;
     opacity: 0;
     animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: calc(var(--index) * 0.2s);
@@ -81,7 +82,6 @@ footer {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
-    flex-wrap: wrap;
 }
 
 .social-links a {

@@ -115,7 +115,6 @@
     font-size: 1.5rem;
     cursor: pointer;
     padding: 0.5rem;
-    display: none;
 }
 
 .nav-links {
@@ -154,6 +153,10 @@
     text-align: center;
     position: relative;
     z-index: 1;
+}
+
+.nav-links .nav-items li {
+    margin: 1rem 0;
 }
 
 .nav-links .nav-items a {

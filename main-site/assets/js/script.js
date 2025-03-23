@@ -31,15 +31,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Close menu when clicking the overlay
-        if (menuOverlay) {
-            menuOverlay.addEventListener('click', function() {
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (navLinks.classList.contains('active') && 
+                !navLinks.contains(event.target) && 
+                !mobileMenuBtn.contains(event.target)) {
                 navLinks.classList.remove('active');
-                menuOverlay.classList.remove('active');
+                if (menuOverlay) {
+                    menuOverlay.classList.remove('active');
+                }
                 body.style.overflow = '';
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        }
+            }
+        });
 
         // Handle window resize
         window.addEventListener('resize', function() {
