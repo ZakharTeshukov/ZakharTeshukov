@@ -105,17 +105,18 @@ function fixNavLinks() {
         
         // Set active class for current page for navigation items
         if (link.closest('.nav-items')) {
+            // Create clean path for comparison (remove domain, get just the file part)
+            const currentFile = path.split('/').pop();
+            const linkFile = href.split('/').pop();
+            
+            const isHomePage = currentFile === '' || currentFile === 'index.html';
+            
             // Special handling for home link
-            if ((path.endsWith('index.html') || path.endsWith('/') || path === '') && 
-                (href === 'index.html' || href === '../index.html' || href === '../../index.html')) {
+            if ((href === 'index.html' || href === '../index.html' || href === '../../index.html') && isHomePage) {
                 link.classList.add('active');
             }
-            // Handle other pages
-            else if (path.includes(href) && 
-                    href !== '' && 
-                    href !== 'index.html' && 
-                    href !== '../index.html' &&
-                    href !== '../../index.html') {
+            // Handle other pages by comparing filenames
+            else if (linkFile && currentFile === linkFile && !isHomePage) {
                 link.classList.add('active');
             }
         }
