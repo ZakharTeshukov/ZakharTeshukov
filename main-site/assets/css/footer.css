@@ -9,16 +9,15 @@ footer {
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     padding: 0 2rem;
 }
 
 .footer-section {
-    flex: 1 1 200px;
-    min-width: 200px;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-section h3 {
@@ -69,23 +68,39 @@ footer {
 .social-links {
     display: flex;
     gap: 1.2rem;
+    margin-top: 1rem;
 }
 
 .social-links a {
     color: #ccc;
     font-size: 1.4rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-links a:hover {
     color: #fff;
-    transform: scale(1.2);
+    background-color: #3498db;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
 
 /* Responsive styles */
+@media (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .footer-content {
-        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem;
         padding: 0 1.5rem;
     }
@@ -124,6 +139,7 @@ footer {
     }
     
     .footer-content {
+        grid-template-columns: 1fr;
         gap: 2rem;
         padding: 0 1rem;
     }
@@ -150,24 +166,5 @@ footer {
     }
 }
 
-/* Connect section special styling */
-.connect-section .social-links {
-    margin-top: 1rem;
-}
-
-.connect-section .social-links a {
-    background-color: rgba(255, 255, 255, 0.1);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.connect-section .social-links a:hover {
-    background-color: #3498db;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-} 
+/* Remove connect section special styling */
+/* The styles have been integrated into the standard social links styles above */ 
