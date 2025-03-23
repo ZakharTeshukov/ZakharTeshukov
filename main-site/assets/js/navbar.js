@@ -10,47 +10,87 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
+    
+    // Add index to nav items for staggered animation
+    const navItems = document.querySelectorAll('.nav-links .nav-items li');
+    navItems.forEach((item, index) => {
+        item.style.setProperty('--item-index', index);
+    });
 
     if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-            
-            // Update menu icon
-            this.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : 
-                '<i class="fas fa-bars"></i>';
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu();
         });
         
         // Close menu when clicking a link
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                body.style.overflow = '';
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                closeMenu();
             });
         });
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
-            if (navLinks && navLinks.classList.contains('active')) {
+            if (navLinks.classList.contains('active')) {
                 if (!navLinks.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
-                    navLinks.classList.remove('active');
-                    body.style.overflow = '';
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    closeMenu();
                 }
+            }
+        });
+        
+        // Close menu on ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && navLinks.classList.contains('active')) {
+                closeMenu();
             }
         });
         
         // Close menu on window resize
         window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                navLinks.classList.remove('active');
-                body.style.overflow = '';
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                closeMenu();
             }
         });
     }
+    
+    // Helper functions
+    function toggleMenu() {
+        navLinks.classList.toggle('active');
+        body.classList.toggle('menu-open');
+        
+        // Toggle aria-expanded for accessibility
+        const expanded = navLinks.classList.contains('active');
+        mobileMenuBtn.setAttribute('aria-expanded', expanded);
+        
+        // Update menu icon
+        mobileMenuBtn.innerHTML = expanded ? 
+            '<i class="fas fa-times"></i>' : 
+            '<i class="fas fa-bars"></i>';
+    }
+    
+    function closeMenu() {
+        navLinks.classList.remove('active');
+        body.classList.remove('menu-open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+    
+    // Add scroll listener to handle nav bar hiding/showing
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > 150) {
+            // Scrolling down
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling up
+            navbar.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, { passive: true });
     
     // Fix broken links
     fixNavLinks();

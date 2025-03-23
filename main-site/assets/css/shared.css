@@ -61,6 +61,7 @@
 html {
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -182,11 +183,72 @@ a:hover {
     .container {
         padding: 0 var(--spacing-sm);
     }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.4rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .hero {
+        min-height: calc(100vh - 70px);
+    }
+    
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
     :root {
         --font-size-base: 14px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    p {
+        font-size: 0.95rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    section {
+        padding: 2rem 0;
+    }
+    
+    .hero {
+        min-height: calc(100vh - 60px);
     }
 }
 
@@ -265,4 +327,32 @@ footer {
     .social-links {
         justify-content: center;
     }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Transition helper for smooth animations */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Hide scrollbar but allow scrolling */
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
 } 

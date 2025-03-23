@@ -1,0 +1,242 @@
+/* Project Detail Page Styles */
+.project-detail {
+    padding: 5rem 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-container {
+    padding: 0 2rem;
+}
+
+.project-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.project-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.project-meta .date:before {
+    content: "\f073";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 0.5rem;
+}
+
+.project-meta .category:before {
+    content: "\f07b";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 0.5rem;
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.project-hero {
+    grid-column: 1 / -1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-hero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-hero:hover img {
+    transform: scale(1.02);
+}
+
+.project-description {
+    grid-column: 1 / -1;
+}
+
+.project-description h2 {
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+    color: #333;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.project-description h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color, #4a6cf7);
+}
+
+.project-description p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* Feature List Styling */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-list li {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f7f9fc;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.feature-list i {
+    font-size: 1.5rem;
+    color: var(--primary-color, #4a6cf7);
+    margin-top: 0.25rem;
+}
+
+.feature-list h3 {
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem;
+    color: #333;
+}
+
+.feature-list p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Tech Stack */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.tech-stack span {
+    padding: 0.5rem 1rem;
+    background: #eef2ff;
+    color: var(--primary-color, #4a6cf7);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Project Links */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary-color, #4a6cf7);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark, #3a5ce5);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #555;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .project-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .project-hero {
+        grid-column: 1 / -1;
+    }
+    
+    .project-description {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 992px) {
+    .project-header {
+        text-align: left;
+    }
+    
+    .project-meta {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 767px) {
+    .project-detail {
+        padding: 3rem 0;
+    }
+    
+    .project-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+    
+    .project-links a {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+} 

@@ -3,62 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Image Generator - Portfolio</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../styles/projects.css">
+    <title>AI Image Generator - Zakhar Teshukov</title>
+    <link rel="stylesheet" href="../../assets/css/shared.css">
+    <link rel="stylesheet" href="../../assets/css/navbar.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/projects-detail.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">PORTFOLIO</div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../projects.html">Projects</a></li>
-                <li><a href="../blog/index.html">Blog</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-            </ul>
+            <a href="../../../index.html" class="logo">ZAKHAR TESHUKOV</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <ul class="nav-items">
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../pages/about.html">About</a></li>
+                    <li><a href="../../pages/projects.html">Projects</a></li>
+                    <li><a href="../../pages/contact.html">Contact</a></li>
+                    <li><a href="../../pages/resume.html">Resume</a></li>
+                </ul>
+                <div class="nav-social">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav">
+                <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="nav-links">
+                    <div class="nav-items">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../pages/about.html">About</a></li>
+                        <li><a href="../../pages/projects.html">Projects</a></li>
+                        <li><a href="../../pages/contact.html">Contact</a></li>
+                        <li><a href="../../pages/resume.html">Resume</a></li>
+                    </div>
+                    <div class="nav-social">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
         </div>
     </nav>
 
     <main class="project-detail">
-        <div class="project-header">
-            <h1>AI Image Generator</h1>
-            <div class="project-meta">
-                <span class="date">2024</span>
-                <span class="category">AI/ML</span>
-            </div>
-        </div>
-
-        <div class="project-content">
-            <div class="project-image">
-                <img src="../images/ai-image-generator.jpg" alt="AI Image Generator Interface">
+        <div class="project-container">
+            <div class="project-header">
+                <h1>AI Image Generator</h1>
+                <div class="project-meta">
+                    <span class="date">2024</span>
+                    <span class="category">AI/ML</span>
+                </div>
             </div>
 
-            <div class="project-description">
-                <h2>Overview</h2>
-                <p>An advanced AI-powered image generation platform that creates unique artwork based on text descriptions. Built using OpenAI's DALL-E API and modern web technologies.</p>
-
-                <h2>Features</h2>
-                <ul>
-                    <li>Text-to-image generation using DALL-E</li>
-                    <li>Custom style presets</li>
-                    <li>Image history and favorites</li>
-                    <li>High-resolution downloads</li>
-                    <li>Community gallery</li>
-                </ul>
-
-                <h2>Technologies Used</h2>
-                <div class="tech-stack">
-                    <span>React</span>
-                    <span>Node.js</span>
-                    <span>OpenAI API</span>
-                    <span>MongoDB</span>
-                    <span>AWS S3</span>
+            <div class="project-content">
+                <div class="project-hero">
+                    <img src="../../assets/images/projects/ai-generator.jpg" alt="AI Image Generator Interface">
                 </div>
 
-                <div class="project-links">
-                    <a href="#" class="project-link">Live Demo</a>
-                    <a href="#" class="project-link">GitHub</a>
+                <div class="project-description">
+                    <h2>Overview</h2>
+                    <p>An advanced AI-powered image generation platform that creates unique artwork based on text descriptions. Built using OpenAI's DALL-E API and modern web technologies.</p>
+
+                    <h2>Features</h2>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-paint-brush"></i>
+                            <div>
+                                <h3>Text-to-image Generation</h3>
+                                <p>Convert text descriptions into high-quality images using DALL-E API</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-sliders-h"></i>
+                            <div>
+                                <h3>Custom Style Presets</h3>
+                                <p>Choose from various artistic styles and customize image parameters</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-history"></i>
+                            <div>
+                                <h3>Image History</h3>
+                                <p>Save and organize all generated images for future reference</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-download"></i>
+                            <div>
+                                <h3>High-resolution Downloads</h3>
+                                <p>Download images in various formats and resolutions</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h3>Community Gallery</h3>
+                                <p>Share and browse images created by other users</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h2>Technologies Used</h2>
+                    <div class="tech-stack">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>OpenAI API</span>
+                        <span>MongoDB</span>
+                        <span>AWS S3</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="btn-primary">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="#" class="btn-secondary">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,40 +152,33 @@
             <div class="footer-section">
                 <h3>Navigation</h3>
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../projects.html">Projects</a></li>
-                    <li><a href="../blog/index.html">Blog</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../pages/about.html">About</a></li>
+                    <li><a href="../../pages/projects.html">Projects</a></li>
+                    <li><a href="../../pages/contact.html">Contact</a></li>
+                    <li><a href="../../pages/resume.html">Resume</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Pages</h3>
+                <h3>Projects</h3>
                 <ul>
-                    <li><a href="../projects.html">All Projects</a></li>
-                    <li><a href="../blog/index.html">Blog Posts</a></li>
-                    <li><a href="../contact.html">Contact Me</a></li>
+                    <li><a href="../projects/ai-image-generator.html">AI Image Generator</a></li>
+                    <li><a href="../projects/ai-code-assistant.html">AI Code Assistant</a></li>
+                    <li><a href="../projects/real-time-chat-app.html">Real-time Chat</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Resume</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Services</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
+            <div class="footer-section connect-section">
                 <h3>Connect</h3>
                 <div class="social-links">
-                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://leetcode.com" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="../script.js"></script>
+    <script src="../../assets/js/navbar.js"></script>
+    <script src="../../assets/js/script.js"></script>
 </body>
 </html> 
