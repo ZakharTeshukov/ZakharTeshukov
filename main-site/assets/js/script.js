@@ -2,11 +2,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
+    const menuOverlay = document.querySelector('.menu-overlay');
     const body = document.body;
 
     if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
+            if (menuOverlay) {
+                menuOverlay.classList.toggle('active');
+            }
             body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
             
             // Update menu icon
@@ -19,24 +23,31 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                if (menuOverlay) {
+                    menuOverlay.classList.remove('active');
+                }
                 body.style.overflow = '';
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        // Close menu when clicking the overlay
+        if (menuOverlay) {
+            menuOverlay.addEventListener('click', function() {
                 navLinks.classList.remove('active');
+                menuOverlay.classList.remove('active');
                 body.style.overflow = '';
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
+            });
+        }
 
         // Handle window resize
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
                 navLinks.classList.remove('active');
+                if (menuOverlay) {
+                    menuOverlay.classList.remove('active');
+                }
                 body.style.overflow = '';
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             }

@@ -5,23 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Zakhar Teshukov</title>
     <link rel="stylesheet" href="../assets/css/shared.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/projects.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">ZAKHAR TESHUKOV</div>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <a href="../index.html" class="logo">ZAKHAR TESHUKOV</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <ul class="nav-items">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-social">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav">
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="nav-links">
+                    <div class="nav-items">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html" class="active">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </div>
+                    <div class="nav-social">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
         </div>
     </nav>
 
@@ -66,8 +106,8 @@
                     <span>GPT-4</span>
                 </div>
                 <div class="project-links">
-                    <a href="projects/ai-code-assistant.html" class="project-link">View Project</a>
                     <a href="#" class="project-link">GitHub</a>
+                    <a href="projects/ai-code-assistant.html" class="project-link">View Project</a>
                 </div>
             </div>
             <div class="project-card">
@@ -80,8 +120,8 @@
                     <span>MongoDB</span>
                 </div>
                 <div class="project-links">
-                    <a href="projects/e-commerce-platform.html" class="project-link">View Project</a>
                     <a href="#" class="project-link">GitHub</a>
+                    <a href="projects/e-commerce-platform.html" class="project-link">View Project</a>
                 </div>
             </div>
             <div class="project-card">
@@ -94,8 +134,8 @@
                     <span>FastAPI</span>
                 </div>
                 <div class="project-links">
-                    <a href="projects/ai-content-generator.html" class="project-link">View Project</a>
                     <a href="#" class="project-link">GitHub</a>
+                    <a href="projects/ai-content-generator.html" class="project-link">View Project</a>
                 </div>
             </div>
             <div class="project-card">
@@ -108,8 +148,8 @@
                     <span>PostgreSQL</span>
                 </div>
                 <div class="project-links">
-                    <a href="projects/task-management-system.html" class="project-link">View Project</a>
                     <a href="#" class="project-link">GitHub</a>
+                    <a href="projects/task-management-system.html" class="project-link">View Project</a>
                 </div>
             </div>
         </div>
@@ -120,7 +160,7 @@
             <div class="footer-section">
                 <h3>Navigation</h3>
                 <ul>
-                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -137,21 +177,22 @@
             <div class="footer-section">
                 <h3>Activities</h3>
                 <ul>
-                    <li><a href="websites/global-debate-society/index.html">Global Debate Society</a></li>
-                    <li><a href="websites/tutoring-dragons/index.html">Tutoring Dragons</a></li>
+                    <li><a href="activities/global-debate.html">Global Debate Society</a></li>
+                    <li><a href="activities/tutoring.html">Tutoring Dragons</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Connect</h3>
                 <div class="social-links">
-                    <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="../assets/js/navbar.js"></script>
     <script src="src/js/script.js"></script>
 </body>
 </html> 

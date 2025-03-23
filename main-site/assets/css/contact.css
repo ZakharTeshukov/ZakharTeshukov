@@ -38,11 +38,18 @@
   --transition: all 0.3s ease;
 }
 
+/* Prevent horizontal scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Main layout */
 .contact-page {
   padding: 120px 20px 60px;
   max-width: 1200px;
   margin: 0 auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .contact-container {
@@ -54,6 +61,7 @@
   overflow: hidden;
   box-shadow: var(--shadow);
   position: relative;
+  width: 100%;
 }
 
 /* Contact Info Section with modern design */
@@ -602,6 +610,7 @@
   
   .form-row {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   
   .contact-header h2 {
@@ -618,12 +627,54 @@
   
   .submit-btn {
     width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .contact-item i {
+    margin-bottom: 10px;
+  }
+  
+  .bio-snippet {
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .expertise-tags {
+    margin-top: 15px;
+  }
+  
+  .expertise-tags span {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 15px;
+    font-size: 16px; /* Prevent zoom on mobile */
   }
 }
 
 @media (max-width: 480px) {
+  .contact-page {
+    padding: 90px 12px 30px;
+  }
+  
+  .contact-container {
+    border-radius: 12px;
+    gap: 0;
+  }
+  
   .contact-info {
     padding: 30px 20px;
+    border-radius: 12px 12px 0 0; /* Add rounded top corners for symmetry */
   }
   
   .contact-form-section {
@@ -632,19 +683,40 @@
   
   .contact-info h2,
   .contact-form-section h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
   .contact-item {
     padding: 15px;
+    margin-bottom: 20px;
   }
   
   .expertise-tags {
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 8px;
   }
   
   .contact-social {
-    justify-content: center;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  
+  .contact-social a {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .bio-snippet h3 {
+    font-size: 1.1rem;
+  }
+  
+  .bio-snippet p {
+    font-size: 0.95rem;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
   }
 }
 
