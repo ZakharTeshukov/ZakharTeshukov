@@ -94,21 +94,30 @@ function fixNavLinks() {
     
     const navLinks = document.querySelectorAll('a');
     
+    // First clear all active classes on navigation items
+    document.querySelectorAll('.nav-items a').forEach(link => {
+        link.classList.remove('active');
+    });
+    
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (!href) return;
         
         // Set active class for current page for navigation items
-        if (link.closest('.nav-items') && 
-            path.includes(href) && 
-            href !== '' && 
-            href !== 'index.html' && 
-            href !== '../index.html') {
-            link.classList.add('active');
-        } else if (link.closest('.nav-items') && 
-                  (path.endsWith('index.html') || path.endsWith('/') || path === '') && 
-                  (href === 'index.html' || href === '../index.html')) {
-            link.classList.add('active');
+        if (link.closest('.nav-items')) {
+            // Special handling for home link
+            if ((path.endsWith('index.html') || path.endsWith('/') || path === '') && 
+                (href === 'index.html' || href === '../index.html' || href === '../../index.html')) {
+                link.classList.add('active');
+            }
+            // Handle other pages
+            else if (path.includes(href) && 
+                    href !== '' && 
+                    href !== 'index.html' && 
+                    href !== '../index.html' &&
+                    href !== '../../index.html') {
+                link.classList.add('active');
+            }
         }
         
         // Fix broken links based on current directory
