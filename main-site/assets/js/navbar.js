@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         navbar.style.transform = 'translateY(0)';
+        navbar.style.opacity = '1';
     }
 
     // Mobile menu toggle
@@ -75,22 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
     }
-    
-    // Add scroll listener to handle nav bar hiding/showing
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > lastScrollTop && scrollTop > 150) {
-            // Scrolling down
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up
-            navbar.style.transform = 'translateY(0)';
-        }
-        
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    }, { passive: true });
     
     // Fix broken links
     fixNavLinks();
