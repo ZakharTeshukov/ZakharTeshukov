@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subjects - Tutoring Dragons</title>
+    <meta name="description" content="View our tutoring packages and pricing options at Tutoring Dragons. Affordable and flexible plans for all students.">
+    <title>Pricing - Tutoring Dragons</title>
     <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/pricing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -22,7 +26,7 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="subjects.html">Subjects</a></li>
                 <li><a href="tutors.html">Our Tutors</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.html" class="login-btn">Student Login</a></li>
             </ul>
@@ -31,41 +35,321 @@
 
     <main>
         <section class="page-header">
-            <h1>Our Subjects</h1>
-            <p>Coming Soon</p>
+            <h1>Tutoring Plans & Pricing</h1>
+            <p>Affordable and flexible options for every learning need</p>
+        </section>
+
+        <section class="pricing-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <h2>Flexible Solutions for Everyone</h2>
+                    <p>At Tutoring Dragons, we believe that quality education should be accessible to all students. We offer a variety of pricing plans designed to meet different needs and budgets. Whether you're looking for ongoing support throughout the semester or targeted help for a specific exam, we have options for you.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-plans">
+            <div class="container">
+                <div class="plans-toggle">
+                    <button class="toggle-btn active" data-plan="monthly">Monthly</button>
+                    <button class="toggle-btn" data-plan="semester">Semester</button>
+                </div>
+                
+                <div class="pricing-grid monthly-plans">
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <h3>Basic</h3>
+                            <div class="price">
+                                <span class="amount">$99</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p>Perfect for occasional help</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 4 hours of tutoring per month</li>
+                                <li><i class="fas fa-check"></i> Access to study materials</li>
+                                <li><i class="fas fa-check"></i> Email support</li>
+                                <li><i class="fas fa-check"></i> 1 subject</li>
+                                <li class="not-included"><i class="fas fa-times"></i> Practice tests</li>
+                                <li class="not-included"><i class="fas fa-times"></i> Homework help</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="get-started.html" class="cta-button primary">Get Started</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card popular">
+                        <div class="popular-tag">Most Popular</div>
+                        <div class="card-header">
+                            <h3>Standard</h3>
+                            <div class="price">
+                                <span class="amount">$199</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p>Our most popular option</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 8 hours of tutoring per month</li>
+                                <li><i class="fas fa-check"></i> Access to study materials</li>
+                                <li><i class="fas fa-check"></i> Priority email & chat support</li>
+                                <li><i class="fas fa-check"></i> 2 subjects</li>
+                                <li><i class="fas fa-check"></i> Practice tests</li>
+                                <li class="not-included"><i class="fas fa-times"></i> Homework help</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="get-started.html" class="cta-button primary">Get Started</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <h3>Premium</h3>
+                            <div class="price">
+                                <span class="amount">$299</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p>For serious academic achievement</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 12 hours of tutoring per month</li>
+                                <li><i class="fas fa-check"></i> Access to all study materials</li>
+                                <li><i class="fas fa-check"></i> 24/7 priority support</li>
+                                <li><i class="fas fa-check"></i> Unlimited subjects</li>
+                                <li><i class="fas fa-check"></i> Practice tests & assessments</li>
+                                <li><i class="fas fa-check"></i> Unlimited homework help</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="get-started.html" class="cta-button primary">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing-grid semester-plans" style="display: none;">
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <h3>Basic</h3>
+                            <div class="price">
+                                <span class="amount">$499</span>
+                                <span class="period">/semester</span>
+                            </div>
+                            <p>Perfect for occasional help</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 20 hours of tutoring per semester</li>
+                                <li><i class="fas fa-check"></i> Access to study materials</li>
+                                <li><i class="fas fa-check"></i> Email support</li>
+                                <li><i class="fas fa-check"></i> 1 subject</li>
+                                <li class="not-included"><i class="fas fa-times"></i> Practice tests</li>
+                                <li class="not-included"><i class="fas fa-times"></i> Homework help</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="get-started.html" class="cta-button primary">Get Started</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card popular">
+                        <div class="popular-tag">Most Popular</div>
+                        <div class="card-header">
+                            <h3>Standard</h3>
+                            <div class="price">
+                                <span class="amount">$999</span>
+                                <span class="period">/semester</span>
+                            </div>
+                            <p>Our most popular option</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 40 hours of tutoring per semester</li>
+                                <li><i class="fas fa-check"></i> Access to study materials</li>
+                                <li><i class="fas fa-check"></i> Priority email & chat support</li>
+                                <li><i class="fas fa-check"></i> 2 subjects</li>
+                                <li><i class="fas fa-check"></i> Practice tests</li>
+                                <li class="not-included"><i class="fas fa-times"></i> Homework help</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="get-started.html" class="cta-button primary">Get Started</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <h3>Premium</h3>
+                            <div class="price">
+                                <span class="amount">$1499</span>
+                                <span class="period">/semester</span>
+                            </div>
+                            <p>For serious academic achievement</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 60 hours of tutoring per semester</li>
+                                <li><i class="fas fa-check"></i> Access to all study materials</li>
+                                <li><i class="fas fa-check"></i> 24/7 priority support</li>
+                                <li><i class="fas fa-check"></i> Unlimited subjects</li>
+                                <li><i class="fas fa-check"></i> Practice tests & assessments</li>
+                                <li><i class="fas fa-check"></i> Unlimited homework help</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="get-started.html" class="cta-button primary">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="additional-options">
+            <div class="container">
+                <h2>Additional Options</h2>
+                <div class="options-grid">
+                    <div class="option-card">
+                        <i class="fas fa-user"></i>
+                        <h3>Single Sessions</h3>
+                        <p>Need help with a specific assignment or concept? Book a single session with any of our expert tutors.</p>
+                        <div class="option-price">
+                            <span>From $39</span>
+                            <span>per hour</span>
+                        </div>
+                        <a href="contact.html" class="btn-small">Contact Us</a>
+                    </div>
+                    
+                    <div class="option-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Group Sessions</h3>
+                        <p>Learn with friends or classmates in small group sessions and share the cost while getting expert help.</p>
+                        <div class="option-price">
+                            <span>From $29</span>
+                            <span>per person/hour</span>
+                        </div>
+                        <a href="contact.html" class="btn-small">Contact Us</a>
+                    </div>
+                    
+                    <div class="option-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Exam Prep</h3>
+                        <p>Intensive preparation for standardized tests, finals, or important exams with specialized tutors.</p>
+                        <div class="option-price">
+                            <span>From $199</span>
+                            <span>per package</span>
+                        </div>
+                        <a href="contact.html" class="btn-small">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>How do I schedule my tutoring sessions?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>After signing up, you'll have access to our scheduling system where you can book sessions with your preferred tutors at times that work for you. You can also reschedule sessions up to 24 hours in advance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Can I switch tutors if I'm not satisfied?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Absolutely! We want you to have the best experience possible. If you're not connecting with your current tutor, you can request a change at any time through your student dashboard.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Is there a minimum commitment period?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>For monthly plans, there is no minimum commitment. You can cancel anytime. For semester plans, you're committing to the full semester (typically 4-5 months) to get the discounted rate.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Do unused hours roll over to the next month?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Yes! Unused hours roll over for up to 3 months, ensuring you get full value from your tutoring package even during less busy periods.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Start Learning?</h2>
+                <p>Choose a plan that works for you and start your journey to academic success</p>
+                <div class="cta-buttons">
+                    <a href="get-started.html" class="cta-button primary">Get Started</a>
+                    <a href="contact.html" class="cta-button secondary">Contact Us</a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>Email: info@tutoringdragons.com</p>
-                <p>Phone: (555) 987-6543</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <p><i class="fas fa-envelope"></i> info@tutoringdragons.com</p>
+                        <p><i class="fas fa-phone"></i> (555) 987-6543</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Learning Lane, Education City</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new courses and promotions.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Tutoring Dragons. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tutoring Dragons. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script src="../assets/js/pricing.js"></script>
 </body>
 </html> 

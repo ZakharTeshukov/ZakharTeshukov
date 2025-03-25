@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subjects - Tutoring Dragons</title>
+    <meta name="description" content="Meet our expert tutors at Tutoring Dragons. Our team of qualified educators are passionate about helping students succeed.">
+    <title>Our Tutors - Tutoring Dragons</title>
     <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/tutors.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -21,7 +25,7 @@
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="subjects.html">Subjects</a></li>
-                <li><a href="tutors.html">Our Tutors</a></li>
+                <li><a href="tutors.html" class="active">Our Tutors</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.html" class="login-btn">Student Login</a></li>
@@ -31,41 +35,295 @@
 
     <main>
         <section class="page-header">
-            <h1>Our Subjects</h1>
-            <p>Coming Soon</p>
+            <h1>Meet Our Expert Tutors</h1>
+            <p>Our tutors are passionate educators with extensive experience in their fields</p>
+        </section>
+
+        <section class="tutor-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <h2>Why Our Tutors Are Different</h2>
+                    <p>At Tutoring Dragons, we believe that the quality of our tutors directly impacts the success of our students. That's why we've assembled a team of highly qualified educators who not only excel in their respective subjects but also possess exceptional teaching skills.</p>
+                    <p>All our tutors undergo a rigorous selection process and receive ongoing training to ensure they provide the highest quality education.</p>
+                    <div class="tutor-stats">
+                        <div class="stat">
+                            <span class="number">50+</span>
+                            <span class="label">Expert Tutors</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">12+</span>
+                            <span class="label">Years Experience (Avg)</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">98%</span>
+                            <span class="label">Student Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-tutors">
+            <div class="container">
+                <h2>Featured Tutors</h2>
+                <div class="tutor-grid">
+                    <div class="tutor-card">
+                        <div class="tutor-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="tutor-info">
+                            <h3>Dr. Sarah Chen</h3>
+                            <p class="tutor-speciality">Mathematics</p>
+                            <p class="tutor-bio">PhD in Mathematics with 15 years of teaching experience. Specializes in calculus, linear algebra, and statistics.</p>
+                            <div class="tutor-credentials">
+                                <span><i class="fas fa-graduation-cap"></i> PhD, Stanford University</span>
+                                <span><i class="fas fa-certificate"></i> Certified Math Educator</span>
+                            </div>
+                            <a href="#" class="btn-small">View Profile</a>
+                        </div>
+                    </div>
+
+                    <div class="tutor-card">
+                        <div class="tutor-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="tutor-info">
+                            <h3>Prof. Michael Johnson</h3>
+                            <p class="tutor-speciality">Physics & Engineering</p>
+                            <p class="tutor-bio">Former NASA engineer with a passion for making complex physics concepts accessible to students of all levels.</p>
+                            <div class="tutor-credentials">
+                                <span><i class="fas fa-graduation-cap"></i> MSc, MIT</span>
+                                <span><i class="fas fa-briefcase"></i> 8 Years at NASA</span>
+                            </div>
+                            <a href="#" class="btn-small">View Profile</a>
+                        </div>
+                    </div>
+
+                    <div class="tutor-card">
+                        <div class="tutor-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="tutor-info">
+                            <h3>Ms. Elena Rodriguez</h3>
+                            <p class="tutor-speciality">Languages & Literature</p>
+                            <p class="tutor-bio">Multilingual educator fluent in 5 languages. Specializes in English literature, Spanish, and French language instruction.</p>
+                            <div class="tutor-credentials">
+                                <span><i class="fas fa-graduation-cap"></i> MA, Columbia University</span>
+                                <span><i class="fas fa-globe"></i> Fluent in 5 Languages</span>
+                            </div>
+                            <a href="#" class="btn-small">View Profile</a>
+                        </div>
+                    </div>
+
+                    <div class="tutor-card">
+                        <div class="tutor-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="tutor-info">
+                            <h3>Mr. Alex Thompson</h3>
+                            <p class="tutor-speciality">Computer Science</p>
+                            <p class="tutor-bio">Software engineer and educator with expertise in Python, Java, and web development. Passionate about teaching coding to beginners.</p>
+                            <div class="tutor-credentials">
+                                <span><i class="fas fa-graduation-cap"></i> BSc, UC Berkeley</span>
+                                <span><i class="fas fa-code"></i> Full-Stack Developer</span>
+                            </div>
+                            <a href="#" class="btn-small">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tutor-categories">
+            <div class="container">
+                <h2>Browse Tutors by Subject</h2>
+                <div class="category-grid">
+                    <a href="#" class="category-box">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Mathematics</h3>
+                        <span>12 Tutors</span>
+                    </a>
+                    <a href="#" class="category-box">
+                        <i class="fas fa-flask"></i>
+                        <h3>Sciences</h3>
+                        <span>15 Tutors</span>
+                    </a>
+                    <a href="#" class="category-box">
+                        <i class="fas fa-language"></i>
+                        <h3>Languages</h3>
+                        <span>8 Tutors</span>
+                    </a>
+                    <a href="#" class="category-box">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming</h3>
+                        <span>6 Tutors</span>
+                    </a>
+                    <a href="#" class="category-box">
+                        <i class="fas fa-book"></i>
+                        <h3>Humanities</h3>
+                        <span>9 Tutors</span>
+                    </a>
+                    <a href="#" class="category-box">
+                        <i class="fas fa-music"></i>
+                        <h3>Arts & Music</h3>
+                        <span>5 Tutors</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="join-us">
+            <div class="container">
+                <h2>Become a Tutor</h2>
+                <p>Are you passionate about teaching and helping students succeed? Join our team of expert tutors!</p>
+                <div class="qualification-list">
+                    <div class="qualification">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Educational Background</h3>
+                            <p>Bachelor's degree or higher in your subject area</p>
+                        </div>
+                    </div>
+                    <div class="qualification">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Teaching Experience</h3>
+                            <p>Minimum 2 years of teaching or tutoring experience</p>
+                        </div>
+                    </div>
+                    <div class="qualification">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Technical Skills</h3>
+                            <p>Comfortable with online teaching platforms and technology</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="careers.html" class="cta-button primary">Apply Now</a>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Students Say About Our Tutors</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Dr. Chen's approach to teaching calculus transformed my understanding of the subject. She explains complex concepts in such a clear way!</p>
+                        </div>
+                        <div class="student">
+                            <div class="student-info">
+                                <h4>Jamie L.</h4>
+                                <p>Calculus Student</p>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Prof. Johnson helped me prepare for my university physics exams. His real-world examples made the concepts stick. I couldn't have passed without him.</p>
+                        </div>
+                        <div class="student">
+                            <div class="student-info">
+                                <h4>Tyler R.</h4>
+                                <p>Physics Student</p>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Ms. Rodriguez's passion for languages is contagious. My Spanish has improved dramatically in just a few months of working with her.</p>
+                        </div>
+                        <div class="student">
+                            <div class="student-info">
+                                <h4>Sophia M.</h4>
+                                <p>Spanish Student</p>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Find Your Perfect Tutor Today</h2>
+                <p>Take the first step toward academic success</p>
+                <div class="cta-buttons">
+                    <a href="get-started.html" class="cta-button primary">Get Started</a>
+                    <a href="contact.html" class="cta-button secondary">Contact Us</a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>Email: info@tutoringdragons.com</p>
-                <p>Phone: (555) 987-6543</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <p><i class="fas fa-envelope"></i> info@tutoringdragons.com</p>
+                        <p><i class="fas fa-phone"></i> (555) 987-6543</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Learning Lane, Education City</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new courses and promotions.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Tutoring Dragons. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tutoring Dragons. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script src="../assets/js/tutors.js"></script>
 </body>
 </html> 

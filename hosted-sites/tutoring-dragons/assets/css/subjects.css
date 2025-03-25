@@ -1,0 +1,106 @@
+/* Subjects Page CSS */
+
+/* Subject Category Styles */
+.subjects-list {
+    padding: 3rem 0 5rem;
+}
+
+.subject-category {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.subject-category h2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.subject-category h2 i {
+    color: var(--primary-color);
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.subject-item {
+    padding: 1.5rem;
+    background-color: var(--light-color);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subject-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.subject-item h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.subject-item p {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    color: var(--text-color);
+}
+
+/* Animation for subject items */
+.subject-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.subject-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive styles for subjects page */
+@media (max-width: 992px) {
+    .subject-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .subject-category h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .subject-category {
+        padding: 1.5rem;
+    }
+    
+    .subject-category h2 {
+        font-size: 1.4rem;
+    }
+    
+    .subject-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .subject-item {
+        padding: 1.25rem;
+    }
+} 

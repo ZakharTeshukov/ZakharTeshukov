@@ -2,25 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Expert online tutoring in Math, Science, Languages, and Programming. Join Tutoring Dragons for personalized learning experience.">
     <meta name="keywords" content="online tutoring, math tutoring, science tutoring, language learning, programming tutoring">
+    <meta name="theme-color" content="#4a47a3">
     <title>Tutoring Dragons - Expert Online Tutoring</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav class="main-nav">
             <div class="logo">
                 <i class="fas fa-dragon"></i>
+                <i class="fas fa-dragon"></i>
                 <h1>Tutoring Dragons</h1>
             </div>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="pages/subjects.html">Subjects</a></li>
                 <li><a href="pages/tutors.html">Our Tutors</a></li>
@@ -30,10 +34,14 @@
             </ul>
         </nav>
     </header>
-
-    <main>
+        
+        <main>
         <section class="hero">
             <div class="hero-content">
+                <button class="mobile-menu-btn">
+                <div class="hero-logo">
+                    <i class="fas fa-dragon"></i>
+                </div>
                 <h1>Ignite Your Learning Potential</h1>
                 <p>Expert online tutoring in Math, Science, Languages, and more</p>
                 <div class="cta-buttons">
@@ -50,21 +58,25 @@
                     <i class="fas fa-calculator"></i>
                     <h3>Mathematics</h3>
                     <p>From basic arithmetic to advanced calculus</p>
+                    <a href="pages/subjects.html#math" class="btn-small">Learn More</a>
                 </div>
                 <div class="subject-card">
                     <i class="fas fa-flask"></i>
                     <h3>Sciences</h3>
                     <p>Physics, Chemistry, and Biology</p>
+                    <a href="pages/subjects.html#sciences" class="btn-small">Learn More</a>
                 </div>
                 <div class="subject-card">
                     <i class="fas fa-language"></i>
                     <h3>Languages</h3>
                     <p>English, Spanish, Mandarin, and more</p>
+                    <a href="pages/subjects.html#languages" class="btn-small">Learn More</a>
                 </div>
                 <div class="subject-card">
                     <i class="fas fa-code"></i>
                     <h3>Programming</h3>
                     <p>Learn to code with expert guidance</p>
+                    <a href="pages/subjects.html#programming" class="btn-small">Learn More</a>
                 </div>
             </div>
         </section>
@@ -75,52 +87,66 @@
                 <div class="feature">
                     <i class="fas fa-graduation-cap"></i>
                     <h3>Expert Tutors</h3>
-                    <p>Qualified and experienced educators</p>
+                    <p>Qualified and experienced educators dedicated to your success</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-clock"></i>
                     <h3>Flexible Schedule</h3>
-                    <p>24/7 availability for global learning</p>
+                    <p>24/7 availability for global learning that fits your lifestyle</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-chart-line"></i>
                     <h3>Track Progress</h3>
-                    <p>Detailed progress monitoring</p>
+                    <p>Detailed progress monitoring helps you stay on track to reach your goals</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>Email: info@tutoringdragons.com</p>
-                <p>Phone: (555) 987-6543</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="pages/faq.html">FAQ</a></li>
-                    <li><a href="pages/blog.html">Blog</a></li>
-                    <li><a href="pages/careers.html">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <p><i class="fas fa-envelope"></i> info@tutoringdragons.com</p>
+                        <p><i class="fas fa-phone"></i> (555) 987-6543</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Learning Lane, Education City</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="pages/faq.html">FAQ</a></li>
+                        <li><a href="pages/blog.html">Blog</a></li>
+                        <li><a href="pages/careers.html">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new courses and promotions.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Tutoring Dragons. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tutoring Dragons. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/home.js"></script>
 </body>
 </html>

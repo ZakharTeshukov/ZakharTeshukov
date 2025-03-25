@@ -1,3 +1,7 @@
+/**
+ * Main JavaScript - Contains general utility functions used across all pages
+ */
+
 // Handle mobile navigation
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile navigation setup
@@ -87,7 +91,64 @@ function initializeTutorSearch() {
     });
 }
 
-// Booking system
+// Form validation helper
+function validateForm(form) {
+    const inputs = form.querySelectorAll('input, textarea, select');
+    let isValid = true;
+
+    // Clear previous error messages
+    form.querySelectorAll('.error-message').forEach(error => error.remove());
+    form.querySelectorAll('.error').forEach(field => field.classList.remove('error'));
+
+    inputs.forEach(input => {
+        if (input.hasAttribute('required') && !input.value.trim()) {
+            showError(input, `${input.getAttribute('placeholder') || input.getAttribute('name')} is required`);
+            isValid = false;
+        }
+
+        if (input.type === 'email' && input.value.trim()) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(input.value.trim())) {
+                showError(input, 'Please enter a valid email address');
+                isValid = false;
+            }
+        }
+        
+        // Phone validation
+        if (input.id === 'phone' && input.value.trim()) {
+            const phonePattern = /^\d{10,15}$/;
+            if (!phonePattern.test(input.value.replace(/\D/g, ''))) {
+                showError(input, 'Please enter a valid phone number');
+                isValid = false;
+            }
+        }
+    });
+
+    return isValid;
+}
+
+function showError(input, message) {
+    input.classList.add('error');
+    
+    const errorElement = document.createElement('div');
+    errorElement.className = 'error-message';
+    errorElement.textContent = message;
+    
+    const formGroup = input.closest('.form-group');
+    if (formGroup) {
+        formGroup.appendChild(errorElement);
+    } else {
+        input.insertAdjacentElement('afterend', errorElement);
+    }
+    
+    input.addEventListener('input', () => {
+        const errorMsg = input.parentElement.querySelector('.error-message');
+        if (errorMsg) errorMsg.remove();
+        input.classList.remove('error');
+    }, { once: true });
+}
+
+// Booking system class (can be used on booking pages)
 class BookingSystem {
     constructor() {
         this.selectedDate = null;
@@ -168,12 +229,14 @@ class BookingSystem {
     }
 }
 
-// Initialize booking system if booking elements exist
-const bookingElements = document.querySelector('.booking-section');
-if (bookingElements) {
-    const bookingSystem = new BookingSystem();
-    bookingSystem.initialize();
-}
+// Initialize booking system if the relevant elements exist
+document.addEventListener('DOMContentLoaded', () => {
+    const bookingElements = document.querySelector('.booking-section');
+    if (bookingElements) {
+        const bookingSystem = new BookingSystem();
+        bookingSystem.initialize();
+    }
+});
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -189,62 +252,166 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add animation on scroll
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.subject-card, .feature, .hero-content');
+// Add scroll animation for elements
+// This is a general function that can be used by page-specific scripts if needed
+function animateOnScroll(selector = '.animate-on-scroll') {
+    const elements = document.querySelectorAll(selector);
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
     
     elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-        
-        if (elementTop < window.innerHeight && elementBottom > 0) {
-            element.classList.add('animate');
-        }
+        observer.observe(element);
     });
-};
-
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
-
-// Form validation helper
-function validateForm(form) {
-    const inputs = form.querySelectorAll('input, textarea');
-    let isValid = true;
-
-    inputs.forEach(input => {
-        if (input.hasAttribute('required') && !input.value.trim()) {
-            showError(input, `${input.name} is required`);
-            isValid = false;
-        }
-
-        if (input.type === 'email' && input.value && !isValidEmail(input.value)) {
-            showError(input, 'Please enter a valid email address');
-            isValid = false;
-        }
-    });
-
-    return isValid;
 }
 
-function showError(input, message) {
-    const formGroup = input.parentElement;
-    const error = formGroup.querySelector('.error-message') || document.createElement('div');
-    error.className = 'error-message';
-    error.textContent = message;
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    // Add mobile menu button to the navigation
+    const nav = document.querySelector('.main-nav');
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
     
-    if (!formGroup.querySelector('.error-message')) {
-        formGroup.appendChild(error);
+    if (mobileBtn) {
+        const navLinks = document.querySelector('.nav-links');
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu if open
+                if (mobileBtn && navLinks) {
+                    navLinks.classList.remove('active');
+                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            }
+        });
+    });
+
+    // Add scroll animation for elements
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.subject-card, .feature, .subject-item, .tutor-card, .testimonial, .pricing-card, .option-card');
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight * 0.9 && elementBottom > 0) {
+                element.style.opacity = '1';
+                element.style.transform = element.classList.contains('popular') 
+                    ? 'scale(1.05)' 
+                    : 'translateY(0)';
+            }
+        });
+    };
+
+    // Initialize element states
+    document.querySelectorAll('.subject-card, .feature, .subject-item, .tutor-card, .testimonial, .pricing-card:not(.popular), .option-card').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    });
+    
+    // Initialize popular pricing cards differently
+    document.querySelectorAll('.pricing-card.popular').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px) scale(1.05)';
+        element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    });
+
+    // Add scroll event listener
+    window.addEventListener('scroll', animateOnScroll);
+    // Initial check for elements in view
+    animateOnScroll();
+
+    // Add hover effects for interactive elements
+    const interactiveElements = document.querySelectorAll('.subject-card, .feature, .cta-button, .category-box, .testimonial');
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            if (element.classList.contains('pricing-card') && element.classList.contains('popular')) {
+                element.style.transform = 'translateY(-5px) scale(1.05)';
+            } else {
+                element.style.transform = 'translateY(-5px)';
+            }
+        });
+        element.addEventListener('mouseleave', () => {
+            if (element.classList.contains('pricing-card') && element.classList.contains('popular')) {
+                element.style.transform = 'scale(1.05)';
+            } else {
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    });
+    
+    // Pricing toggle functionality
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+    if (toggleButtons.length > 0) {
+        const monthlyPlans = document.querySelector('.monthly-plans');
+        const semesterPlans = document.querySelector('.semester-plans');
+        
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                toggleButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const plan = button.getAttribute('data-plan');
+                if (plan === 'monthly') {
+                    monthlyPlans.style.display = 'grid';
+                    semesterPlans.style.display = 'none';
+                } else if (plan === 'semester') {
+                    monthlyPlans.style.display = 'none';
+                    semesterPlans.style.display = 'grid';
+                }
+            });
+        });
     }
     
-    input.classList.add('error');
-    
-    input.addEventListener('input', () => {
-        error.remove();
-        input.classList.remove('error');
-    }, { once: true });
-}
-
-function isValidEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-} 
+    // Accordion functionality
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        
+        header.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all accordion items
+            accordionItems.forEach(accordionItem => {
+                accordionItem.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't already open
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+}); 

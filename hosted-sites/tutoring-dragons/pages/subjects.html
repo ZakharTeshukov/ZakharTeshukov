@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our wide range of subjects at Tutoring Dragons. From mathematics to programming, we have expert tutors for all your learning needs.">
     <title>Subjects - Tutoring Dragons</title>
     <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/subjects.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -20,7 +24,7 @@
             </button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="subjects.html">Subjects</a></li>
+                <li><a href="subjects.html" class="active">Subjects</a></li>
                 <li><a href="tutors.html">Our Tutors</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -32,40 +36,173 @@
     <main>
         <section class="page-header">
             <h1>Our Subjects</h1>
-            <p>Coming Soon</p>
+            <p>Expert tutoring in a wide range of academic disciplines</p>
+        </section>
+
+        <section class="subjects-list">
+            <div class="container">
+                <div class="subject-category">
+                    <h2><i class="fas fa-calculator"></i> Mathematics</h2>
+                    <div class="subject-grid">
+                        <div class="subject-item">
+                            <h3>Elementary Math</h3>
+                            <p>Building strong foundations in arithmetic, fractions, and basic problem-solving.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>Algebra</h3>
+                            <p>Mastering equations, functions, and algebraic problem-solving techniques.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>Geometry</h3>
+                            <p>Understanding shapes, spatial relationships, and geometric proofs.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>Calculus</h3>
+                            <p>Exploring derivatives, integrals, and applications of calculus.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subject-category">
+                    <h2><i class="fas fa-flask"></i> Sciences</h2>
+                    <div class="subject-grid">
+                        <div class="subject-item">
+                            <h3>Biology</h3>
+                            <p>Exploring living organisms, ecosystems, and cellular processes.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>Chemistry</h3>
+                            <p>Understanding atomic structure, chemical reactions, and laboratory techniques.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>Physics</h3>
+                            <p>Mastering mechanics, energy, waves, and quantum concepts.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>Environmental Science</h3>
+                            <p>Investigating ecosystems, climate, and sustainability principles.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subject-category">
+                    <h2><i class="fas fa-language"></i> Languages</h2>
+                    <div class="subject-grid">
+                        <div class="subject-item">
+                            <h3>English</h3>
+                            <p>Developing reading, writing, grammar, and communication skills.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>Spanish</h3>
+                            <p>Learning conversational skills, grammar, and cultural context.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>Mandarin</h3>
+                            <p>Mastering tones, characters, and practical communication.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>French</h3>
+                            <p>Building vocabulary, grammar, and conversational fluency.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subject-category">
+                    <h2><i class="fas fa-code"></i> Programming</h2>
+                    <div class="subject-grid">
+                        <div class="subject-item">
+                            <h3>Python</h3>
+                            <p>Learning syntax, data structures, and building practical applications.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>JavaScript</h3>
+                            <p>Mastering web development with interactive front-end applications.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>Java</h3>
+                            <p>Building object-oriented applications and understanding core concepts.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                        <div class="subject-item">
+                            <h3>Web Development</h3>
+                            <p>Learning HTML, CSS, and building responsive websites.</p>
+                            <a href="#" class="btn-small">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to start learning?</h2>
+                <p>Our expert tutors are ready to help you master any subject</p>
+                <div class="cta-buttons">
+                    <a href="get-started.html" class="cta-button primary">Get Started</a>
+                    <a href="contact.html" class="cta-button secondary">Contact Us</a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>Email: info@tutoringdragons.com</p>
-                <p>Phone: (555) 987-6543</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="footer-info">
+                        <p><i class="fas fa-envelope"></i> info@tutoringdragons.com</p>
+                        <p><i class="fas fa-phone"></i> (555) 987-6543</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Learning Lane, Education City</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new courses and promotions.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Tutoring Dragons. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tutoring Dragons. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script src="../assets/js/subjects.js"></script>
 </body>
 </html> 

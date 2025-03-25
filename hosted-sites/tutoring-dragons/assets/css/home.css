@@ -1,0 +1,503 @@
+/* Home Page CSS */
+
+/* Hero Section */
+.hero {
+    padding: 8rem 5% 4rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/pattern.svg') repeat;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem;
+}
+
+.hero-content.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-logo {
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.hero-logo i {
+    font-size: 4rem;
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 160px;
+}
+
+.cta-button.primary {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.primary:hover {
+    background-color: var(--secondary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Small button used in cards */
+.btn-small {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-light);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-small:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Subjects Preview Section */
+.subjects-preview {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: white;
+}
+
+.subjects-preview h2 {
+    margin-bottom: 3rem;
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    padding: 0 1rem;
+}
+
+.subject-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.subject-card {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.subject-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.subject-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.subject-card h3 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.subject-card p {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 4rem 0;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    padding: 0 1rem;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.feature {
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.feature.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.feature p {
+    color: var(--text-color);
+}
+
+/* Student Success Stories */
+.success-stories {
+    padding: 4rem 0;
+    background-color: white;
+    text-align: center;
+}
+
+.success-stories h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    padding: 0 1rem;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.story-card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.story-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.story-image {
+    height: 200px;
+    background-color: var(--bg-light);
+    position: relative;
+}
+
+.story-image i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+.story-content {
+    padding: 2rem;
+    background-color: white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.story-content .achievement {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.story-content p {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.story-content .btn-small {
+    align-self: flex-start;
+}
+
+/* Responsive styles for home page */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subjects-preview h2,
+    .why-choose-us h2,
+    .success-stories h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem 5% 3rem;
+        min-height: 70vh;
+    }
+    
+    .hero-logo i {
+        font-size: 3.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .subjects-preview h2,
+    .why-choose-us h2,
+    .success-stories h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .subject-cards, 
+    .features,
+    .stories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .subject-card i,
+    .feature i {
+        font-size: 2.2rem;
+    }
+    
+    .btn-small {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 5rem 5% 2rem;
+        min-height: 60vh;
+    }
+    
+    .hero-logo i {
+        font-size: 3rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.9rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .cta-button {
+        padding: 0.7rem 1.5rem;
+        min-width: 140px;
+        font-size: 0.9rem;
+    }
+    
+    .subjects-preview,
+    .why-choose-us,
+    .success-stories {
+        padding: 3rem 0;
+    }
+    
+    .subjects-preview h2,
+    .why-choose-us h2,
+    .success-stories h2 {
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .subject-cards, 
+    .features,
+    .stories-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        padding: 0 1rem;
+    }
+    
+    .subject-card,
+    .feature {
+        padding: 1.5rem;
+    }
+    
+    .subject-card i,
+    .feature i {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .subject-card h3,
+    .feature h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.7rem;
+    }
+    
+    .btn-small {
+        width: 100%;
+        padding: 0.5rem 0;
+        display: block;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 0.7rem;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .subject-card,
+    .feature {
+        padding: 1.2rem;
+    }
+} 
