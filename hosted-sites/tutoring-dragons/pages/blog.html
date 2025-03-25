@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subjects - Tutoring Dragons</title>
+    <title>Blog - Tutoring Dragons</title>
     <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -15,23 +16,31 @@
                 <i class="fas fa-dragon"></i>
                 <h1>Tutoring Dragons</h1>
             </div>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="subjects.html">Subjects</a></li>
-                <li><a href="tutors.html">Our Tutors</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" class="login-btn">Student Login</a></li>
-            </ul>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button-container">
+                <div class="menu-button"></div>
+            </label>
+            
+            <div class="menu-box">
+                <label for="menu-toggle" class="close-menu">
+                    <i class="fas fa-times"></i>
+                </label>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="subjects.html">Subjects</a></li>
+                    <li><a href="tutors.html">Our Tutors</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="login-btn">Student Login</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <main>
         <section class="page-header">
-            <h1>Our Subjects</h1>
+            <h1>Blog</h1>
             <p>Coming Soon</p>
         </section>
     </main>

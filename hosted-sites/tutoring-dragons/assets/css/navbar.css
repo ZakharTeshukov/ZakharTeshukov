@@ -1,6 +1,13 @@
 /* Navbar Styles for Tutoring Dragons
- * Enhanced mobile navigation with animations
+ * Fullscreen overlay navigation
  */
+
+/* Reset styles */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Main Navigation */
 .main-nav {
@@ -27,284 +34,314 @@
 
 /* Logo */
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--text-light);
-    text-decoration: none;
     display: flex;
     align-items: center;
+    color: var(--text-light);
+    text-decoration: none;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
+/* Logo icon */
 .logo i {
     font-size: 2rem;
-    margin-right: 0.7rem;
-    color: var(--secondary-color);
+    margin-right: 0.5rem;
+    color: var(--accent-color);
     transition: all 0.3s ease;
 }
 
+/* Logo text */
 .logo h1 {
-    margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
+/* Logo image (if used instead of icon) */
 .logo img {
-    height: 45px;
-    margin-right: 10px;
+    height: 40px;
+    margin-right: 0.5rem;
     transition: all 0.3s ease;
 }
 
+/* Logo in scrolled state */
 .main-nav.scrolled .logo {
-    font-size: 1.6rem;
+    transform: scale(0.9);
 }
 
 .main-nav.scrolled .logo i {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
 }
 
 .main-nav.scrolled .logo h1 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 .main-nav.scrolled .logo img {
     height: 35px;
 }
 
+/* Logo hover effect */
 .logo:hover {
-    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
 .logo:hover i {
-    transform: rotate(10deg);
+    transform: rotate(-15deg);
+    color: var(--accent-color-hover);
 }
 
-/* Navigation Links */
+/* Hide checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Menu button container styles */
+.menu-button-container {
+    display: none;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2001;
+}
+
+/* Menu button style */
+.menu-button {
+    display: block;
+    background-color: #fff;
+    position: relative;
+    height: 2px;
+    width: 100%;
+    transition: all .4s ease;
+}
+
+.menu-button::before,
+.menu-button::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    transition: all .4s ease;
+}
+
+.menu-button::before {
+    transform: translateY(-8px);
+}
+
+.menu-button::after {
+    transform: translateY(8px);
+}
+
+/* Close button style */
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.close-menu i {
+    font-size: 2rem;
+}
+
+/* Menu box for overlay */
+.menu-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--primary-color);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nav links */
 .nav-links {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-links li {
-    margin: 0 1rem;
+    margin-left: 1.5rem;
 }
 
 .nav-links a {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.1rem;
-    padding: 0.5rem 0;
     position: relative;
     transition: all 0.3s ease;
+    padding: 0.5rem 0;
 }
 
 .nav-links a:hover {
     color: var(--accent-color);
 }
 
-/* Active link underline effect */
 .nav-links a.active::after,
 .nav-links a:hover::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    height: 2px;
-    background-color: var(--accent-color);
-    transform: scaleX(1);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+    opacity: 1;
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: 0;
     left: 0;
-    width: 100%;
+    bottom: 0;
+    width: 0;
     height: 2px;
     background-color: var(--accent-color);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 0;
 }
 
-/* Login Button */
+/* Login button */
 .login-btn {
     background-color: var(--accent-color);
-    color: var(--text-light);
-    border: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: 4px;
-    font-weight: 500;
-    cursor: pointer;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
     transition: all 0.3s ease;
-    margin-left: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .login-btn:hover {
-    background-color: var(--accent-hover);
+    background-color: var(--accent-color-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Mobile Navigation Button */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-light);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 1001;
-    padding: 0.5rem;
-}
-
-.mobile-menu-btn:hover {
-    color: var(--accent-color);
-}
-
-.mobile-menu-btn:focus {
-    outline: none;
-}
-
-/* Responsive Styles */
+/* Media Queries */
 @media (max-width: 992px) {
-    .nav-links {
-        margin-right: 0;
-    }
-    
     .nav-links li {
-        margin: 0 0.7rem;
+        margin-left: 1rem;
     }
     
     .nav-links a {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .login-btn {
-        padding: 0.4rem 1rem;
+        padding: 0.4rem 0.8rem;
         font-size: 0.9rem;
     }
 }
 
 @media (max-width: 768px) {
     .main-nav {
-        padding: 0.8rem 5%;
+        padding: 1rem 1.5rem;
     }
     
-    .mobile-menu-btn {
-        display: block;
+    .menu-button-container {
+        display: flex;
     }
     
     .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 250px;
-        height: 100vh;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        background-color: var(--primary-color);
-        padding: 80px 2rem 2rem;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
     }
     
-    .nav-links.active {
-        right: 0;
+    #menu-toggle:checked ~ .menu-box {
+        height: 100%;
+    }
+    
+    .close-menu {
+        display: block;
     }
     
     .nav-links li {
-        margin: 0;
-        width: 100%;
+        margin: 1.5rem 0;
+        text-align: center;
         opacity: 0;
-        transform: translateX(50px);
-        transition: all 0.5s ease;
-    }
-    
-    .nav-links.active li {
-        opacity: 1;
-        transform: translateX(0);
-        /* Staggered animation using --i variable set in JS */
-        transition-delay: calc(0.1s * var(--i));
+        transform: translateY(20px);
+        transition: all 0.4s ease;
     }
     
     .nav-links a {
-        display: block;
-        padding: 1rem 0;
-        width: 100%;
-        font-size: 1.1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        display: inline-block;
     }
     
-    .nav-links a::after,
-    .nav-links a.active::after,
+    .nav-links a::after {
+        bottom: 0.3rem;
+        height: 3px;
+    }
+    
     .nav-links a:hover::after {
-        display: none;
+        width: 80%;
+        left: 10%;
+    }
+    
+    .nav-links a:hover {
+        transform: translateY(-5px);
+    }
+    
+    #menu-toggle:checked ~ .menu-box .nav-links li {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.2s;
     }
     
     .login-btn {
-        margin: 1.5rem 0 0;
-        width: 100%;
-        text-align: center;
+        font-size: 1.2rem;
+        padding: 0.6rem 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    .login-btn:hover {
+        transform: translateY(-3px);
     }
 }
 
 @media (max-width: 480px) {
     .main-nav {
-        padding: 0.7rem 4%;
+        padding: 0.8rem 1rem;
     }
     
     .logo {
-        font-size: 1.5rem;
+        transform: scale(0.9);
     }
     
     .logo i {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
     
     .logo h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .logo img {
-        height: 35px;
+        height: 32px;
     }
     
-    .nav-links {
-        width: 100%;
-    }
-    
-    .main-nav.scrolled {
-        padding: 0.5rem 4%;
-    }
-    
-    .main-nav.scrolled .logo {
+    .nav-links a {
         font-size: 1.3rem;
     }
-    
-    .main-nav.scrolled .logo i {
-        font-size: 1.5rem;
-    }
-    
-    .main-nav.scrolled .logo h1 {
-        font-size: 1.3rem;
-    }
-    
-    .main-nav.scrolled .logo img {
-        height: 30px;
-    }
-    
-    .mobile-menu-btn {
-        font-size: 1.4rem;
-        padding: 0.4rem;
-    }
-} 
+}
+
+/* Animate menu items on mobile */
+#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(1) { transition-delay: 0.1s; }
+#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(2) { transition-delay: 0.2s; }
+#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(3) { transition-delay: 0.3s; }
+#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(4) { transition-delay: 0.4s; }
+#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(5) { transition-delay: 0.5s; }
+#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(6) { transition-delay: 0.6s; } 

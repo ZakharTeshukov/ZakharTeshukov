@@ -40,6 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
+            // Close mobile menu on ESC key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    document.body.style.overflow = '';
+                }
+            });
+            
             // Prevent clicks on menu items from bubbling to document
             navLinks.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -129,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Set active class for matching paths or home page
             if (currentPath.endsWith(linkPath) || 
-                (currentPath === '/' && linkPath === 'index.html') ||
+                (currentPath.endsWith('/') && linkPath === 'index.html') ||
                 (currentPath.endsWith('/index.html') && linkPath === 'index.html')) {
                 link.classList.add('active');
             }

@@ -4,34 +4,6 @@
 
 // Handle mobile navigation
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile navigation setup
-    const createMobileNav = () => {
-        const nav = document.querySelector('.main-nav');
-        const mobileMenuBtn = document.createElement('button');
-        mobileMenuBtn.className = 'mobile-menu-btn';
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        
-        nav.insertBefore(mobileMenuBtn, nav.firstChild);
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('show');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('show') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-    };
-
-    if (window.innerWidth < 768) {
-        createMobileNav();
-    }
-
-    window.addEventListener('resize', () => {
-        if (window.innerWidth < 768 && !document.querySelector('.mobile-menu-btn')) {
-            createMobileNav();
-        }
-    });
-
     // Initialize subject filters if they exist
     const subjectFilters = document.querySelector('.subject-filters');
     if (subjectFilters) {
@@ -236,6 +208,104 @@ document.addEventListener('DOMContentLoaded', () => {
         const bookingSystem = new BookingSystem();
         bookingSystem.initialize();
     }
+
+    // Add scroll animation for elements
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.subject-card, .feature, .subject-item, .tutor-card, .testimonial, .pricing-card, .option-card');
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight * 0.9 && elementBottom > 0) {
+                element.style.opacity = '1';
+                element.style.transform = element.classList.contains('popular') 
+                    ? 'scale(1.05)' 
+                    : 'translateY(0)';
+            }
+        });
+    };
+
+    // Initialize element states
+    document.querySelectorAll('.subject-card, .feature, .subject-item, .tutor-card, .testimonial, .pricing-card:not(.popular), .option-card').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    });
+    
+    // Initialize popular pricing cards differently
+    document.querySelectorAll('.pricing-card.popular').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px) scale(1.05)';
+        element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    });
+
+    // Add scroll event listener
+    window.addEventListener('scroll', animateOnScroll);
+    // Initial check for elements in view
+    animateOnScroll();
+
+    // Add hover effects for interactive elements
+    const interactiveElements = document.querySelectorAll('.subject-card, .feature, .cta-button, .category-box, .testimonial');
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            if (element.classList.contains('pricing-card') && element.classList.contains('popular')) {
+                element.style.transform = 'translateY(-5px) scale(1.05)';
+            } else {
+                element.style.transform = 'translateY(-5px)';
+            }
+        });
+        element.addEventListener('mouseleave', () => {
+            if (element.classList.contains('pricing-card') && element.classList.contains('popular')) {
+                element.style.transform = 'scale(1.05)';
+            } else {
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    });
+    
+    // Pricing toggle functionality
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+    if (toggleButtons.length > 0) {
+        const monthlyPlans = document.querySelector('.monthly-plans');
+        const semesterPlans = document.querySelector('.semester-plans');
+        
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                toggleButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const plan = button.getAttribute('data-plan');
+                if (plan === 'monthly') {
+                    monthlyPlans.style.display = 'grid';
+                    semesterPlans.style.display = 'none';
+                } else if (plan === 'semester') {
+                    monthlyPlans.style.display = 'none';
+                    semesterPlans.style.display = 'grid';
+                }
+            });
+        });
+    }
+    
+    // Accordion functionality
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        
+        header.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all accordion items
+            accordionItems.forEach(accordionItem => {
+                accordionItem.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't already open
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
 });
 
 // Smooth scrolling for anchor links
