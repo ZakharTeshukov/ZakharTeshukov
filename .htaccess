@@ -1,3 +1,14 @@
+# Enable the RewriteEngine
+RewriteEngine On
+
+# Redirect requests from /hosted-sites/ to the root
+RewriteCond %{REQUEST_URI} ^/hosted-sites/(.*)$
+RewriteRule ^hosted-sites/(.*)$ /$1 [L,R=301]
+
+# Redirect requests from /main-site/ to the root
+RewriteCond %{REQUEST_URI} ^/main-site/(.*)$
+RewriteRule ^main-site/(.*)$ /$1 [L,R=301]
+
 # Ensure index.html is the default page
 DirectoryIndex index.html
 
@@ -5,7 +16,6 @@ DirectoryIndex index.html
 Options -Indexes
 
 # Redirect www to non-www (if needed)
-RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
