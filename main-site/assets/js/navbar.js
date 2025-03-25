@@ -3,9 +3,44 @@ document.addEventListener('DOMContentLoaded', function() {
     // Make sure navbar is visible
     const navbar = document.querySelector('.navbar');
     if (navbar) {
-        navbar.style.transform = 'translateY(0)';
-        navbar.style.opacity = '1';
+        setTimeout(() => {
+            navbar.style.transform = 'translateY(0)';
+            navbar.style.opacity = '1';
+        }, 100);
     }
+
+    // Handle scroll effects
+    let lastScrollTop = 0;
+    let scrollThreshold = 100;
+    
+    window.addEventListener('scroll', function() {
+        if (!navbar) return;
+        
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Add glass effect after scrolling down
+        if (currentScroll > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        
+        // Auto-hide navbar when scrolling down (only on desktop)
+        if (window.innerWidth > 768) {
+            if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+                // Scrolling down
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                navbar.style.transform = 'translateY(0)';
+            }
+        } else {
+            // Always show navbar on mobile
+            navbar.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
 
     // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -28,6 +63,18 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 closeMenu();
+                
+                // If it's an anchor link on the same page, scroll smoothly
+                const href = link.getAttribute('href');
+                if (href.includes('#') && !href.startsWith('http')) {
+                    const targetId = href.split('#')[1];
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
             });
         });
 
@@ -77,9 +124,74 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
     }
     
+    // Add current page indicator
+    highlightCurrentPage();
+    
     // Fix broken links
     fixNavLinks();
+    
+    // Add touch event for mobile devices
+    if ('ontouchstart' in window) {
+        enableTouchNavigation();
+    }
 });
+
+// Highlight current page in navigation
+function highlightCurrentPage() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-items a');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        
+        // Check if link matches current page
+        const linkPath = href.split('/').pop();
+        const currentPage = currentPath.split('/').pop() || 'index.html';
+        
+        if (linkPath === currentPage || 
+            (currentPage === '' && linkPath === 'index.html') || 
+            (currentPage === 'index.html' && linkPath === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+// Enable touch navigation on mobile devices
+function enableTouchNavigation() {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const navLinks = document.querySelector('.nav-links');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    // Handle swipe to close menu
+    document.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    document.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        // Detect right swipe (to close menu)
+        if (navLinks && navLinks.classList.contains('active')) {
+            if (touchEndX - touchStartX > 75) { // Right swipe
+                closeMenu();
+            }
+        }
+    }
+    
+    function closeMenu() {
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+}
 
 // Function to ensure all navigation links are correct
 function fixNavLinks() {
@@ -134,8 +246,5 @@ function fixNavLinks() {
         if (href.startsWith('activities/') && isInSubfolder) {
             link.setAttribute('href', '../pages/' + href);
         }
-        
-        // Log fixed links for debugging
-        console.log(`Fixed: ${href} -> ${link.getAttribute('href')}`);
     });
 } 

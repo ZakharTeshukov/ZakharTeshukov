@@ -16,7 +16,23 @@
     <link rel="icon" href="main-site/assets/images/favicon.ico" type="image/x-icon">
     <style>
         .navbar {
-            position: static !important;
+            position: fixed !important;
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
