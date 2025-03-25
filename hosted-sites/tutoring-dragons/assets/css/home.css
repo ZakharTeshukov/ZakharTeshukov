@@ -2,14 +2,13 @@
 
 /* Hero Section */
 .hero {
-    padding: 8rem 5% 4rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: white;
-    text-align: center;
-    min-height: 80vh;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    padding: 6rem 1rem 4rem;
     position: relative;
     overflow: hidden;
 }
@@ -19,93 +18,76 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../images/pattern.svg') repeat;
+    right: 0;
+    bottom: 0;
+    background: url('../images/pattern.png') repeat;
     opacity: 0.1;
-    z-index: 1;
+    animation: float 20s linear infinite;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 1;
     max-width: 800px;
     margin: 0 auto;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    position: relative;
-    z-index: 2;
-    padding: 0 1rem;
-}
-
-.hero-content.animate {
-    opacity: 1;
-    transform: translateY(0);
+    color: var(--text-light);
 }
 
 .hero-logo {
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    animation: pulse 2s infinite ease-in-out;
+    margin-bottom: 2rem;
 }
 
 .hero-logo i {
     font-size: 4rem;
-    color: var(--secondary-color);
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    color: var(--accent-color);
+    animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
     line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.hero-content p {
+.hero p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cta-buttons {
     display: flex;
-    justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .cta-button {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
+    padding: 1rem 2rem;
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
-    min-width: 160px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
 }
 
 .cta-button.primary {
-    background-color: var(--secondary-color);
-    color: var(--text-dark);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button.primary:hover {
-    background-color: var(--secondary-light);
+    background-color: var(--accent-color-hover);
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button.secondary {
@@ -115,28 +97,75 @@
 }
 
 .cta-button.secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: white;
+    color: var(--primary-color);
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Small button used in cards */
-.btn-small {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-light);
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
+/* Animations */
+@keyframes float {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
 }
 
-.btn-small:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 5rem 1rem 3rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 4rem 1rem 2rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero-logo i {
+        font-size: 3rem;
+    }
 }
 
 /* Subjects Preview Section */
@@ -355,10 +384,6 @@
 
 /* Responsive styles for home page */
 @media (max-width: 992px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
     .subjects-preview h2,
     .why-choose-us h2,
     .success-stories h2 {
@@ -367,23 +392,6 @@
 }
 
 @media (max-width: 768px) {
-    .hero {
-        padding: 6rem 5% 3rem;
-        min-height: 70vh;
-    }
-    
-    .hero-logo i {
-        font-size: 3.5rem;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-    
-    .hero-content p {
-        font-size: 1.1rem;
-    }
-    
     .subjects-preview h2,
     .why-choose-us h2,
     .success-stories h2 {
@@ -410,30 +418,6 @@
 }
 
 @media (max-width: 576px) {
-    .hero {
-        padding: 5rem 5% 2rem;
-        min-height: 60vh;
-    }
-    
-    .hero-logo i {
-        font-size: 3rem;
-    }
-    
-    .hero-content h1 {
-        font-size: 1.9rem;
-    }
-    
-    .hero-content p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .cta-button {
-        padding: 0.7rem 1.5rem;
-        min-width: 140px;
-        font-size: 0.9rem;
-    }
-    
     .subjects-preview,
     .why-choose-us,
     .success-stories {
@@ -481,10 +465,6 @@
 }
 
 @media (max-width: 380px) {
-    .hero-content h1 {
-        font-size: 1.7rem;
-    }
-    
     .cta-buttons {
         flex-direction: column;
         gap: 0.7rem;

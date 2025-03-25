@@ -135,6 +135,19 @@
     transform: translateY(8px);
 }
 
+/* Menu button animation when checked */
+#menu-toggle:checked ~ .menu-button-container .menu-button {
+    background-color: transparent;
+}
+
+#menu-toggle:checked ~ .menu-button-container .menu-button::before {
+    transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .menu-button-container .menu-button::after {
+    transform: rotate(-45deg);
+}
+
 /* Close button style */
 .close-menu {
     display: none;
@@ -264,7 +277,7 @@
     }
     
     .close-menu {
-        display: block;
+        display: none;
     }
     
     .nav-links li {
