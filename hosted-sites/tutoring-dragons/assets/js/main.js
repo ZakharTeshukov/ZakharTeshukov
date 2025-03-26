@@ -364,7 +364,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (mobileBtn) {
         const navLinks = document.querySelector('.nav-links');
+        const navItems = navLinks.querySelectorAll('li');
+        const navAnchors = navLinks.querySelectorAll('a');
         const body = document.body;
+        
+        // Add animation index to each nav item for staggered animation
+        navItems.forEach((item, index) => {
+            item.style.setProperty('--i', index);
+        });
+        
+        // Set data-text attribute for 3D glow effect
+        navAnchors.forEach(anchor => {
+            anchor.setAttribute('data-text', anchor.textContent);
+        });
         
         mobileBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -380,14 +392,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 body.style.position = 'fixed';
                 body.style.width = '100%';
                 body.classList.add('menu-open');
+                
+                // Add 3D effect on mouse move when menu is open
+                initMenu3DEffect();
             } else {
                 body.style.overflow = '';
                 body.style.position = '';
                 body.style.width = '';
                 body.classList.remove('menu-open');
+                
+                // Remove event listener when menu is closed
+                document.removeEventListener('mousemove', handleMenuMouseMove);
             }
         });
-
+        
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
@@ -399,8 +417,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 body.style.position = '';
                 body.style.width = '';
                 body.classList.remove('menu-open');
+                
+                // Remove event listener
+                document.removeEventListener('mousemove', handleMenuMouseMove);
             }
         });
+    }
+    
+    // Initialize 3D menu effect on mouse move
+    function initMenu3DEffect() {
+        document.addEventListener('mousemove', handleMenuMouseMove);
+    }
+    
+    // Handle mouse move for 3D menu effect
+    function handleMenuMouseMove(e) {
+        const menuBox = document.querySelector('.menu-box');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (menuBox && navLinks) {
+            const menuItems = navLinks.querySelectorAll('li');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            // Calculate rotation and movement based on mouse position
+            const rotateY = 5 * (0.5 - mouseX);
+            const rotateX = 5 * (0.5 - mouseY);
+            const translateZ = 10 * (Math.abs(mouseX - 0.5) + Math.abs(mouseY - 0.5));
+            
+            // Apply subtle rotation to the entire menu
+            menuBox.style.transform = `translateX(0%) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+            
+            // Apply individual movements to menu items
+            menuItems.forEach((item, index) => {
+                const factor = (index + 1) * 0.15;
+                item.style.transform = `translateX(0) translateZ(${20 + translateZ * factor}px) rotateY(${rotateY * factor}deg)`;
+            });
+        }
     }
 
     // Smooth scrolling for anchor links

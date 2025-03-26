@@ -4,22 +4,44 @@
  */
 
 :root {
-    --primary-color: #4a47a3;
-    --primary-color-rgb: 74, 71, 163;
-    --primary-light: #6f6bcb;
-    --primary-dark: #343278;
+    /* Base colors */
+    --primary-color: #31679c;  /* Darker blue color */
+    --primary-color-rgb: 44, 62, 80;
+    --primary-light: rgb(58, 84, 109);
+    --primary-dark: rgb(52, 50, 116);
     --secondary-color: #f2b705;
     --secondary-light: #ffd149;
     --secondary-dark: #d49c00;
     --accent-color: #ed6663;
     --accent-hover: #fc8985;
+    
+    /* Text colors */
     --text-color: #333333;
     --text-light: #ffffff;
     --text-dark: #1a1a1a;
     --text-muted: #6c757d;
+    
+    /* Background colors */
     --bg-light: #f8f9fa;
     --bg-dark: #343a40;
     --border-color: #dee2e6;
+    
+    /* Component-specific colors */
+    --button-primary: var(--primary-color);
+    --button-primary-hover: var(--primary-dark);
+    --button-secondary: var(--secondary-color);
+    --button-secondary-hover: var(--secondary-dark);
+    --button-accent: var(--accent-color);
+    --button-accent-hover: var(--accent-hover);
+    --navbar-bg: var(--primary-dark);
+    --navbar-text: var(--text-light);
+    --card-bg: var(--text-light);
+    --card-border: var(--border-color);
+    --section-heading: var(--primary-color);
+    --footer-bg: var(--primary-dark);
+    --footer-text: var(--text-light);
+    
+    /* Other variables */
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
     --transition: all 0.3s ease;
@@ -124,34 +146,34 @@ main {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--button-primary);
     color: var(--text-light);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--button-primary-hover);
     transform: translateY(-2px);
     box-shadow: var(--box-shadow);
 }
 
 .btn-secondary {
-    background-color: var(--secondary-color);
+    background-color: var(--button-secondary);
     color: var(--text-dark);
 }
 
 .btn-secondary:hover {
-    background-color: var(--secondary-dark);
+    background-color: var(--button-secondary-hover);
     transform: translateY(-2px);
     box-shadow: var(--box-shadow);
 }
 
 .btn-accent {
-    background-color: var(--accent-color);
+    background-color: var(--button-accent);
     color: var(--text-light);
 }
 
 .btn-accent:hover {
-    background-color: var(--accent-hover);
+    background-color: var(--button-accent-hover);
     transform: translateY(-2px);
     box-shadow: var(--box-shadow);
 }
