@@ -195,6 +195,8 @@ main {
     border-bottom: 4px solid transparent;
     position: relative;
     overflow: hidden;
+    opacity: 1;
+    transform: none;
 }
 
 .subject-item:before {
@@ -266,14 +268,11 @@ main {
 
 /* Animation for subject items */
 .subject-item {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.subject-item.animate {
-    opacity: 1;
-    transform: translateY(0);
+    /* Remove opacity and transform properties that were used for animation */
+    /* opacity: 0; */
+    /* transform: translateY(20px); */
+    /* Keep transition for hover effects, but remove animation properties */
+    transition: all 0.3s ease;
 }
 
 /* CTA Section enhancements */

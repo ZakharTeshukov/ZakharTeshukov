@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add scroll animation for elements
     const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.subject-card, .feature, .subject-item, .tutor-card, .testimonial, .pricing-card, .option-card');
+        const elements = document.querySelectorAll('.subject-card, .feature, .tutor-card, .testimonial, .pricing-card, .option-card');
         elements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
             const elementBottom = element.getBoundingClientRect().bottom;
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Initialize element states
-    document.querySelectorAll('.subject-card, .feature, .subject-item, .tutor-card, .testimonial, .pricing-card:not(.popular), .option-card').forEach(element => {
+    document.querySelectorAll('.subject-card, .feature, .tutor-card, .testimonial, .pricing-card:not(.popular), .option-card').forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
         element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
@@ -239,6 +239,8 @@ document.addEventListener('DOMContentLoaded', () => {
         element.style.transform = 'translateY(20px) scale(1.05)';
         element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
     });
+    
+    // Note: subject-item elements are excluded from scroll animations, handled separately in subjects.js
 
     // Add scroll event listener
     window.addEventListener('scroll', animateOnScroll);
@@ -428,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add scroll animation for elements
     const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.subject-card, .feature, .subject-item, .tutor-card, .testimonial, .pricing-card, .option-card');
+        const elements = document.querySelectorAll('.subject-card, .feature, .tutor-card, .testimonial, .pricing-card, .option-card');
         elements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
             const elementBottom = element.getBoundingClientRect().bottom;
@@ -444,7 +446,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Initialize element states
-    document.querySelectorAll('.subject-card, .feature, .subject-item, .tutor-card, .testimonial, .pricing-card:not(.popular), .option-card').forEach(element => {
+    document.querySelectorAll('.subject-card, .feature, .tutor-card, .testimonial, .pricing-card:not(.popular), .option-card').forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
         element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
@@ -456,6 +458,8 @@ document.addEventListener('DOMContentLoaded', () => {
         element.style.transform = 'translateY(20px) scale(1.05)';
         element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
     });
+    
+    // Note: subject-item elements are excluded from scroll animations, handled separately in subjects.js
 
     // Add scroll event listener
     window.addEventListener('scroll', animateOnScroll);

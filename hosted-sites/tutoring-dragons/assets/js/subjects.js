@@ -4,26 +4,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Animation for subject items when they come into view with staggered delay
-    const animateSubjectItems = () => {
+    // Function removed - no longer using loading animations for subject cards
+    
+    // Immediately render all subject items without animations
+    const renderSubjectItemsImmediately = () => {
         const subjectItems = document.querySelectorAll('.subject-item');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    // Add staggered delay based on index within the category
-                    setTimeout(() => {
-                        entry.target.classList.add('animate');
-                    }, 100 * (index % 4)); // Stagger by groups of 4 items
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        });
-        
         subjectItems.forEach(item => {
-            observer.observe(item);
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
         });
     };
     
@@ -115,14 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (category === 'all' || cat.dataset.category === category) {
                             cat.style.display = 'block';
                             
-                            // Re-trigger animations for newly visible items
-                            const items = cat.querySelectorAll('.subject-item');
-                            items.forEach((item, index) => {
-                                item.classList.remove('animate');
-                                setTimeout(() => {
-                                    item.classList.add('animate');
-                                }, 50 * index);
-                            });
+                            // No longer re-triggering animations for newly visible items
+                            // since animations have been removed
                         } else {
                             cat.style.display = 'none';
                         }
@@ -171,8 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     // Initialize all functions
-    animateSubjectItems();
     initSubjectSearch();
     initCategoryFilter();
     initHoverEffects();
+    
+    // Immediately render all subject items without waiting for scroll
+    renderSubjectItemsImmediately();
 }); 
