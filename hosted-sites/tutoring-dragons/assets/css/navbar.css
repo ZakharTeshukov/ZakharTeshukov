@@ -1,9 +1,12 @@
 /* Navbar Styles for Tutoring Dragons
  * Fullscreen overlay navigation
+ * Updated for consistent styling across all pages
  */
 
-/* Reset styles */
-*, *::before, *::after {
+/* Reset navbar styles */
+.main-nav *, 
+.main-nav *::before, 
+.main-nav *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,6 +14,7 @@
 
 /* Main Navigation */
 .main-nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,7 +22,7 @@
     background-color: var(--primary-color);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    transition: padding 0.3s ease;
+    transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
 /* Navbar when scrolled */
@@ -58,6 +62,8 @@
     font-size: 1.5rem;
     font-weight: 600;
     transition: opacity 0.3s ease;
+    margin: 0;
+    padding: 0;
 }
 
 /* Logo image (if used instead of icon) */
@@ -126,18 +132,10 @@
 
 /* Menu box for overlay */
 .menu-box {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background-color: var(--primary-color);
-    overflow: hidden;
-    z-index: 2000;
     display: flex;
-    justify-content: center;
     align-items: center;
-    transition: height 0.4s ease-in-out;
+    background-color: transparent;
+    transition: all 0.3s ease;
 }
 
 /* Nav links */
@@ -146,11 +144,15 @@
     justify-content: flex-end;
     align-items: center;
     list-style: none;
+    margin: 0;
+    padding: 0;
     margin-left: auto; /* Push links to the right */
+    transition: all 0.3s ease;
 }
 
 .nav-links li {
     margin-left: 1.5rem;
+    position: relative;
 }
 
 .nav-links a {
@@ -201,7 +203,8 @@
     border: 2px solid transparent;
 }
 
-.login-btn:hover {
+.login-btn:hover, 
+.login-btn.active {
     background-color: var(--secondary-light);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -234,8 +237,91 @@
     }
 }
 
+/* Mobile menu and responsive settings */
+@media (max-width: 768px) {
+    .menu-button-container {
+        display: flex;
+    }
+    
+    .menu-box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: var(--primary-color);
+        overflow: hidden;
+        z-index: 2000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: height 0.4s ease-in-out;
+    }
+    
+    #menu-toggle:checked ~ .menu-box {
+        height: 100vh;
+        overflow-y: auto;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        padding: 2rem 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+    }
+    
+    #menu-toggle:checked ~ .menu-box .nav-links {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .nav-links li {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition-delay: calc(var(--i, 0) * 0.1s);
+    }
+    
+    #menu-toggle:checked ~ .menu-box .nav-links li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        font-weight: 600;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-links a::after {
+        bottom: 0.3rem;
+    }
+    
+    .login-btn {
+        margin-top: 1rem;
+        padding: 0.8rem 2rem !important;
+        font-size: 1.1rem !important;
+    }
+    
+    /* Fix for mobile nav scroll issue */
+    body.menu-open {
+        overflow: hidden !important;
+        position: fixed;
+        width: 100%;
+    }
+}
+
 @media (min-width: 769px) {
-    /* For desktop view, reset the fixed position and height */
+    /* For desktop view, reset any mobile settings */
     .menu-box {
         position: static;
         height: auto;
@@ -243,75 +329,15 @@
         overflow: visible;
     }
     
-    /* Ensure nav-links are properly displayed */
     .nav-links {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-    
-    /* Hide close menu button on desktop */
-    .close-menu {
-        display: none !important;
-    }
-    
-    /* Larger font size for desktop nav links */
-    .nav-links a {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-nav {
-        padding: 1rem 1.5rem;
-    }
-    
-    .menu-button-container {
-        display: flex;
-    }
-    
-    .nav-links {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
-    
-    #menu-toggle:checked ~ .menu-box {
-        height: 100%;
-    }
-    
-    /* Remove display of close menu button on mobile */
-    #menu-toggle:checked ~ .menu-box .close-menu {
-        display: none;
+        opacity: 1;
+        transform: translateY(0);
+        flex-direction: row;
     }
     
     .nav-links li {
-        margin: 1.5rem 0;
-        text-align: center;
-    }
-    
-    .nav-links a {
-        font-size: 1.5rem;
-        padding: 0.5rem 1rem;
-        display: inline-block;
-    }
-    
-    .nav-links a::after {
-        bottom: 0.3rem;
-        height: 3px;
-    }
-    
-    .nav-links a:hover::after {
-        width: 80%;
-        left: 10%;
-    }
-    
-    .login-btn {
-        font-size: 1.2rem;
-        padding: 0.6rem 1.5rem !important;
-        margin-top: 1rem;
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 

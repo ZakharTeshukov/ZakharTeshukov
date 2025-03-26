@@ -318,6 +318,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth',
                 block: 'start'
             });
+            // Close mobile menu if open
+            if (mobileBtn && navLinks) {
+                navLinks.classList.remove('active');
+                mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                
+                // Restore scrolling
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
         }
     });
 });
@@ -352,11 +362,28 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (mobileBtn) {
         const navLinks = document.querySelector('.nav-links');
+        const body = document.body;
+        
         mobileBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            mobileBtn.innerHTML = navLinks.classList.contains('active') 
+            const isMenuActive = navLinks.classList.contains('active');
+            
+            mobileBtn.innerHTML = isMenuActive 
                 ? '<i class="fas fa-times"></i>' 
                 : '<i class="fas fa-bars"></i>';
+                
+            // Prevent scrolling when menu is open
+            if (isMenuActive) {
+                body.style.overflow = 'hidden';
+                body.style.position = 'fixed';
+                body.style.width = '100%';
+                body.classList.add('menu-open');
+            } else {
+                body.style.overflow = '';
+                body.style.position = '';
+                body.style.width = '';
+                body.classList.remove('menu-open');
+            }
         });
 
         // Close mobile menu when clicking outside
@@ -364,6 +391,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
                 mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                
+                // Restore scrolling
+                body.style.overflow = '';
+                body.style.position = '';
+                body.style.width = '';
+                body.classList.remove('menu-open');
             }
         });
     }
@@ -379,9 +412,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     block: 'start'
                 });
                 // Close mobile menu if open
-                if (mobileBtn && navLinks) {
+                if (mobileBtn && navLinks && navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
                     mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    // Restore scrolling
+                    document.body.style.overflow = '';
+                    document.body.style.position = '';
+                    document.body.style.width = '';
+                    document.body.classList.remove('menu-open');
                 }
             }
         });

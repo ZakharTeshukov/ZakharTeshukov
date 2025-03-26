@@ -27,6 +27,8 @@
     --error-color: #dc3545;
     --font-primary: 'Montserrat', sans-serif;
     --font-secondary: 'Open Sans', sans-serif;
+    --light-color: #f8f9fa;
+    --gray-color: #6c757d;
 }
 
 * {
@@ -34,6 +36,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-primary);
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
 body {
@@ -42,16 +46,12 @@ body {
     font-size: 16px;
     background-color: var(--bg-light);
     overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
-/* Hide scrollbar but allow scrolling */
 body::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
-}
-
-body {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    display: none;  /* Safari and Chrome */
 }
 
 /* Container for page content */

@@ -398,6 +398,302 @@
     align-self: flex-start;
 }
 
+/* Pricing & Mission Section */
+.pricing-mission-section {
+    padding: 5rem 0;
+    background-color: #ffffff;
+}
+
+.pricing-mission-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.pricing-mission-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.mission-pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.mission-column, .pricing-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.mission-content, .pricing-content {
+    height: 100%;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    background-color: #f8f9fa;
+    box-shadow: var(--box-shadow);
+}
+
+.mission-content {
+    background-color: var(--primary-light);
+    color: var(--text-light);
+}
+
+.mission-content h3, .pricing-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.mission-content h3::after, .pricing-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.mission-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.mission-content ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.mission-content ul li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.mission-content ul li i {
+    color: var(--secondary-color);
+    margin-right: 0.75rem;
+}
+
+.mission-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.mission-btn:hover {
+    background-color: var(--secondary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-content h3 {
+    color: var(--primary-color);
+}
+
+.pricing-content p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Pricing Card Styles */
+.pricing-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.pricing-card.popular {
+    border: 2px solid var(--primary-color);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.popular-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border-bottom-left-radius: 0.5rem;
+    font-weight: 600;
+}
+
+.card-header {
+    padding: 2rem 2rem 1rem;
+    text-align: center;
+    background-color: var(--light-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-header h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.price {
+    margin-bottom: 1rem;
+}
+
+.price .amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.price .period {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.card-header p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+.card-features {
+    padding: 1.5rem 2rem;
+}
+
+.card-features ul {
+    list-style: none;
+}
+
+.card-features li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-features i {
+    margin-right: 0.75rem;
+    font-size: 1rem;
+    color: var(--success-color);
+}
+
+.card-footer {
+    padding: 1.5rem 2rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.view-all-plans {
+    display: block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.view-all-plans:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Ready to Get Started Section */
+.get-started-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.get-started-content {
+    height: 100%;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-light);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.get-started-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.get-started-content p {
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.cta-button {
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button.primary {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+}
+
+.cta-button.primary:hover {
+    background-color: var(--secondary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--text-light);
+}
+
+.cta-button.secondary:hover {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 /* Responsive styles for home page */
 @media (max-width: 992px) {
     .hero h1 {
@@ -416,6 +712,14 @@
     
     .cta-button {
         width: 80%;
+    }
+    
+    .mission-column, .pricing-column {
+        flex: 100%;
+    }
+    
+    .mission-content, .pricing-content {
+        height: auto;
     }
 }
 

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const menuBox = document.querySelector('.menu-box');
         const navLinks = document.querySelector('.nav-links');
         const closeMenu = document.querySelector('.close-menu');
+        const body = document.body;
         
         // Add delay indices to nav items for staggered animation
         const navItems = document.querySelectorAll('.nav-links li');
@@ -17,10 +18,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         if (menuToggle) {
+            // Toggle body scroll when menu is opened/closed
+            menuToggle.addEventListener('change', () => {
+                if (menuToggle.checked) {
+                    // Prevent scrolling when menu is open
+                    body.style.overflow = 'hidden';
+                    body.style.position = 'fixed';
+                    body.style.width = '100%';
+                    body.classList.add('menu-open');
+                } else {
+                    // Restore scrolling when menu is closed
+                    body.style.overflow = '';
+                    body.style.position = '';
+                    body.style.width = '';
+                    body.classList.remove('menu-open');
+                }
+            });
+            
             // Close menu when clicking on a link
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     menuToggle.checked = false;
+                    // Restore scrolling
+                    body.style.overflow = '';
+                    body.style.position = '';
+                    body.style.width = '';
+                    body.classList.remove('menu-open');
                 });
             });
             
@@ -28,6 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (closeMenu) {
                 closeMenu.addEventListener('click', () => {
                     menuToggle.checked = false;
+                    // Restore scrolling
+                    body.style.overflow = '';
+                    body.style.position = '';
+                    body.style.width = '';
+                    body.classList.remove('menu-open');
                 });
             }
             
@@ -35,6 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && menuToggle.checked) {
                     menuToggle.checked = false;
+                    // Restore scrolling
+                    body.style.overflow = '';
+                    body.style.position = '';
+                    body.style.width = '';
+                    body.classList.remove('menu-open');
                 }
             });
         }
