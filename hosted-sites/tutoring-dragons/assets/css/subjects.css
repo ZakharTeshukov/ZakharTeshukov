@@ -1,10 +1,15 @@
 /* Subjects Page CSS */
 
+/* Override main padding for subjects page */
+main {
+    padding-top: 0 !important;
+}
+
 /* Page Header styling */
 .page-header {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
     color: var(--text-light);
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
     margin-bottom: 0;
     position: relative;
@@ -30,7 +35,7 @@
 }
 
 .page-header p {
-    font-size: 1.2rem;
+    font-size: 0rem;
     max-width: 600px;
     margin: 0 auto;
     opacity: 0.9;

@@ -3,68 +3,89 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Animation for various elements when they come into view
-    const animateElements = () => {
-        const elements = document.querySelectorAll('.tutor-card, .testimonial, .qualification');
+    // Animation for tutor cards when they come into view
+    const animateTutorCards = () => {
+        const tutorCards = document.querySelectorAll('.tutor-card');
         
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
+                    // Add staggered delay based on index
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                    }, 100 * (index % 4)); // Stagger by groups of 4
                     observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.1,
+            threshold: 0.15,
             rootMargin: '0px 0px -50px 0px'
         });
         
-        elements.forEach(item => {
-            observer.observe(item);
+        tutorCards.forEach(card => {
+            observer.observe(card);
         });
     };
     
-    // Tutor search functionality
+    // Search functionality for tutors
     const initTutorSearch = () => {
         const searchInput = document.getElementById('tutor-search');
         if (searchInput) {
+            // Add clear search icon
+            const searchBar = searchInput.closest('.search-bar');
+            const clearIcon = document.createElement('i');
+            clearIcon.classList.add('fas', 'fa-times', 'clear-search');
+            clearIcon.style.display = 'none';
+            searchBar.appendChild(clearIcon);
+            
+            // Clear search when icon is clicked
+            clearIcon.addEventListener('click', () => {
+                searchInput.value = '';
+                clearIcon.style.display = 'none';
+                searchInput.dispatchEvent(new Event('input'));
+            });
+            
             searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
+                const searchTerm = e.target.value.toLowerCase().trim();
+                
+                // Toggle clear icon
+                clearIcon.style.display = searchTerm ? 'block' : 'none';
+                
                 const tutorCards = document.querySelectorAll('.tutor-card');
+                let hasResults = false;
                 
                 tutorCards.forEach(card => {
                     const tutorName = card.querySelector('h3').textContent.toLowerCase();
-                    const tutorSubject = card.querySelector('.tutor-speciality').textContent.toLowerCase();
+                    const tutorSpecialty = card.querySelector('.tutor-specialty').textContent.toLowerCase();
                     const tutorBio = card.querySelector('.tutor-bio').textContent.toLowerCase();
+                    const subjects = Array.from(card.querySelectorAll('.subjects-taught span')).map(span => span.textContent.toLowerCase());
                     
-                    if (tutorName.includes(searchTerm) || 
-                        tutorSubject.includes(searchTerm) || 
-                        tutorBio.includes(searchTerm)) {
-                        card.style.display = 'flex';
+                    if (!searchTerm || 
+                        tutorName.includes(searchTerm) || 
+                        tutorSpecialty.includes(searchTerm) || 
+                        tutorBio.includes(searchTerm) ||
+                        subjects.some(subject => subject.includes(searchTerm))) {
+                        card.style.display = 'block';
+                        hasResults = true;
                     } else {
                         card.style.display = 'none';
                     }
                 });
                 
-                // Show/hide empty message
-                const tutorGrid = document.querySelector('.tutor-grid');
-                if (tutorGrid) {
-                    const visibleCards = tutorGrid.querySelectorAll('.tutor-card[style="display: flex"]').length;
-                    let noResultsMsg = tutorGrid.querySelector('.no-results');
-                    
-                    if (visibleCards === 0) {
-                        if (!noResultsMsg) {
-                            noResultsMsg = document.createElement('p');
-                            noResultsMsg.classList.add('no-results');
-                            noResultsMsg.textContent = 'No tutors match your search.';
-                            noResultsMsg.style.textAlign = 'center';
-                            noResultsMsg.style.width = '100%';
-                            noResultsMsg.style.padding = '2rem';
-                            tutorGrid.appendChild(noResultsMsg);
-                        }
-                    } else if (noResultsMsg) {
-                        noResultsMsg.remove();
+                // Show/hide no results message
+                let noResultsMsg = document.querySelector('.no-results-message');
+                if (!hasResults) {
+                    if (!noResultsMsg) {
+                        noResultsMsg = document.createElement('div');
+                        noResultsMsg.classList.add('no-results-message');
+                        noResultsMsg.innerHTML = `
+                            <i class="fas fa-search"></i>
+                            <p>No tutors found matching "${searchTerm}"</p>
+                        `;
+                        document.querySelector('.tutors-list').appendChild(noResultsMsg);
                     }
+                } else if (noResultsMsg) {
+                    noResultsMsg.remove();
                 }
             });
         }
@@ -72,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Subject filter functionality
     const initSubjectFilter = () => {
-        const filterBtns = document.querySelectorAll('.subject-filter');
+        const filterBtns = document.querySelectorAll('.tutor-filter');
         if (filterBtns.length) {
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -84,34 +105,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     const tutorCards = document.querySelectorAll('.tutor-card');
                     
                     tutorCards.forEach(card => {
-                        const tutorSubject = card.querySelector('.tutor-speciality').textContent.toLowerCase();
-                        
-                        if (subject === 'all' || tutorSubject.includes(subject.toLowerCase())) {
-                            card.style.display = 'flex';
+                        if (subject === 'all' || card.dataset.subjects === subject) {
+                            card.style.display = 'block';
+                            
+                            // Re-trigger animation
+                            card.classList.remove('animate');
+                            setTimeout(() => {
+                                card.classList.add('animate');
+                            }, 50);
                         } else {
                             card.style.display = 'none';
                         }
                     });
                     
-                    // Show/hide empty message
-                    const tutorGrid = document.querySelector('.tutor-grid');
-                    if (tutorGrid) {
-                        const visibleCards = tutorGrid.querySelectorAll('.tutor-card[style="display: flex"]').length;
-                        let noResultsMsg = tutorGrid.querySelector('.no-results');
-                        
-                        if (visibleCards === 0) {
-                            if (!noResultsMsg) {
-                                noResultsMsg = document.createElement('p');
-                                noResultsMsg.classList.add('no-results');
-                                noResultsMsg.textContent = 'No tutors in this subject area.';
-                                noResultsMsg.style.textAlign = 'center';
-                                noResultsMsg.style.width = '100%';
-                                noResultsMsg.style.padding = '2rem';
-                                tutorGrid.appendChild(noResultsMsg);
-                            }
-                        } else if (noResultsMsg) {
-                            noResultsMsg.remove();
-                        }
+                    // Clear search input when changing filters
+                    const searchInput = document.getElementById('tutor-search');
+                    if (searchInput && searchInput.value) {
+                        searchInput.value = '';
+                        const clearIcon = document.querySelector('.clear-search');
+                        if (clearIcon) clearIcon.style.display = 'none';
+                    }
+                    
+                    // Remove any "no results" message
+                    const noResultsMsg = document.querySelector('.no-results-message');
+                    if (noResultsMsg) {
+                        noResultsMsg.remove();
                     }
                 });
             });
@@ -119,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     // Initialize all functions
-    animateElements();
+    animateTutorCards();
     initTutorSearch();
     initSubjectFilter();
 }); 

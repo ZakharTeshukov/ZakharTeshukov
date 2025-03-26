@@ -93,6 +93,17 @@
     justify-content: center;
     align-items: center;
     z-index: 2001;
+    transition: transform 0.3s ease;
+}
+
+.menu-button-container:hover {
+    transform: scale(1.1);
+}
+
+.menu-button-container:hover .menu-button,
+.menu-button-container:hover .menu-button::before,
+.menu-button-container:hover .menu-button::after {
+    background-color: var(--secondary-color);
 }
 
 /* Menu button style */
