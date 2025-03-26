@@ -287,10 +287,127 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     
+    // Init functions for How to Get a Tutor section
+    const initGetTutorSection = () => {
+        const stepCards = document.querySelectorAll('.step-card');
+        const stepsContainer = document.querySelector('.steps-container');
+        
+        if (!stepCards.length) return;
+        
+        // Create intersection observer for step cards
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                // Apply staggered entrance animation to each card
+                stepCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(40px)';
+                        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                        
+                        // Force reflow
+                        void card.offsetWidth;
+                        
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 150);
+                });
+                
+                // Only trigger once
+                observer.unobserve(stepsContainer);
+            }
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        if (stepsContainer) {
+            observer.observe(stepsContainer);
+        }
+        
+        // Add hover animation and click events for step cards
+        stepCards.forEach(card => {
+            // Interactive hover effect for step number
+            const stepNumber = card.querySelector('.step-number');
+            
+            if (stepNumber) {
+                card.addEventListener('mouseenter', () => {
+                    stepNumber.style.transform = 'translateX(-50%) scale(1.15)';
+                    stepNumber.style.transition = 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    stepNumber.style.transform = 'translateX(-50%) scale(1)';
+                });
+            }
+            
+            // For mobile touch interactions
+            if (isMobile()) {
+                card.addEventListener('touchstart', () => {
+                    card.style.transform = 'translateY(-5px)';
+                    card.style.transition = 'transform 0.3s ease';
+                    
+                    if (stepNumber) {
+                        stepNumber.style.transform = 'translateX(-50%) scale(1.15)';
+                        stepNumber.style.transition = 'transform 0.3s ease';
+                    }
+                }, { passive: true });
+                
+                card.addEventListener('touchend', () => {
+                    setTimeout(() => {
+                        card.style.transform = '';
+                        
+                        if (stepNumber) {
+                            stepNumber.style.transform = 'translateX(-50%) scale(1)';
+                        }
+                    }, 200);
+                }, { passive: true });
+            }
+        });
+        
+        // Add shimmer effect to CTA button
+        const ctaButton = document.querySelector('.steps-cta .cta-button');
+        if (ctaButton) {
+            // Create shine effect on button hover
+            ctaButton.addEventListener('mouseenter', () => {
+                ctaButton.classList.add('shine-effect');
+            });
+            
+            ctaButton.addEventListener('mouseleave', () => {
+                ctaButton.classList.remove('shine-effect');
+            });
+            
+            // Pulse animation for the CTA button to draw attention
+            const pulseCTA = () => {
+                ctaButton.classList.add('pulse');
+                
+                setTimeout(() => {
+                    ctaButton.classList.remove('pulse');
+                }, 1000);
+            };
+            
+            // Pulse the CTA button every 6 seconds
+            setInterval(pulseCTA, 6000);
+            
+            // Initial pulse after 3 seconds
+            setTimeout(pulseCTA, 3000);
+        }
+    };
+
     // Initialize all functions
-    animateElements();
-    initSubjectCards();
-    initTestimonialSlider();
-    initVideoModal();
-    handleResize();
+    const initFunctions = () => {
+        animateElements();
+        initSubjectCards();
+        initTestimonialSlider();
+        initVideoModal();
+        initGetTutorSection();
+        
+        // Update layout on resize
+        window.addEventListener('resize', handleResize);
+        
+        // Call resize handler once to set initial states
+        handleResize();
+    };
+    
+    // Run initialization
+    initFunctions();
 }); 

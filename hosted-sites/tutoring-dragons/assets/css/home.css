@@ -777,4 +777,273 @@
     .feature {
         padding: 1.2rem;
     }
+}
+
+/* How to Get a Tutor Section */
+.how-to-get-tutor {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f8f9fc 0%, #e9edf8 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.how-to-get-tutor::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: url('../images/dragon-watermark.svg');
+    background-position: right center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    z-index: 1;
+}
+
+.how-to-get-tutor .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.how-to-get-tutor h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 3.5rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.how-to-get-tutor h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.step-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(74, 71, 163, 0.1);
+    padding: 2.5rem 2rem;
+    position: relative;
+    flex: 1 1 220px;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.step-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(74, 71, 163, 0.15);
+    border-color: var(--secondary-color);
+}
+
+.step-number {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(242, 183, 5, 0.3);
+    border: 3px solid white;
+    z-index: 3;
+}
+
+.step-icon {
+    margin: 1rem 0 1.5rem;
+    width: 80px;
+    height: 80px;
+    background: rgba(74, 71, 163, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.step-card:hover .step-icon {
+    background: rgba(74, 71, 163, 0.12);
+    transform: scale(1.1);
+}
+
+.step-icon i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    transition: all 0.4s ease;
+}
+
+.step-card:hover .step-icon i {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.step-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.step-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.steps-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.steps-cta .cta-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.steps-cta .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transition: all 0.6s ease;
+}
+
+.steps-cta .cta-button:hover::before {
+    left: 100%;
+}
+
+/* Shine and Pulse effects for CTA button */
+.steps-cta .cta-button.shine-effect::before {
+    animation: shine 1s forwards;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.steps-cta .cta-button.pulse {
+    animation: pulse-animation 1s cubic-bezier(.45,.05,.55,.95);
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(242, 183, 5, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(242, 183, 5, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(242, 183, 5, 0.3);
+    }
+}
+
+/* Target browsers that support prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .step-card {
+        opacity: 1;
+        transform: none;
+        transition: none !important;
+    }
+    
+    .steps-cta .cta-button.pulse {
+        animation: none !important;
+    }
+    
+    .steps-cta .cta-button::before {
+        display: none;
+    }
+}
+
+/* Media queries for How to Get a Tutor section */
+@media (max-width: 992px) {
+    .how-to-get-tutor {
+        padding: 5rem 0;
+    }
+    
+    .how-to-get-tutor h2 {
+        font-size: 2.4rem;
+    }
+    
+    .step-card {
+        flex: 1 1 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .how-to-get-tutor {
+        padding: 4rem 0;
+    }
+    
+    .how-to-get-tutor h2 {
+        font-size: 2.2rem;
+    }
+    
+    .steps-container {
+        gap: 3.5rem 1.5rem;
+    }
+    
+    .step-card {
+        padding: 2rem 1.5rem;
+        flex: 0 1 calc(50% - 1.5rem);
+        max-width: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .step-card {
+        flex: 0 1 100%;
+    }
+    
+    .steps-cta .cta-button {
+        padding: 0.9rem 2rem;
+        width: 100%;
+        max-width: 250px;
+    }
 } 
