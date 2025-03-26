@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/subjects.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dragon+Quest:wght@400&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -44,9 +44,25 @@
             <p>Expert tutoring in a wide range of academic disciplines</p>
         </section>
 
+        <section class="search-filter-section">
+            <div class="container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="subject-search" placeholder="Search for subjects...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="subject-filter active" data-category="all">All Subjects</button>
+                    <button class="subject-filter" data-category="mathematics">Mathematics</button>
+                    <button class="subject-filter" data-category="sciences">Sciences</button>
+                    <button class="subject-filter" data-category="languages">Languages</button>
+                    <button class="subject-filter" data-category="programming">Programming</button>
+                </div>
+            </div>
+        </section>
+
         <section class="subjects-list">
             <div class="container">
-                <div class="subject-category">
+                <div class="subject-category" data-category="mathematics">
                     <h2><i class="fas fa-calculator"></i> Mathematics</h2>
                     <div class="subject-grid">
                         <div class="subject-item">
@@ -72,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="subject-category">
+                <div class="subject-category" data-category="sciences">
                     <h2><i class="fas fa-flask"></i> Sciences</h2>
                     <div class="subject-grid">
                         <div class="subject-item">
@@ -98,7 +114,7 @@
                     </div>
                 </div>
 
-                <div class="subject-category">
+                <div class="subject-category" data-category="languages">
                     <h2><i class="fas fa-language"></i> Languages</h2>
                     <div class="subject-grid">
                         <div class="subject-item">
@@ -124,7 +140,7 @@
                     </div>
                 </div>
 
-                <div class="subject-category">
+                <div class="subject-category" data-category="programming">
                     <h2><i class="fas fa-code"></i> Programming</h2>
                     <div class="subject-grid">
                         <div class="subject-item">

@@ -637,6 +637,7 @@
     background-color: var(--primary-light);
     box-shadow: var(--box-shadow);
     text-align: center;
+    color: var(--text-light);
 }
 
 .get-started-content h3 {
@@ -647,7 +648,7 @@
 
 .get-started-content p {
     font-size: 1rem;
-    color: #ffffff;
+    color: var(--text-light);
     margin: 1rem 0;
     line-height: 1.6;
 }

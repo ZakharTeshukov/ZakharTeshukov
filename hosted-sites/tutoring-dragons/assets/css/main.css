@@ -415,3 +415,13 @@ main {
     opacity: 1;
     transform: translateX(0);
 }
+
+.cta-section {
+    padding: 5rem 0;
+    background-color: var(--primary-color); /* Ensure the background is still visible */
+}
+
+.cta-section h2,
+.cta-section p {
+    color: white; /* Change text color to white */
+}
