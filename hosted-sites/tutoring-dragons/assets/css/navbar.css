@@ -40,21 +40,75 @@
     color: var(--text-light);
     text-decoration: none;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     white-space: nowrap; /* Prevent logo text from wrapping */
+    position: relative;
+    z-index: 10;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -15px;
+    right: -15px;
+    bottom: -8px;
+    background: radial-gradient(circle at center, rgba(242, 183, 5, 0), rgba(242, 183, 5, 0));
+    border-radius: 50px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease, background 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo:hover::before {
+    opacity: 1;
+    background: radial-gradient(circle at center, rgba(242, 183, 5, 0.15), rgba(242, 183, 5, 0));
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(242, 183, 5, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(242, 183, 5, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(242, 183, 5, 0);
+    }
 }
 
 /* Logo icon */
 .logo i {
     font-size: 2rem;
-    margin-right: 0.5rem;
+    margin-right: 1.2rem;
     color: var(--accent-color);
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.4s ease, transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), text-shadow 0.4s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .logo:hover i {
     color: var(--secondary-color);
-    transform: rotate(-10deg);
+    transform: rotate(-12deg) scale(1.1);
+    text-shadow: 0 0 15px rgba(242, 183, 5, 0.7);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: rotate(-12deg) scale(1.1) translateY(0);
+    }
+    50% {
+        transform: rotate(-12deg) scale(1.1) translateY(-5px);
+    }
+    100% {
+        transform: rotate(-12deg) scale(1.1) translateY(0);
+    }
 }
 
 /* Logo text */
@@ -62,7 +116,7 @@
     font-family: 'Dragon Quest', var(--font-primary);
     font-size: 1.5rem;
     font-weight: 600;
-    transition: opacity 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     margin: 0;
     padding: 0;
     letter-spacing: 1px;
@@ -70,12 +124,58 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0px 0px 5px rgba(242, 183, 5, 0.3);
+    position: relative;
+}
+
+.logo:hover h1 {
+    background: linear-gradient(135deg, #fff, var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 10px rgba(242, 183, 5, 0.8);
+    letter-spacing: 1.5px;
+}
+
+.logo h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
+    transition: width 0.5s ease;
+}
+
+.logo:hover h1::after {
+    width: 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { 
+        opacity: 0; 
+        transform: translateX(-100%);
+    }
+    50% { 
+        opacity: 1; 
+    }
+    100% { 
+        opacity: 0;
+        transform: translateX(100%);
+    }
 }
 
 /* Logo image (if used instead of icon) */
 .logo img {
     height: 40px;
     margin-right: 0.5rem;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), filter 0.4s ease;
+}
+
+.logo:hover img {
+    transform: rotate(-5deg) scale(1.1);
+    filter: drop-shadow(0 0 5px rgba(242, 183, 5, 0.7));
+    animation: float 3s ease-in-out infinite;
 }
 
 /* Hide checkbox */

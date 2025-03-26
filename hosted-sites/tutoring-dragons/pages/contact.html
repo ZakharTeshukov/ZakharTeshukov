@@ -14,16 +14,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dragon+Quest:wght@400&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav class="main-nav">
+<body>    
+    <header role="banner">
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
             <div class="logo">
-                <i class="fas fa-dragon"></i>
+                <i class="fas fa-dragon" aria-hidden="true"></i>
                 <h1>Tutoring Dragons</h1>
             </div>
             
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-button-container">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+            <label for="menu-toggle" class="menu-button-container" aria-label="Toggle menu">
                 <div class="menu-button"></div>
             </label>
             
@@ -32,20 +32,15 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="subjects.html">Subjects</a></li>
                     <li><a href="tutors.html">Our Tutors</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
                     <li><a href="login.html" class="login-btn">Login</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="page-header">
-            <h1>Contact Us</h1>
-            <p>We're here to answer your questions and help you get started</p>
-        </section>
-
-        <section class="contact-section">
+    <main role="main">
+        <section class="contact-section" aria-label="Contact information">
             <div class="container">
                 <div class="contact-wrapper">
                     <div class="contact-info">
@@ -54,36 +49,40 @@
                         
                         <div class="contact-details">
                             <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <div>
                                     <h3>Visit Us</h3>
-                                    <p>78 Nguyễn Đức Cảnh<br>Tân Phong, Quận 7, Hồ Chí Minh 700000, Vietnam</p>
+                                    <address>
+                                        78 Nguyễn Đức Cảnh<br>
+                                        Tân Phong, Quận 7<br>
+                                        Hồ Chí Minh 700000, Vietnam
+                                    </address>
                                 </div>
                             </div>
                             
                             <div class="contact-item">
-                                <i class="fas fa-phone-alt"></i>
+                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
                                 <div>
                                     <h3>Call Us</h3>
-                                    <p>+84 90 184 41 97</p>
+                                    <p><a href="tel:+84901844197" class="phone-link">+84 90 184 41 97</a></p>
                                     <p>Monday-Friday: 9am-6pm</p>
                                 </div>
                             </div>
                             
                             <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
                                 <div>
                                     <h3>Email Us</h3>
-                                    <p>tutoringdragons@ssis.edu.vn</p>
+                                    <p><a href="mailto:tutoringdragons@ssis.edu.vn">tutoringdragons@ssis.edu.vn</a></p>
                                 </div>
                             </div>
                             
                             <div class="contact-item">
-                                <i class="fas fa-comment"></i>
+                                <i class="fas fa-comment" aria-hidden="true"></i>
                                 <div>
                                     <h3>Live Chat</h3>
                                     <p>Available 24/7 on our website</p>
-                                    <a href="#" class="chat-btn">Start Chat</a>
+                                    <button class="chat-btn" aria-label="Start live chat">Start Chat</button>
                                 </div>
                             </div>
                         </div>
@@ -91,36 +90,46 @@
                         <div class="social-contact">
                             <h3>Connect With Us</h3>
                             <div class="social-links">
-                                <a href="https://www.instagram.com/tutoring.dragons/" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.instagram.com/tutoring.dragons/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" aria-label="Follow us on Facebook">
+                                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" aria-label="Follow us on Twitter">
+                                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" aria-label="Follow us on LinkedIn">
+                                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" aria-label="Subscribe to our YouTube channel">
+                                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                     
                     <div class="contact-form-container">
                         <h2>Send Us a Message</h2>
-                        <form class="contact-form">
+                        <form class="contact-form" novalidate>
                             <div class="form-group">
                                 <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required aria-required="true">
                             </div>
                             
                             <div class="form-group">
                                 <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required aria-required="true">
                             </div>
                             
                             <div class="form-group">
                                 <label for="phone">Phone Number (Optional)</label>
-                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" aria-required="false">
                             </div>
                             
                             <div class="form-group">
                                 <label for="subject">Subject</label>
-                                <select id="subject" name="subject" required>
+                                <select id="subject" name="subject" required aria-required="true">
                                     <option value="" disabled selected>Select a subject</option>
                                     <option value="general">General Inquiry</option>
                                     <option value="pricing">Pricing Information</option>
@@ -132,7 +141,7 @@
                             
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
+                                <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required aria-required="true"></textarea>
                             </div>
                             
                             <div class="form-group form-checkbox">
@@ -140,56 +149,54 @@
                                 <label for="subscribe">Subscribe to our newsletter for updates and learning tips</label>
                             </div>
                             
-                            <button type="submit" class="submit-btn">Send Message</button>
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section class="map-section">
+        <section class="map-section" aria-label="Location map">
             <div class="container">
                 <h2>Find Us</h2>
-                <div class="map-container">
-                    <!-- Placeholder for map, in a real implementation this would be a Google Maps or similar embed -->
-                    <div class="map-placeholder">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <p>Interactive Map Would Be Displayed Here</p>
-                    </div>
+                <div class="map-container" role="region" aria-label="Google Maps showing our location">
+                    <!-- Map will be loaded here by JavaScript -->
                 </div>
             </div>
         </section>
 
-        <section class="faq">
+        <section class="faq" aria-label="Frequently asked questions">
             <div class="container">
                 <h2>Frequently Asked Contact Questions</h2>
-                <div class="accordion">
+                <div class="accordion" role="region" aria-label="FAQ Accordion">
                     <div class="accordion-item">
-                        <div class="accordion-header">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq-1">
                             <h3>What is your typical response time?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="accordion-content">
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content" id="faq-1" aria-hidden="true">
                             <p>We typically respond to email inquiries within 24 hours during business days. For urgent matters, we recommend using our live chat or calling our support line directly.</p>
                         </div>
                     </div>
                     
                     <div class="accordion-item">
-                        <div class="accordion-header">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq-2">
                             <h3>Do you offer in-person consultations?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="accordion-content">
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content" id="faq-2" aria-hidden="true">
                             <p>Yes, we offer in-person consultations at our main office. These consultations must be scheduled in advance. Please contact us to book a time that works for you.</p>
                         </div>
                     </div>
                     
                     <div class="accordion-item">
-                        <div class="accordion-header">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq-3">
                             <h3>How can I get a customized tutoring plan?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="accordion-content">
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content" id="faq-3" aria-hidden="true">
                             <p>For customized tutoring plans, please fill out our contact form specifying your needs, or schedule a consultation call with one of our education consultants who can help design a program tailored to your specific goals.</p>
                         </div>
                     </div>
@@ -197,7 +204,7 @@
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="cta-section" aria-label="Call to action">
             <div class="container">
                 <h2>Ready to Transform Your Learning Experience?</h2>
                 <p>Experience quality tutoring that's <strong>always free</strong> - no hidden costs or fees ever</p>
@@ -209,21 +216,38 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <div class="footer-info">
-                        <p><i class="fas fa-envelope"></i> tutoringdragons@ssis.edu.vn</p>
-                        <p><i class="fas fa-phone"></i> +84 90 184 41 97</p>
-                        <p><i class="fas fa-map-marker-alt"></i> 78 Nguyễn Đức Cảnh, Tân Phong, Quận 7, Hồ Chí Minh 700000, Vietnam</p>
+                        <p>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:tutoringdragons@ssis.edu.vn">tutoringdragons@ssis.edu.vn</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <a href="tel:+84901844197">+84 90 184 41 97</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <address>78 Nguyễn Đức Cảnh, Tân Phong, Quận 7, Hồ Chí Minh 700000, Vietnam</address>
+                        </p>
                     </div>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/tutoring.dragons/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/tutoring.dragons/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Follow us on Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Follow us on LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -239,9 +263,11 @@
                 <div class="footer-column">
                     <h3>Newsletter</h3>
                     <p>Subscribe to get updates on new courses and promotions.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    <form class="newsletter-form" aria-label="Newsletter subscription">
+                        <input type="email" placeholder="Your email address" required aria-label="Email address for newsletter">
+                        <button type="submit" aria-label="Subscribe to newsletter">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -251,8 +277,6 @@
         </div>
     </footer>
 
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/layout.js"></script>
     <script src="../assets/js/contact.js"></script>
 </body>
 </html> 

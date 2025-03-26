@@ -17,11 +17,24 @@
     color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
+    position: relative;
+}
+
+.contact-info h2::after,
+.contact-form-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
 }
 
 .contact-info > p {
     margin-bottom: 2rem;
     line-height: 1.6;
+    color: var(--text-color);
 }
 
 .contact-details {
@@ -35,12 +48,26 @@
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--light-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .contact-item i {
     font-size: 1.5rem;
     color: var(--primary-color);
     margin-top: 0.25rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover i {
+    transform: scale(1.1);
 }
 
 .contact-item h3 {
@@ -56,19 +83,23 @@
 
 .chat-btn {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     margin-top: 0.5rem;
     background-color: var(--accent-color);
     color: white;
     border-radius: 0.25rem;
     font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
     text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .chat-btn:hover {
     background-color: var(--primary-color);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .social-contact h3 {
@@ -80,22 +111,25 @@
 .social-contact .social-links {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .social-contact .social-links a {
     background-color: var(--light-color);
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .social-contact .social-links a:hover {
     background-color: var(--primary-color);
-    transform: translateY(-3px);
+    transform: translateY(-3px) rotate(8deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .social-contact .social-links a i {
@@ -111,9 +145,9 @@
 /* Contact Form */
 .contact-form-container {
     background-color: var(--light-color);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form {
@@ -124,22 +158,26 @@
 .form-group {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .form-group label {
     margin-bottom: 0.5rem;
     color: var(--accent-color);
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
     padding: 0.75rem;
-    border: 1px solid var(--light-gray);
-    border-radius: 0.25rem;
+    border: 2px solid var(--light-gray);
+    border-radius: 0.5rem;
     font-family: inherit;
     font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
 }
 
 .form-group input:focus,
@@ -147,23 +185,33 @@
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 71, 163, 0.1);
+}
+
+.form-group input:focus + label,
+.form-group select:focus + label,
+.form-group textarea:focus + label {
+    color: var(--primary-color);
 }
 
 .form-checkbox {
     flex-direction: row;
     align-items: flex-start;
     gap: 0.75rem;
+    cursor: pointer;
 }
 
 .form-checkbox input {
     width: 20px;
     height: 20px;
     margin-top: 0.25rem;
+    cursor: pointer;
 }
 
 .form-checkbox label {
     margin-bottom: 0;
     font-size: 0.9rem;
+    cursor: pointer;
 }
 
 .submit-btn {
@@ -176,12 +224,42 @@
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .submit-btn:hover {
     background-color: var(--primary-dark);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.submit-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s infinite linear;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 /* Map Section */
@@ -201,9 +279,10 @@
     width: 100%;
     height: 400px;
     background-color: white;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .map-placeholder {
@@ -243,6 +322,14 @@
     color: var(--error-color);
     font-size: 0.85rem;
     margin-top: 0.25rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .form-group input.error,
@@ -253,13 +340,82 @@
 
 /* Form Success Message */
 .form-success {
-    display: none;
-    background-color: var(--success-color);
-    color: white;
+    background-color: #d4edda;
+    color: #155724;
     padding: 1rem;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     margin-bottom: 1rem;
-    text-align: center;
+    display: none;
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FAQ Section */
+.faq {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border: 1px solid var(--light-gray);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 1.5rem;
+    background-color: var(--light-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #f0f0f5;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+}
+
+.accordion-header i {
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header i {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+    padding: 1.5rem;
+    max-height: 500px;
 }
 
 /* Responsive styles for contact page */
@@ -290,24 +446,59 @@
     .submit-btn {
         width: 100%;
     }
+    
+    .social-contact .social-links {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
     .contact-item {
         flex-direction: column;
-        gap: 0.5rem;
+        align-items: center;
+        text-align: center;
     }
     
     .contact-item i {
-        margin-top: 0;
+        margin-bottom: 0.5rem;
     }
     
     .form-checkbox {
-        flex-direction: column;
         align-items: flex-start;
     }
     
     .form-checkbox input {
-        margin-bottom: 0.5rem;
+        margin-top: 0.3rem;
     }
+    
+    .accordion-header {
+        padding: 1rem;
+    }
+    
+    .accordion-header h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Accessibility Improvements */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.chat-btn:focus,
+.social-contact .social-links a:focus,
+.accordion-header:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 } 
