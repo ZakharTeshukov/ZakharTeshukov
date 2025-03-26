@@ -5,62 +5,37 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile navigation setup
     const initMobileNavigation = () => {
-        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuBox = document.querySelector('.menu-box');
         const navLinks = document.querySelector('.nav-links');
-        const navItems = document.querySelectorAll('.nav-links li');
+        const closeMenu = document.querySelector('.close-menu');
         
         // Add delay indices to nav items for staggered animation
+        const navItems = document.querySelectorAll('.nav-links li');
         navItems.forEach((item, index) => {
             item.style.setProperty('--i', index);
         });
         
-        if (mobileBtn) {
-            mobileBtn.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent document click from immediately closing
-                
-                // Toggle navigation
-                navLinks.classList.toggle('active');
-                
-                // Change hamburger icon to close icon
-                mobileBtn.innerHTML = navLinks.classList.contains('active') 
-                    ? '<i class="fas fa-times"></i>' 
-                    : '<i class="fas fa-bars"></i>';
-                
-                // Toggle body scroll
-                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                const nav = document.querySelector('.main-nav');
-                if (nav && !nav.contains(e.target) && navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    document.body.style.overflow = '';
-                }
-            });
-            
-            // Close mobile menu on ESC key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    document.body.style.overflow = '';
-                }
-            });
-            
-            // Prevent clicks on menu items from bubbling to document
-            navLinks.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
-            
-            // Close mobile menu when a link is clicked
+        if (menuToggle) {
+            // Close menu when clicking on a link
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    document.body.style.overflow = '';
+                    menuToggle.checked = false;
                 });
+            });
+            
+            // Close menu when clicking on close button
+            if (closeMenu) {
+                closeMenu.addEventListener('click', () => {
+                    menuToggle.checked = false;
+                });
+            }
+            
+            // Close menu on ESC key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && menuToggle.checked) {
+                    menuToggle.checked = false;
+                }
             });
         }
     };

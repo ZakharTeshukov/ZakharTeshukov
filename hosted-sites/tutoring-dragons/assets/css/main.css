@@ -106,7 +106,7 @@ body {
 
 /* Main content adjustment for fixed header */
 main {
-    padding-top: 80px; /* Adjust based on navbar height */
+    padding-top: 0; /* Remove padding to eliminate white space */
     min-height: calc(100vh - 400px); /* Ensure footer stays at bottom */
 }
 

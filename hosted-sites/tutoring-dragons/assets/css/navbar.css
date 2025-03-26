@@ -15,21 +15,18 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     background-color: var(--primary-color);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: padding 0.3s ease;
 }
 
-/* Scrolled state - smaller navbar */
+/* Navbar when scrolled */
 .main-nav.scrolled {
-    padding: 0.5rem 5%;
+    padding: 0.6rem 5%;
     background-color: rgba(var(--primary-color-rgb), 0.95);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Logo */
@@ -38,8 +35,9 @@
     align-items: center;
     color: var(--text-light);
     text-decoration: none;
-    transition: all 0.3s ease;
     cursor: pointer;
+    transition: transform 0.3s ease;
+    white-space: nowrap; /* Prevent logo text from wrapping */
 }
 
 /* Logo icon */
@@ -47,47 +45,25 @@
     font-size: 2rem;
     margin-right: 0.5rem;
     color: var(--accent-color);
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover i {
+    color: var(--secondary-color);
+    transform: rotate(-10deg);
 }
 
 /* Logo text */
 .logo h1 {
     font-size: 1.5rem;
     font-weight: 600;
+    transition: opacity 0.3s ease;
 }
 
 /* Logo image (if used instead of icon) */
 .logo img {
     height: 40px;
     margin-right: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-/* Logo in scrolled state */
-.main-nav.scrolled .logo {
-    transform: scale(0.9);
-}
-
-.main-nav.scrolled .logo i {
-    font-size: 1.8rem;
-}
-
-.main-nav.scrolled .logo h1 {
-    font-size: 1.3rem;
-}
-
-.main-nav.scrolled .logo img {
-    height: 35px;
-}
-
-/* Logo hover effect */
-.logo:hover {
-    transform: translateY(-2px);
-}
-
-.logo:hover i {
-    transform: rotate(-15deg);
-    color: var(--accent-color-hover);
 }
 
 /* Hide checkbox */
@@ -114,7 +90,7 @@
     position: relative;
     height: 2px;
     width: 100%;
-    transition: all .4s ease;
+    transition: all 0.3s ease;
 }
 
 .menu-button::before,
@@ -124,7 +100,7 @@
     height: 2px;
     width: 100%;
     background-color: #fff;
-    transition: all .4s ease;
+    transition: all 0.3s ease;
 }
 
 .menu-button::before {
@@ -148,22 +124,6 @@
     transform: rotate(-45deg);
 }
 
-/* Close button style */
-.close-menu {
-    display: none;
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    font-size: 1.5rem;
-    color: white;
-    cursor: pointer;
-    z-index: 2001;
-}
-
-.close-menu i {
-    font-size: 2rem;
-}
-
 /* Menu box for overlay */
 .menu-box {
     position: fixed;
@@ -173,11 +133,11 @@
     height: 0;
     background-color: var(--primary-color);
     overflow: hidden;
-    transition: all 0.4s ease;
     z-index: 2000;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: height 0.4s ease-in-out;
 }
 
 /* Nav links */
@@ -186,6 +146,7 @@
     justify-content: flex-end;
     align-items: center;
     list-style: none;
+    margin-left: auto; /* Push links to the right */
 }
 
 .nav-links li {
@@ -197,12 +158,17 @@
     text-decoration: none;
     font-weight: 500;
     position: relative;
-    transition: all 0.3s ease;
     padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    font-size: 1.05rem; /* Larger font size for nav links */
 }
 
 .nav-links a:hover {
-    color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.nav-links a.active {
+    color: var(--secondary-color);
 }
 
 .nav-links a.active::after,
@@ -218,29 +184,42 @@
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: var(--accent-color);
-    transition: all 0.3s ease;
+    background-color: var(--secondary-color);
     opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
 }
 
 /* Login button */
 .login-btn {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--text-dark) !important;
+    padding: 0.6rem 1.2rem !important;
     border-radius: 50px;
-    transition: all 0.3s ease;
+    font-weight: 600 !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease !important;
+    border: 2px solid transparent;
 }
 
 .login-btn:hover {
-    background-color: var(--accent-color-hover);
+    background-color: var(--secondary-light);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.login-btn::after {
+    display: none !important;
+}
+
 /* Media Queries */
 @media (max-width: 992px) {
+    .logo h1 {
+        opacity: 0;
+        width: 0;
+        overflow: hidden;
+        margin: 0;
+    }
+    
     .nav-links li {
         margin-left: 1rem;
     }
@@ -250,8 +229,35 @@
     }
     
     .login-btn {
-        padding: 0.4rem 0.8rem;
+        padding: 0.5rem 1rem !important;
         font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 769px) {
+    /* For desktop view, reset the fixed position and height */
+    .menu-box {
+        position: static;
+        height: auto;
+        background-color: transparent;
+        overflow: visible;
+    }
+    
+    /* Ensure nav-links are properly displayed */
+    .nav-links {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    /* Hide close menu button on desktop */
+    .close-menu {
+        display: none !important;
+    }
+    
+    /* Larger font size for desktop nav links */
+    .nav-links a {
+        font-size: 1.1rem;
     }
 }
 
@@ -276,16 +282,14 @@
         height: 100%;
     }
     
-    .close-menu {
+    /* Remove display of close menu button on mobile */
+    #menu-toggle:checked ~ .menu-box .close-menu {
         display: none;
     }
     
     .nav-links li {
         margin: 1.5rem 0;
         text-align: center;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.4s ease;
     }
     
     .nav-links a {
@@ -304,24 +308,10 @@
         left: 10%;
     }
     
-    .nav-links a:hover {
-        transform: translateY(-5px);
-    }
-    
-    #menu-toggle:checked ~ .menu-box .nav-links li {
-        opacity: 1;
-        transform: translateY(0);
-        transition-delay: 0.2s;
-    }
-    
     .login-btn {
         font-size: 1.2rem;
-        padding: 0.6rem 1.5rem;
+        padding: 0.6rem 1.5rem !important;
         margin-top: 1rem;
-    }
-    
-    .login-btn:hover {
-        transform: translateY(-3px);
     }
 }
 
@@ -349,12 +339,4 @@
     .nav-links a {
         font-size: 1.3rem;
     }
-}
-
-/* Animate menu items on mobile */
-#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(1) { transition-delay: 0.1s; }
-#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(2) { transition-delay: 0.2s; }
-#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(3) { transition-delay: 0.3s; }
-#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(4) { transition-delay: 0.4s; }
-#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(5) { transition-delay: 0.5s; }
-#menu-toggle:checked ~ .menu-box .nav-links li:nth-child(6) { transition-delay: 0.6s; } 
+} 
