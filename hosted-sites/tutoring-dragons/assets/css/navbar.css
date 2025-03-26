@@ -170,6 +170,7 @@
 .nav-links li {
     margin-left: 1.5rem;
     position: relative;
+    perspective: 1000px;
 }
 
 .nav-links a {
@@ -178,22 +179,45 @@
     font-weight: 500;
     position: relative;
     padding: 0.5rem 0;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
     font-size: 1.05rem; /* Larger font size for nav links */
+    display: inline-block;
 }
 
 .nav-links a:hover {
     color: var(--secondary-color);
+    transform: translateY(-3px);
 }
 
 .nav-links a.active {
     color: var(--secondary-color);
 }
 
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -10%;
+    width: 120%;
+    height: 100%;
+    background-color: rgba(242, 183, 5, 0.1);
+    border-radius: 4px;
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+    padding: 5px 0;
+}
+
+.nav-links a:hover::before {
+    transform: scale(1);
+}
+
 .nav-links a.active::after,
 .nav-links a:hover::after {
     width: 100%;
     opacity: 1;
+    transform: translateY(0);
 }
 
 .nav-links a::after {
@@ -205,7 +229,8 @@
     height: 2px;
     background-color: var(--secondary-color);
     opacity: 0;
-    transition: width 0.3s ease, opacity 0.3s ease;
+    transform: translateY(5px);
+    transition: width 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Login button */
@@ -218,12 +243,31 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease !important;
     border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.login-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.login-btn:hover::before {
+    width: 100%;
 }
 
 .login-btn:hover, 
 .login-btn.active {
     background-color: var(--secondary-light);
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -234,10 +278,11 @@
 /* Media Queries */
 @media (max-width: 992px) {
     .logo h1 {
-        opacity: 0;
-        width: 0;
-        overflow: hidden;
-        margin: 0;
+        font-size: 1.3rem;
+        opacity: 1;
+        width: auto;
+        overflow: visible;
+        margin-right: 0.5rem;
     }
     
     .nav-links li {
@@ -245,11 +290,6 @@
     }
     
     .nav-links a {
-        font-size: 0.9rem;
-    }
-    
-    .login-btn {
-        padding: 0.5rem 1rem !important;
         font-size: 0.9rem;
     }
 }
@@ -260,73 +300,58 @@
         display: flex;
     }
     
+    .logo h1 {
+        font-size: 1.2rem;
+        opacity: 1;
+        width: auto;
+        overflow: visible;
+        margin-right: 0.5rem;
+    }
+    
+    .logo i {
+        font-size: 1.8rem;
+    }
+    
     .menu-box {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 0;
+        height: 100vh;
         background-color: var(--primary-color);
-        overflow: hidden;
-        z-index: 2000;
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: height 0.4s ease-in-out;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 2000;
     }
     
     #menu-toggle:checked ~ .menu-box {
-        height: 100vh;
-        overflow-y: auto;
+        transform: translateX(0%);
     }
     
     .nav-links {
         flex-direction: column;
+        align-items: center;
         justify-content: center;
-        margin: 0;
-        padding: 2rem 0;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
-    }
-    
-    #menu-toggle:checked ~ .menu-box .nav-links {
-        opacity: 1;
-        transform: translateY(0);
+        width: 100%;
     }
     
     .nav-links li {
         margin: 1rem 0;
-        font-size: 1.5rem;
         text-align: center;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        transition-delay: calc(var(--i, 0) * 0.1s);
-    }
-    
-    #menu-toggle:checked ~ .menu-box .nav-links li {
-        opacity: 1;
-        transform: translateY(0);
+        width: 100%;
     }
     
     .nav-links a {
         font-size: 1.2rem;
-        color: var(--text-light);
-        font-weight: 600;
-        display: inline-block;
-        padding: 0.5rem 1rem;
-    }
-    
-    .nav-links a::after {
-        bottom: 0.3rem;
+        padding: 0.8rem 2rem;
+        display: block;
     }
     
     .login-btn {
         margin-top: 1rem;
-        padding: 0.8rem 2rem !important;
-        font-size: 1.1rem !important;
     }
     
     /* Fix for mobile nav scroll issue */
@@ -359,20 +384,20 @@
 }
 
 @media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+    
+    .logo i {
+        font-size: 1.6rem;
+    }
+    
     .main-nav {
-        padding: 0.8rem 1rem;
+        padding: 0.8rem 4%;
     }
     
     .logo {
         transform: scale(0.9);
-    }
-    
-    .logo i {
-        font-size: 1.8rem;
-    }
-    
-    .logo h1 {
-        font-size: 1.3rem;
     }
     
     .logo img {
