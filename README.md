@@ -86,7 +86,7 @@ The purpose of Global Debate Society (GDS), is to promote equitable access to de
 ![Static Badge](https://img.shields.io/badge/LeetCode-black?style=for-the-badge&logo=leetcode&logoColor=white&labelColor=%23A17F00&color=%23F8C300&link=https%3A%2F%2Fx.com%2Fzakharteshukov)
 [![Mail Badge](https://img.shields.io/badge/-zakharteshukov@gmail.com-9B4DFF?style=for-the-badge&logo=gmail&logoColor=white&labelColor=7A2EDD)](mailto:zakharteshukov@gmail.com)
 
-
+![Alt](https://repobeats.axiom.co/api/embed/f42ca629a9ea293f3ae8c12dc98cc9c364e20a6e.svg "Repobeats analytics image")
 
 # Top Repositories
 
