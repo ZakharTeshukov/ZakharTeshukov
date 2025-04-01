@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - Zakhar Teshukov</title>
+    <link rel="stylesheet" href="../assets/css/shared.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 2rem auto 4rem;
+            padding: 0 1.5rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .testimonial-quote {
+            font-size: 5rem;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            color: rgba(76, 175, 80, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            font-style: italic;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info {
+            flex: 1;
+        }
+        
+        .author-info h3 {
+            margin: 0 0 0.2rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .author-info .position {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .author-info .company {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .testimonial-rating {
+            display: flex;
+            margin-top: 1rem;
+            color: #FFC107;
+        }
+        
+        .testimonial-rating i {
+            margin-right: 3px;
+        }
+        
+        .featured-testimonial {
+            grid-column: 1 / -1;
+            background-color: #f8f9fa;
+            padding: 3rem;
+            border-left: 5px solid #4CAF50;
+        }
+        
+        .featured-testimonial .testimonial-content {
+            font-size: 1.2rem;
+            max-width: 800px;
+        }
+        
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+            
+            .featured-testimonial {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="../../index.html">ZAKHAR TESHUKOV</a>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button-container">
+                <div class="menu-button"></div>
+            </label>
+            
+            <div class="menu-box">
+                <ul class="nav-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="testimonials.html" class="active">Testimonials</a></li>
+                </ul>
+                
+                <div class="nav-social">
+                    <a href="https://linkedin.com/in/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com/zakhar_teshukov" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main style="margin-top:80px;">
+        <div class="testimonials-container">
+            <div class="page-header">
+                <h1>Client Testimonials</h1>
+                <p>What clients and colleagues have to say about their experiences working with me</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Featured Testimonial -->
+                <div class="testimonial-card featured-testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-content">
+                        Working with Zakhar on our AI-powered platform was a game-changer for our startup. His technical expertise in both frontend and backend development, combined with his creative approach to problem-solving, helped us create a product that exceeded our expectations. He was able to seamlessly translate our vision into a scalable solution that our users love. Beyond his technical skills, Zakhar was also an excellent communicator and truly became an extension of our team.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="../assets/images/testimonials/alex-morgan.jpg" alt="Alex Morgan">
+                        </div>
+                        <div class="author-info">
+                            <h3>Alex Morgan</h3>
+                            <div class="position">CEO & Founder</div>
+                            <div class="company">TechVision Startup</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Regular Testimonials -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-content">
+                        Zakhar's ability to understand complex requirements and translate them into elegant code is exceptional. He worked on our real-time data visualization dashboard and delivered a solution that was both beautiful and highly performant. His attention to detail and commitment to code quality made him a valuable asset to our project.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="../assets/images/testimonials/sarah-chen.jpg" alt="Sarah Chen">
+                        </div>
+                        <div class="author-info">
+                            <h3>Sarah Chen</h3>
+                            <div class="position">Product Manager</div>
+                            <div class="company">DataInsights Inc.</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-content">
+                        I've collaborated with Zakhar on multiple frontend projects, and his expertise with React and modern JavaScript frameworks is impressive. He's a thoughtful developer who builds components with reusability and scalability in mind. Perhaps most importantly, he's a great team player who elevates the work of everyone around him.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="../assets/images/testimonials/mark-johnson.jpg" alt="Mark Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h3>Mark Johnson</h3>
+                            <div class="position">Lead Developer</div>
+                            <div class="company">WebSolutions LLC</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-content">
+                        Zakhar developed a custom e-commerce solution for our boutique retail business that perfectly matched our unique requirements. He was patient in explaining technical concepts and provided excellent support even after the project was completed. The site has received numerous compliments from our customers on its design and usability.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="../assets/images/testimonials/emma-patel.jpg" alt="Emma Patel">
+                        </div>
+                        <div class="author-info">
+                            <h3>Emma Patel</h3>
+                            <div class="position">Owner</div>
+                            <div class="company">Elysian Boutique</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-content">
+                        Our team needed to modernize an aging backend system, and Zakhar was instrumental in architecting and implementing the new solution. His expertise in Node.js and database optimization resulted in a system that's not only more maintainable but also significantly faster. He's a thoughtful problem solver who considers both immediate needs and long-term implications.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="../assets/images/testimonials/james-wilson.jpg" alt="James Wilson">
+                        </div>
+                        <div class="author-info">
+                            <h3>James Wilson</h3>
+                            <div class="position">CTO</div>
+                            <div class="company">FinTech Solutions</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-content">
+                        Zakhar helped us implement AI features into our existing app, and the results exceeded our expectations. He has a deep understanding of machine learning concepts and knew exactly how to integrate them with our existing codebase. His work has given our product a competitive edge in the market.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="../assets/images/testimonials/olivia-garcia.jpg" alt="Olivia Garcia">
+                        </div>
+                        <div class="author-info">
+                            <h3>Olivia Garcia</h3>
+                            <div class="position">VP of Engineering</div>
+                            <div class="company">InnovateAI</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Projects</h3>
+                <ul>
+                    <li><a href="projects/ai-image-generator.html">AI Image Generator</a></li>
+                    <li><a href="projects/ai-code-assistant.html">AI Code Assistant</a></li>
+                    <li><a href="projects/real-time-chat-app.html">Real-time Chat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sub-Hosting</h3>
+                <ul>
+                    <li><a href="../../hosted-sites/global-debate-society/index.html">Global Debate Society</a></li>
+                    <li><a href="../../hosted-sites/tutoring-dragons/index.html">Tutoring Dragons</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Other</h3>
+                <ul>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+</body>
+</html> 

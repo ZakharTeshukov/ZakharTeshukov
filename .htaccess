@@ -1,0 +1,47 @@
+# Enable the RewriteEngine
+RewriteEngine On
+
+# Redirect requests from /hosted-sites/ to the root
+RewriteCond %{REQUEST_URI} ^/hosted-sites/(.*)$
+RewriteRule ^hosted-sites/(.*)$ /$1 [L,R=301]
+
+# Redirect requests from /main-site/ to the root
+RewriteCond %{REQUEST_URI} ^/main-site/(.*)$
+RewriteRule ^main-site/(.*)$ /$1 [L,R=301]
+
+# Ensure index.html is the default page
+DirectoryIndex index.html
+
+# Prevent directory listing
+Options -Indexes
+
+# Redirect www to non-www (if needed)
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Custom 404 page (if needed)
+ErrorDocument 404 /404.html
+
+# Protect sensitive directories
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Enable CORS for assets
+<IfModule mod_headers.c>
+    <FilesMatch "\.(jpg|jpeg|png|gif|css|js)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule> 

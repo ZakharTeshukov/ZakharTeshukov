@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Chat App - Zakhar Teshukov</title>
+    <link rel="stylesheet" href="../../assets/css/shared.css">
+    <link rel="stylesheet" href="../../assets/css/navbar.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/projects-detail.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../../../index.html" class="logo">ZAKHAR TESHUKOV</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <ul class="nav-items">
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../pages/about.html">About</a></li>
+                    <li><a href="../../pages/projects.html">Projects</a></li>
+                    <li><a href="../../pages/contact.html">Contact</a></li>
+                    <li><a href="../../pages/resume.html">Resume</a></li>
+                </ul>
+                <div class="nav-social">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav">
+                <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="nav-links">
+                    <div class="nav-items">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../pages/about.html">About</a></li>
+                        <li><a href="../../pages/projects.html">Projects</a></li>
+                        <li><a href="../../pages/contact.html">Contact</a></li>
+                        <li><a href="../../pages/resume.html">Resume</a></li>
+                    </div>
+                    <div class="nav-social">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <div class="project-container">
+            <div class="project-header">
+                <h1>Real-time Chat Application</h1>
+                <div class="project-meta">
+                    <span class="date">2023</span>
+                    <span class="category">Web Development</span>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="project-hero">
+                    <img src="../../assets/images/projects/chat-app.jpg" alt="Real-time Chat Application Interface">
+                </div>
+
+                <div class="project-description">
+                    <h2>Overview</h2>
+                    <p>A modern real-time chat application that allows users to communicate instantly across different devices. This project focuses on creating a seamless, responsive user experience with features like instant messaging, file sharing, and message encryption.</p>
+
+                    <h2>Features</h2>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <h3>Real-time Messaging</h3>
+                                <p>Instant message delivery with typing indicators and read receipts</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-user-friends"></i>
+                            <div>
+                                <h3>Group Chats</h3>
+                                <p>Create and manage group conversations with multiple participants</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-file-upload"></i>
+                            <div>
+                                <h3>Media Sharing</h3>
+                                <p>Share images, videos, and files with drag-and-drop functionality</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-lock"></i>
+                            <div>
+                                <h3>End-to-End Encryption</h3>
+                                <p>Secure communication with advanced encryption protocols</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-history"></i>
+                            <div>
+                                <h3>Message History</h3>
+                                <p>Access and search your complete conversation history</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h2>Technical Challenges</h2>
+                    <p>Developing this application required solving several key challenges:</p>
+                    
+                    <p>The most significant hurdle was implementing a scalable WebSocket architecture that could handle thousands of concurrent connections while maintaining low latency. I solved this by designing a microservice-based system using Redis for pub/sub communication between server instances.</p>
+                    
+                    <p>Another challenge was implementing end-to-end encryption that worked seamlessly across platforms. This required careful key management and a custom protocol for secure message exchange.</p>
+
+                    <h2>Technologies Used</h2>
+                    <div class="tech-stack">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>Socket.IO</span>
+                        <span>Redis</span>
+                        <span>MongoDB</span>
+                        <span>WebRTC</span>
+                        <span>AWS</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="btn-primary">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="#" class="btn-secondary">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../pages/about.html">About</a></li>
+                    <li><a href="../../pages/projects.html">Projects</a></li>
+                    <li><a href="../../pages/contact.html">Contact</a></li>
+                    <li><a href="../../pages/resume.html">Resume</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Projects</h3>
+                <ul>
+                    <li><a href="../projects/ai-image-generator.html">AI Image Generator</a></li>
+                    <li><a href="../projects/ai-code-assistant.html">AI Code Assistant</a></li>
+                    <li><a href="../projects/real-time-chat-app.html">Real-time Chat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section connect-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/navbar.js"></script>
+    <script src="../../assets/js/script.js"></script>
+</body>
+</html> 

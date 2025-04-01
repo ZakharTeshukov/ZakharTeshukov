@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Zakhar Teshukov</title>
+    <link rel="stylesheet" href="../assets/css/shared.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/contact.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="../../index.html">ZAKHAR TESHUKOV</a>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button-container">
+                <div class="menu-button"></div>
+            </label>
+            
+            <div class="menu-box">
+                <ul class="nav-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+                
+                <div class="nav-social">
+                    <a href="https://linkedin.com/in/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com/zakhar_teshukov" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top:80px;">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-header">
+                    <h2>Get in Touch</h2>
+                    <p class="location-tag"><i class="fas fa-map-marker-alt"></i> Ho Chi Minh City, Vietnam</p>
+                </div>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="far fa-envelope-open" aria-hidden="true"></i>
+                        <div>
+                            <h2>Email</h2>
+                            <p><a href="mailto:zakharteshukov@gmail.com" class="contact-link">zakharteshukov@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <div>
+                            <h2>Phone</h2>
+                            <p><a href="tel:+84901844197" class="contact-link">+84 90 184 41 97</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                        <div>
+                            <h2>Location</h2>
+                            <p>Ho Chi Minh City, Vietnam</p>
+                            <span class="location-detail">Originally from Russia, based in Vietnam for 8+ years</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bio-snippet">
+                    <h3>About Me</h3>
+                    <p>15-year-old student passionate about computer science, entrepreneurship, and debate. Currently developing AI-powered tools and leading a transnational debate organization across Southeast Asia.</p>
+                    <div class="expertise-tags">
+                        <span>AI Development</span>
+                        <span>Web Development</span>
+                        <span>Statistical Analysis</span>
+                        <span>Public Speaking</span>
+                    </div>
+                </div>
+                
+                <div class="contact-social">
+                    <a href="https://github.com" target="_blank" class="github" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="linkedin" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="twitter" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-form-section">
+                <h2>Send a Message</h2>
+                <p class="form-intro">Have a project in mind or interested in collaboration? I'm always open to discussing new opportunities and ideas.</p>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message">Please enter your name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message">Please enter a valid email</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                        <span class="error-message">Please enter a subject</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <span class="error-message">Please enter your message</span>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Send Message
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="spinner"></span>
+                    </button>
+                </form>
+                
+                <div class="form-success">
+                    <h3><i class="fas fa-check-circle"></i> Thank you!</h3>
+                    <p>Your message has been sent successfully. I'll get back to you as soon as possible.</p>
+                    <button>Close</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Projects</h3>
+                <ul>
+                    <li><a href="../pages/projects/ai-image-generator.html">AI Image Generator</a></li>
+                    <li><a href="../pages/projects/ai-code-assistant.html">AI Code Assistant</a></li>
+                    <li><a href="../pages/projects/real-time-chat-app.html">Real-time Chat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sub-Hosting</h3>
+                <ul>
+                    <li><a href="../pages/activities/global-debate.html">Global Debate Society</a></li>
+                    <li><a href="../pages/activities/tutoring.html">Tutoring Dragons</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html> 

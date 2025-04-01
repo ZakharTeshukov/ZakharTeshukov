@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Global Debate Society</title>
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/resources.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <h1>Global Debate Society</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="resources-hero">
+            <div class="container">
+                <h1>Debate Resources</h1>
+                <p>Access our comprehensive collection of debate materials, guides, and training resources</p>
+            </div>
+        </section>
+
+        <section class="resource-categories container">
+            <div class="grid grid-3">
+                <div class="category-card animate-on-scroll" id="guides">
+                    <div class="category-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h2>Debate Guides</h2>
+                    <p>Comprehensive guides covering various debate formats and techniques</p>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-file-pdf"></i>
+                                Beginner's Guide to Parliamentary Debate
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-file-pdf"></i>
+                                Advanced Argumentation Techniques
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-file-pdf"></i>
+                                Cross-Examination Strategies
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="category-card animate-on-scroll" id="materials">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h2>Training Materials</h2>
+                    <p>Structured learning materials for debate skill development</p>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-file-powerpoint"></i>
+                                Public Speaking Workshop Slides
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-file-word"></i>
+                                Case Building Templates
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-file-pdf"></i>
+                                Research Methodology Guide
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="category-card animate-on-scroll" id="videos">
+                    <div class="category-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h2>Video Library</h2>
+                    <p>Watch recorded debates, workshops, and training sessions</p>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-play-circle"></i>
+                                Championship Finals 2023
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-play-circle"></i>
+                                Masterclass: Rebuttal Techniques
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-play-circle"></i>
+                                Expert Panel Discussions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-resources container">
+            <h2 class="text-center mb-3">Featured Resources</h2>
+            <div class="grid grid-2">
+                <div class="featured-card animate-on-scroll">
+                    <div class="featured-content">
+                        <h3>Debate Handbook 2024</h3>
+                        <p>Our comprehensive guide to competitive debating, updated for 2024.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Latest debate formats</li>
+                            <li><i class="fas fa-check"></i> Case building strategies</li>
+                            <li><i class="fas fa-check"></i> Advanced rebuttal techniques</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Download Now</a>
+                    </div>
+                    <div class="featured-image">
+                        <img src="../assets/images/handbook-cover.jpg" alt="Debate Handbook Cover">
+                    </div>
+                </div>
+
+                <div class="featured-card animate-on-scroll">
+                    <div class="featured-content">
+                        <h3>Online Course: Mastering Debate</h3>
+                        <p>A comprehensive online course for aspiring debaters.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> 10+ hours of video content</li>
+                            <li><i class="fas fa-check"></i> Interactive exercises</li>
+                            <li><i class="fas fa-check"></i> Personal feedback</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                    <div class="featured-image">
+                        <img src="../assets/images/online-course.jpg" alt="Online Course Preview">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resource-search container">
+            <h2 class="text-center mb-3">Search Resources</h2>
+            <div class="search-container">
+                <input type="text" id="resourceSearch" placeholder="Search for resources...">
+                <button class="btn btn-primary">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+            <div class="filter-tags">
+                <button class="filter-tag active">All</button>
+                <button class="filter-tag">Guides</button>
+                <button class="filter-tag">Videos</button>
+                <button class="filter-tag">Templates</button>
+                <button class="filter-tag">Workshops</button>
+            </div>
+        </section>
+
+        <section class="premium-resources">
+            <div class="container text-center">
+                <h2>Premium Resources</h2>
+                <p>Get access to our exclusive collection of advanced debate materials</p>
+                <div class="premium-features grid grid-3">
+                    <div class="premium-feature animate-on-scroll">
+                        <i class="fas fa-crown"></i>
+                        <h3>Expert Analysis</h3>
+                        <p>In-depth analysis of championship debates</p>
+                    </div>
+                    <div class="premium-feature animate-on-scroll">
+                        <i class="fas fa-comments"></i>
+                        <h3>1-on-1 Coaching</h3>
+                        <p>Personal coaching from experienced debaters</p>
+                    </div>
+                    <div class="premium-feature animate-on-scroll">
+                        <i class="fas fa-laptop"></i>
+                        <h3>Online Workshops</h3>
+                        <p>Live interactive training sessions</p>
+                    </div>
+                </div>
+                <a href="join.html" class="btn btn-primary mt-3">Become a Premium Member</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#guides">Debate Guides</a></li>
+                    <li><a href="#materials">Training Materials</a></li>
+                    <li><a href="#videos">Video Library</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="contact.html">Get in Touch</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/resources.js"></script>
+</body>
+</html> 

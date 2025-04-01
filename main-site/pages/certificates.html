@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates - Zakhar Teshukov</title>
+    <link rel="stylesheet" href="../assets/css/shared.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .certificates-container {
+            max-width: 1200px;
+            margin: 2rem auto 4rem;
+            padding: 0 1.5rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .certificate-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .certificate-header {
+            background-color: #f5f5f5;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .certificate-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .certificate-title {
+            flex: 1;
+        }
+        
+        .certificate-title h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .certificate-title .issuer {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .certificate-body {
+            padding: 1.5rem;
+            flex: 1;
+        }
+        
+        .certificate-info {
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-item .label {
+            font-weight: 500;
+        }
+        
+        .certificate-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .certificate-actions a {
+            flex: 1;
+            display: block;
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .certificate-actions .view-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .certificate-actions .verify-btn {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .certificate-actions a:hover {
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .certificates-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="../../index.html">ZAKHAR TESHUKOV</a>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button-container">
+                <div class="menu-button"></div>
+            </label>
+            
+            <div class="menu-box">
+                <ul class="nav-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="certificates.html" class="active">Certificates</a></li>
+                </ul>
+                
+                <div class="nav-social">
+                    <a href="https://linkedin.com/in/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com/zakhar_teshukov" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main style="margin-top:80px;">
+        <div class="certificates-container">
+            <div class="page-header">
+                <h1>Professional Certificates</h1>
+                <p>View and verify my professional credentials and certifications from leading institutions and organizations</p>
+            </div>
+            
+            <div class="certificates-grid">
+                <!-- AWS Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="certificate-title">
+                            <h3>AWS Certified Solutions Architect</h3>
+                            <div class="issuer">Amazon Web Services</div>
+                        </div>
+                    </div>
+                    <div class="certificate-body">
+                        <div class="certificate-info">
+                            <div class="info-item">
+                                <span class="label">Credential ID:</span>
+                                <span class="value">AWS-ASA-12345</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Issued:</span>
+                                <span class="value">June 2023</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Expires:</span>
+                                <span class="value">June 2026</span>
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-btn">View Certificate</a>
+                            <a href="#" class="verify-btn">Verify</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Google Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" style="background-color: #4285F4;">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="certificate-title">
+                            <h3>Google Cloud Professional Developer</h3>
+                            <div class="issuer">Google Cloud</div>
+                        </div>
+                    </div>
+                    <div class="certificate-body">
+                        <div class="certificate-info">
+                            <div class="info-item">
+                                <span class="label">Credential ID:</span>
+                                <span class="value">GCP-PD-67890</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Issued:</span>
+                                <span class="value">April 2023</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Expires:</span>
+                                <span class="value">April 2025</span>
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-btn">View Certificate</a>
+                            <a href="#" class="verify-btn">Verify</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Microsoft Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" style="background-color: #00A4EF;">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <div class="certificate-title">
+                            <h3>Microsoft Certified: Azure Developer</h3>
+                            <div class="issuer">Microsoft</div>
+                        </div>
+                    </div>
+                    <div class="certificate-body">
+                        <div class="certificate-info">
+                            <div class="info-item">
+                                <span class="label">Credential ID:</span>
+                                <span class="value">MS-AZ-204-54321</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Issued:</span>
+                                <span class="value">September 2022</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Expires:</span>
+                                <span class="value">September 2024</span>
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-btn">View Certificate</a>
+                            <a href="#" class="verify-btn">Verify</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TensorFlow Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" style="background-color: #FF6F00;">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="certificate-title">
+                            <h3>TensorFlow Developer Certificate</h3>
+                            <div class="issuer">Google</div>
+                        </div>
+                    </div>
+                    <div class="certificate-body">
+                        <div class="certificate-info">
+                            <div class="info-item">
+                                <span class="label">Credential ID:</span>
+                                <span class="value">TF-DEV-98765</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Issued:</span>
+                                <span class="value">November 2021</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Expires:</span>
+                                <span class="value">No Expiration</span>
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-btn">View Certificate</a>
+                            <a href="#" class="verify-btn">Verify</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- MongoDB Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" style="background-color: #13AA52;">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="certificate-title">
+                            <h3>MongoDB Developer Certification</h3>
+                            <div class="issuer">MongoDB University</div>
+                        </div>
+                    </div>
+                    <div class="certificate-body">
+                        <div class="certificate-info">
+                            <div class="info-item">
+                                <span class="label">Credential ID:</span>
+                                <span class="value">MDB-DEV-24680</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Issued:</span>
+                                <span class="value">March 2022</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Expires:</span>
+                                <span class="value">No Expiration</span>
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-btn">View Certificate</a>
+                            <a href="#" class="verify-btn">Verify</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kubernetes Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" style="background-color: #326CE5;">
+                            <i class="fas fa-dharmachakra"></i>
+                        </div>
+                        <div class="certificate-title">
+                            <h3>Certified Kubernetes Administrator</h3>
+                            <div class="issuer">Cloud Native Computing Foundation</div>
+                        </div>
+                    </div>
+                    <div class="certificate-body">
+                        <div class="certificate-info">
+                            <div class="info-item">
+                                <span class="label">Credential ID:</span>
+                                <span class="value">CKA-13579</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Issued:</span>
+                                <span class="value">July 2022</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Expires:</span>
+                                <span class="value">July 2025</span>
+                            </div>
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="view-btn">View Certificate</a>
+                            <a href="#" class="verify-btn">Verify</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Projects</h3>
+                <ul>
+                    <li><a href="projects/ai-image-generator.html">AI Image Generator</a></li>
+                    <li><a href="projects/ai-code-assistant.html">AI Code Assistant</a></li>
+                    <li><a href="projects/real-time-chat-app.html">Real-time Chat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sub-Hosting</h3>
+                <ul>
+                    <li><a href="../../hosted-sites/global-debate-society/index.html">Global Debate Society</a></li>
+                    <li><a href="../../hosted-sites/tutoring-dragons/index.html">Tutoring Dragons</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Other</h3>
+                <ul>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../assets/js/script.js"></script>
+</body>
+</html> 

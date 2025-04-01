@@ -1,0 +1,418 @@
+/* Navbar Styles for Zakhar Teshukov Portfolio
+ * Slideover navigation menu for mobile 
+ * Based on Tutoring Dragons design
+ */
+
+/* Reset navbar styles */
+.main-nav *, 
+.main-nav *::before, 
+.main-nav *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Navigation */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--background);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Navbar when scrolled */
+.main-nav.scrolled {
+    padding: 0.6rem 5%;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+    transform: scale(1.02);
+}
+
+/* Hide checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Menu button container styles */
+.menu-button-container {
+    display: none;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2001;
+    transition: transform 0.3s ease;
+}
+
+.menu-button-container:hover {
+    transform: scale(1.1);
+}
+
+/* Menu button style */
+.menu-button {
+    display: block;
+    background-color: var(--text);
+    position: relative;
+    height: 2px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.menu-button::before,
+.menu-button::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: var(--text);
+    transition: all 0.3s ease;
+}
+
+.menu-button::before {
+    transform: translateY(-8px);
+}
+
+.menu-button::after {
+    transform: translateY(8px);
+}
+
+/* Menu button animation when checked */
+#menu-toggle:checked ~ .menu-button-container .menu-button {
+    background-color: transparent;
+}
+
+#menu-toggle:checked ~ .menu-button-container .menu-button::before {
+    transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .menu-button-container .menu-button::after {
+    transform: rotate(-45deg);
+}
+
+/* Menu box for overlay */
+.menu-box {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Nav links */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Push links to the right */
+    transition: all 0.3s ease;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+    position: relative;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.05rem;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.nav-links a.active {
+    color: var(--accent);
+}
+
+/* Underline effect for nav links - centered animation */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transform: translateX(-50%);
+    transition: width 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    border-radius: 3px;
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+    width: 100%;
+}
+
+/* Reset the after pseudo-element that was causing issues */
+.nav-links a::after {
+    display: none;
+}
+
+/* Social links */
+.nav-social {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.nav-social a {
+    color: var(--text);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.nav-social a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+    background-color: rgba(0, 102, 204, 0.1);
+}
+
+/* Mobile styles */
+@media (max-width: 992px) {
+    .logo a {
+        font-size: 1.3rem;
+    }
+    
+    .nav-links li {
+        margin-left: 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-button-container {
+        display: flex;
+    }
+    
+    .logo a {
+        font-size: 1.2rem;
+    }
+    
+    /* Menu box becomes a fullscreen overlay */
+    .menu-box {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 1);
+        padding: 2rem;
+        overflow-y: auto;
+        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        z-index: 2000;
+    }
+    
+    /* Remove dark overlay */
+    .menu-box::before {
+        display: none;
+    }
+    
+    /* Animate menu in when checked */
+    #menu-toggle:checked ~ .menu-box {
+        right: 0;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 1rem 0;
+        margin: 0;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.4s ease;
+    }
+    
+    .nav-links li {
+        margin: 0.8rem 0;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        transition-delay: calc(0.05s * var(--i, 0));
+    }
+    
+    /* Animate links in when menu is checked */
+    #menu-toggle:checked ~ .menu-box .nav-links {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    #menu-toggle:checked ~ .menu-box .nav-links li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .nav-links a {
+        font-size: 1.5rem;
+        padding: 0.7rem 0;
+        display: inline-block;
+        width: auto;
+        position: relative;
+    }
+    
+    .nav-links a:hover {
+        transform: translateY(-3px);
+        color: var(--accent);
+    }
+    
+    .nav-links a.active {
+        color: var(--accent);
+    }
+    
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Simplify animations for mobile */
+    .nav-links a::after {
+        display: none;
+    }
+    
+    /* Centered underline animation for mobile menu */
+    .nav-links a::before {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent);
+        transform: translateX(-50%);
+        transition: width 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+        border-radius: 3px;
+    }
+    
+    /* Override for mobile menu - use smaller underline width */
+    .nav-links a:hover::before {
+        width: 60%;
+    }
+    
+    .nav-links a.active::before {
+        width: 70%;
+    }
+    
+    /* Social links in mobile menu */
+    .nav-social {
+        margin: 2rem 0 0 0;
+        justify-content: center;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+        transition-delay: 0.3s;
+    }
+    
+    #menu-toggle:checked ~ .menu-box .nav-social {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .nav-social a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 1rem;
+    }
+    
+    .main-nav {
+        padding: 0.8rem 4%;
+    }
+    
+    .menu-button-container {
+        width: 28px;
+    }
+    
+    .nav-links a {
+        font-size: 1.3rem;
+    }
+    
+    .nav-social {
+        gap: 1rem;
+    }
+    
+    .nav-social a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Animation delay for staggered nav items */
+.nav-links li:nth-child(1) { --i: 1; }
+.nav-links li:nth-child(2) { --i: 2; }
+.nav-links li:nth-child(3) { --i: 3; }
+.nav-links li:nth-child(4) { --i: 4; }
+.nav-links li:nth-child(5) { --i: 5; }
+.nav-links li:nth-child(6) { --i: 6; }
+.nav-links li:nth-child(7) { --i: 7; }
+
+/* Make sure navbar stays on top */
+.main-nav {
+    z-index: 1000;
+}

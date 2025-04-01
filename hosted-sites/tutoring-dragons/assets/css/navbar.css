@@ -1,0 +1,586 @@
+/* Navbar Styles for Tutoring Dragons
+ * Fullscreen overlay navigation
+ * Updated for consistent styling across all pages
+ */
+
+/* Reset navbar styles */
+.main-nav *, 
+.main-nav *::before, 
+.main-nav *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Navigation */
+.main-nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--navbar-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+/* Navbar when scrolled */
+.main-nav.scrolled {
+    padding: 0.6rem 5%;
+    background-color: rgba(var(--primary-color-rgb), 0.95);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--navbar-text);
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    white-space: nowrap; /* Prevent logo text from wrapping */
+}
+
+/* Logo icon */
+.logo i {
+    font-size: 2rem;
+    margin-right: 1.2rem;
+    color: var(--accent-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover i {
+    color: var(--secondary-color);
+    transform: rotate(-10deg);
+}
+
+/* Logo text */
+.logo h1 {
+    font-family: 'Dragon Quest', var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, var(--secondary-color), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 5px rgba(242, 183, 5, 0.3);
+}
+
+/* Logo image (if used instead of icon) */
+.logo img {
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+/* Hide checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Menu button container styles */
+.menu-button-container {
+    display: none;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2001;
+    transition: transform 0.3s ease;
+}
+
+.menu-button-container:hover {
+    transform: scale(1.1);
+}
+
+.menu-button-container:hover .menu-button,
+.menu-button-container:hover .menu-button::before,
+.menu-button-container:hover .menu-button::after {
+    background-color: var(--secondary-color);
+}
+
+/* Menu button style */
+.menu-button {
+    display: block;
+    background-color: #fff;
+    position: relative;
+    height: 2px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.menu-button::before,
+.menu-button::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.menu-button::before {
+    transform: translateY(-8px);
+}
+
+.menu-button::after {
+    transform: translateY(8px);
+}
+
+/* Menu button animation when checked */
+#menu-toggle:checked ~ .menu-button-container .menu-button {
+    background-color: transparent;
+}
+
+#menu-toggle:checked ~ .menu-button-container .menu-button::before {
+    transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .menu-button-container .menu-button::after {
+    transform: rotate(-45deg);
+}
+
+/* Menu box for overlay */
+.menu-box {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Nav links */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Push links to the right */
+    transition: all 0.3s ease;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+    position: relative;
+    perspective: 1000px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.05rem; /* Larger font size for nav links */
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+
+/* Removing the previous highlight effect */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    border-radius: 3px;
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after {
+    width: 100%;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    opacity: 0;
+    transform: translateY(5px);
+    transition: width 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Login button */
+.login-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-dark) !important;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: 50px;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease !important;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.login-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.login-btn:hover::before {
+    width: 100%;
+}
+
+.login-btn:hover, 
+.login-btn.active {
+    background-color: var(--secondary-light);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn::after {
+    display: none !important;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .logo h1 {
+        font-size: 1.3rem;
+        opacity: 1;
+        width: auto;
+        overflow: visible;
+        margin-right: 0.5rem;
+    }
+    
+    .nav-links li {
+        margin-left: 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile menu and responsive settings */
+@media (max-width: 768px) {
+    .menu-button-container {
+        display: flex;
+    }
+    
+    .logo h1 {
+        font-size: 1.2rem;
+        opacity: 1;
+        width: auto;
+        overflow: visible;
+        margin-right: 0.5rem;
+    }
+    
+    .logo i {
+        font-size: 1.8rem;
+    }
+    
+    /* Enhanced mobile menu animation with 3D effects */
+    .menu-box {
+        position: fixed;
+        top: 0;
+        right: 0; 
+        width: 100%; /* Changed to 100% for fullscreen */
+        height: 100vh;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%) rotateY(-30deg);
+        transform-origin: right center;
+        transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
+        z-index: 2000;
+        box-shadow: -5px 0px 20px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        perspective: 1200px;
+        backface-visibility: hidden;
+    }
+    
+    /* Dark overlay behind the menu */
+    .menu-box::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+    }
+    
+    #menu-toggle:checked ~ .menu-box {
+        transform: translateX(0%) rotateY(0deg);
+        opacity: 1;
+    }
+    
+    #menu-toggle:checked ~ .menu-box::before {
+        opacity: 1;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transform: translateZ(-50px);
+        transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .nav-links li {
+        margin: 1.5rem 0;
+        text-align: center;
+        width: 100%;
+        transform: translateX(50px) scale(0.8);
+        opacity: 0;
+        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+        transition-delay: calc(var(--i, 0) * 0.1s);
+        transform-style: preserve-3d;
+    }
+    
+    #menu-toggle:checked ~ .menu-box .nav-links {
+        transform: translateZ(0);
+    }
+    
+    #menu-toggle:checked ~ .menu-box .nav-links li {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+    
+    .nav-links a {
+        font-size: 1.6rem;
+        padding: 0.8rem 2rem;
+        display: block;
+        position: relative;
+        transform: perspective(1000px) rotateX(0);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+        transform-style: preserve-3d;
+    }
+    
+    .nav-links a:hover {
+        transform: perspective(1000px) rotateX(5deg) translateY(-5px) translateZ(20px);
+        color: var(--secondary-color);
+    }
+    
+    .login-btn {
+        margin-top: 1rem;
+        padding: 0.8rem 2.5rem !important; /* Increased side padding */
+    }
+    
+    /* Fix for mobile nav scroll issue */
+    body.menu-open {
+        overflow: hidden !important;
+        position: fixed;
+        width: 100%;
+    }
+    
+    /* Create 3D text effect */
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+        transform: scaleX(0) translateZ(-10px);
+        opacity: 0;
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+        transform-origin: center;
+    }
+    
+    .nav-links a:hover::after {
+        transform: scaleX(1) translateZ(-10px);
+        opacity: 1;
+    }
+    
+    /* Add a glow effect on hover */
+    .nav-links a::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: var(--secondary-color);
+        opacity: 0;
+        transform: translateZ(15px);
+        filter: blur(8px);
+        transition: opacity 0.4s ease;
+        z-index: -1;
+    }
+    
+    .nav-links a:hover::before {
+        opacity: 0.5;
+    }
+}
+
+@media (min-width: 769px) {
+    /* For desktop view, reset any mobile settings */
+    .menu-box {
+        position: static;
+        height: auto;
+        background-color: transparent;
+        overflow: visible;
+    }
+    
+    .nav-links {
+        opacity: 1;
+        transform: translateY(0);
+        flex-direction: row;
+    }
+    
+    .nav-links li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+    
+    .logo i {
+        font-size: 1.6rem;
+    }
+    
+    .main-nav {
+        padding: 0.8rem 4%;
+    }
+    
+    .logo {
+        transform: scale(0.9);
+    }
+    
+    .logo img {
+        height: 32px;
+    }
+    
+    .nav-links a {
+        font-size: 1.3rem;
+    }
+}
+
+.mobile-menu-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    position: relative;
+    z-index: 2002;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+
+.mobile-menu-btn:hover {
+    transform: scale(1.1) rotateY(10deg);
+}
+
+.mobile-menu-btn i {
+    color: var(--text-light);
+    font-size: 1.4rem;
+    transition: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    transform-style: preserve-3d;
+}
+
+.mobile-menu-btn:hover i {
+    color: var(--secondary-color);
+    transform: translateZ(10px);
+    text-shadow: 0 0 10px rgba(var(--secondary-color-rgb), 0.5);
+}
+
+/* Button background animation */
+.mobile-menu-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(var(--secondary-color-rgb), 0.2) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: -1;
+}
+
+.mobile-menu-btn:hover::before {
+    transform: scale(1.5);
+}
+
+/* Add icon rotation and scale animation */
+.mobile-menu-btn .fa-bars {
+    transform: rotateY(0deg);
+}
+
+.mobile-menu-btn .fa-times {
+    transform: rotateY(180deg) scale(1.2);
+    color: var(--secondary-color);
+}
+
+/* Add ripple effect for menu button */
+.mobile-menu-btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    z-index: -1;
+}
+
+.mobile-menu-btn:active::after {
+    transform: scale(2);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+} 
