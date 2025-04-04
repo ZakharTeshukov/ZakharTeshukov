@@ -14,28 +14,42 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <!-- Favicon -->
     <link rel="icon" href="main-site/assets/images/favicon.ico" type="image/x-icon">
+    <style>
+        .navbar {
+            position: fixed !important;
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="main-nav">
-            <div class="logo">
-                <a href="index.html">ZAKHAR TESHUKOV</a>
-            </div>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">ZAKHAR TESHUKOV</a>
             
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-button-container">
-                <div class="menu-button"></div>
-            </label>
-            
-            <div class="menu-box">
-                <ul class="nav-links">
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <ul class="nav-items">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="main-site/pages/about.html">About</a></li>
                     <li><a href="main-site/pages/projects.html">Projects</a></li>
                     <li><a href="main-site/pages/contact.html">Contact</a></li>
                     <li><a href="main-site/pages/resume.html">Resume</a></li>
                 </ul>
-                
                 <div class="nav-social">
                     <a href="https://linkedin.com/in/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <i class="fab fa-linkedin"></i>
@@ -48,8 +62,35 @@
                     </a>
                 </div>
             </div>
-        </nav>
-    </header>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav">
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="nav-links">
+                    <ul class="nav-items">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="main-site/pages/about.html">About</a></li>
+                        <li><a href="main-site/pages/projects.html">Projects</a></li>
+                        <li><a href="main-site/pages/contact.html">Contact</a></li>
+                        <li><a href="main-site/pages/resume.html">Resume</a></li>
+                    </ul>
+                    <div class="nav-social">
+                        <a href="https://linkedin.com/in/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com/zakhar_teshukov" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </nav>
     
     <main>
         <!-- Hero Section -->
