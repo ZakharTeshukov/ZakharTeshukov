@@ -11,62 +11,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="../../index.html" class="logo">ZAKHAR TESHUKOV</a>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="../../index.html">ZAKHAR TESHUKOV</a>
+            </div>
             
-            <!-- Desktop Navigation -->
-            <div class="desktop-nav">
-                <ul class="nav-items">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button-container">
+                <div class="menu-button"></div>
+            </label>
+            
+            <div class="menu-box">
+                <ul class="nav-links">
                     <li><a href="../../index.html">Home</a></li>
                     <li><a href="about.html" class="active">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="resume.html">Resume</a></li>
                 </ul>
+                
                 <div class="nav-social">
-                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <a href="https://linkedin.com/in/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com" target="_blank" aria-label="GitHub">
+                    <a href="https://github.com/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <a href="https://instagram.com/zakhar_teshukov" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
             </div>
-            
-            <!-- Mobile Navigation -->
-            <div class="mobile-nav">
-                <button class="mobile-menu-btn" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <nav class="nav-links">
-                    <div class="nav-items">
-                        <li><a href="../../index.html">Home</a></li>
-                        <li><a href="about.html" class="active">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                    </div>
-                    <div class="nav-social">
-                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <main class="about-page" style="margin-top:50px;">
+    <main class="about-page" style="margin-top:80px;">
         <div class="about-container">
             <div class="about-header">
                 <span class="about-tag">About Me</span>
