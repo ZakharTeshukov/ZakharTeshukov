@@ -1,4 +1,4 @@
-# Zakhar Teshukov </> Full-Satack Developer
+# Zakhar Teshukov </> Full-Stack Developer
 
 <div>
   <br />
