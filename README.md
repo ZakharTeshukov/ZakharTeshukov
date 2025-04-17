@@ -15,7 +15,7 @@
 #
 
 # About Me
-I am a high school student at FoxFord Online, living in Vietnam. I am a full-stack developer with expiriance in web developemt and systems design.
+I am a high school student and a full-stack developer with expiriance in web developemt and systems design.
 
 # My Stack
 
