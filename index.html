@@ -6,14 +6,14 @@
     <meta name="description" content="Zakhar Teshukov - Full Stack Developer & Designer specializing in AI solutions and web applications">
     <meta name="keywords" content="Full Stack Developer, Designer, AI, Web Development, Portfolio">
     <title>Zakhar Teshukov | Full Stack Developer & Designer</title>
-    <link rel="stylesheet" href="main-site/assets/css/shared.css">
-    <link rel="stylesheet" href="main-site/assets/css/navbar.css">
-    <link rel="stylesheet" href="main-site/assets/css/styles.css">
-    <link rel="stylesheet" href="main-site/assets/css/footer.css">
+    <link rel="stylesheet" href="src/assets/css/shared.css">
+    <link rel="stylesheet" href="src/assets/css/navbar.css">
+    <link rel="stylesheet" href="src/assets/css/styles.css">
+    <link rel="stylesheet" href="src/assets/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <!-- Favicon -->
-    <link rel="icon" href="main-site/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="src/assets/images/favicon.ico" type="image/x-icon">
     <style>
         .navbar {
             position: static !important;
@@ -29,10 +29,9 @@
             <div class="desktop-nav">
                 <ul class="nav-items">
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="main-site/pages/about.html">About</a></li>
-                    <li><a href="main-site/pages/projects.html">Projects</a></li>
-                    <li><a href="main-site/pages/contact.html">Contact</a></li>
-                    <li><a href="main-site/pages/resume.html">Resume</a></li>
+                    <li><a href="src/pages/projects.html">Projects</a></li>
+                    <li><a href="src/pages/contact.html">Contact</a></li>
+                    <li><a href="src/pages/resume.html">Resume</a></li>
                 </ul>
                 <div class="nav-social">
                     <a href="https://linkedin.com/in/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -55,10 +54,9 @@
                 <nav class="nav-links">
                     <ul class="nav-items">
                         <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="main-site/pages/about.html">About</a></li>
-                        <li><a href="main-site/pages/projects.html">Projects</a></li>
-                        <li><a href="main-site/pages/contact.html">Contact</a></li>
-                        <li><a href="main-site/pages/resume.html">Resume</a></li>
+                        <li><a href="src/pages/projects.html">Projects</a></li>
+                        <li><a href="src/pages/contact.html">Contact</a></li>
+                        <li><a href="src/pages/resume.html">Resume</a></li>
                     </ul>
                     <div class="nav-social">
                         <a href="https://linkedin.com/in/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -82,7 +80,97 @@
             <div class="hero-content">
                 <h1><span class="typewriter">Hello, I'm <span class="highlight">Zakhar Teshukov</span></span></h1>
                 <p>Full Stack Developer & Designer</p>
-                <a href="main-site/pages/projects.html" class="cta-button">View My Work</a>
+                <a href="src/pages/projects.html" class="cta-button">View My Work</a>
+            </div>
+        </section>
+
+        <!-- About Section (merged from about.html) -->
+        <section id="about" class="about-page" style="margin-top:50px;">
+            <div class="about-container">
+                <div class="about-header">
+                    <span class="about-tag">About Me</span>
+                    <h1>Passionate Developer & Student</h1>
+                    <p class="lead">15-year-old student from Russia, based in Vietnam, with a passion for technology, entrepreneurship, and debate.</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-section">
+                        <h2>Background</h2>
+                        <p>Originally from Russia and living in Vietnam for over 8 years, I've developed a unique perspective that combines different cultural approaches to problem-solving. As a student managing both Vietnamese and Russian education systems, I've learned to be adaptable and efficient in my learning approach.</p>
+                    </div>
+                    <div class="about-section">
+                        <h2>Interests & Focus</h2>
+                        <div class="interests-grid">
+                            <div class="interest-card">
+                                <i class="fas fa-code"></i>
+                                <h3>Programming</h3>
+                                <p>Full-stack development with a focus on AI integration and modern web technologies.</p>
+                            </div>
+                            <div class="interest-card">
+                                <i class="fas fa-robot"></i>
+                                <h3>Artificial Intelligence</h3>
+                                <p>Developing AI-powered tools and exploring machine learning applications.</p>
+                            </div>
+                            <div class="interest-card">
+                                <i class="fas fa-comments"></i>
+                                <h3>Debate</h3>
+                                <p>Leading a transnational debate organization across Southeast Asia.</p>
+                            </div>
+                            <div class="interest-card">
+                                <i class="fas fa-lightbulb"></i>
+                                <h3>Entrepreneurship</h3>
+                                <p>Working on innovative projects that combine technology and education.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-section">
+                        <h2>Skills</h2>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3>Development</h3>
+                                <div class="skill-tags">
+                                    <span>JavaScript</span>
+                                    <span>Python</span>
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>HTML/CSS</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h3>AI & Data</h3>
+                                <div class="skill-tags">
+                                    <span>Machine Learning</span>
+                                    <span>Data Analysis</span>
+                                    <span>NLP</span>
+                                    <span>Statistical Analysis</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Soft Skills</h3>
+                                <div class="skill-tags">
+                                    <span>Public Speaking</span>
+                                    <span>Leadership</span>
+                                    <span>Problem Solving</span>
+                                    <span>Communication</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-section">
+                        <h2>Current Projects</h2>
+                        <div class="projects-preview">
+                            <div class="project-item">
+                                <h3>AI Debate Assistant</h3>
+                                <p>Developing an AI-powered tool to help debaters prepare arguments and analyze speeches.</p>
+                                <a href="#" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                            <div class="project-item">
+                                <h3>Educational Platform</h3>
+                                <p>Creating an online platform to connect students with tutoring opportunities.</p>
+                                <a href="#" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -92,7 +180,7 @@
             <div class="project-grid">
                 <!-- AI Image Generator -->
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('main-site/assets/images/projects/ai-generator.jpg')" aria-hidden="true"></div>
+                    <div class="project-image" style="background-image: url('src/assets/images/projects/ai-generator.jpg')" aria-hidden="true"></div>
                     <h3>AI Image Generator</h3>
                     <p>Advanced AI-powered image generation using DALL-E API.</p>
                     <div class="project-tech">
@@ -100,12 +188,12 @@
                         <span>Node.js</span>
                         <span>OpenAI</span>
                     </div>
-                    <a href="main-site/pages/projects/ai-image-generator.html" class="project-link">Learn More</a>
+                    <a href="src/pages/projects/ai-image-generator.html" class="project-link">Learn More</a>
                 </div>
 
                 <!-- Real-time Chat App -->
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('main-site/assets/images/projects/chat-app.jpg')" aria-hidden="true"></div>
+                    <div class="project-image" style="background-image: url('src/assets/images/projects/chat-app.jpg')" aria-hidden="true"></div>
                     <h3>Real-time Chat App</h3>
                     <p>Feature-rich chat application with real-time messaging and file sharing.</p>
                     <div class="project-tech">
@@ -113,12 +201,12 @@
                         <span>Express</span>
                         <span>MongoDB</span>
                     </div>
-                    <a href="main-site/pages/projects/real-time-chat-app.html" class="project-link">Learn More</a>
+                    <a href="src/pages/projects/real-time-chat-app.html" class="project-link">Learn More</a>
                 </div>
 
                 <!-- AI Code Assistant -->
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('main-site/assets/images/projects/code-assistant.jpg')" aria-hidden="true"></div>
+                    <div class="project-image" style="background-image: url('src/assets/images/projects/code-assistant.jpg')" aria-hidden="true"></div>
                     <h3>AI Code Assistant</h3>
                     <p>Intelligent coding assistant powered by machine learning models.</p>
                     <div class="project-tech">
@@ -126,12 +214,12 @@
                         <span>TensorFlow</span>
                         <span>GPT-4</span>
                     </div>
-                    <a href="main-site/pages/projects/ai-code-assistant.html" class="project-link">Learn More</a>
+                    <a href="src/pages/projects/ai-code-assistant.html" class="project-link">Learn More</a>
                 </div>
 
                 <!-- E-commerce Platform -->
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('main-site/assets/images/projects/ecommerce.jpg')" aria-hidden="true"></div>
+                    <div class="project-image" style="background-image: url('src/assets/images/projects/ecommerce.jpg')" aria-hidden="true"></div>
                     <h3>E-commerce Platform</h3>
                     <p>Full-featured online store with advanced filtering and search.</p>
                     <div class="project-tech">
@@ -139,12 +227,12 @@
                         <span>Node.js</span>
                         <span>MongoDB</span>
                     </div>
-                    <a href="main-site/pages/projects/e-commerce-platform.html" class="project-link">Learn More</a>
+                    <a href="src/pages/projects/e-commerce-platform.html" class="project-link">Learn More</a>
                 </div>
 
                 <!-- AI Content Generator -->
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('main-site/assets/images/projects/content-generator.jpg')" aria-hidden="true"></div>
+                    <div class="project-image" style="background-image: url('src/assets/images/projects/content-generator.jpg')" aria-hidden="true"></div>
                     <h3>AI Content Generator</h3>
                     <p>AI-powered platform for generating articles and blog posts.</p>
                     <div class="project-tech">
@@ -152,12 +240,12 @@
                         <span>GPT-4</span>
                         <span>FastAPI</span>
                     </div>
-                    <a href="main-site/pages/projects/ai-content-generator.html" class="project-link">Learn More</a>
+                    <a href="src/pages/projects/ai-content-generator.html" class="project-link">Learn More</a>
                 </div>
 
                 <!-- Task Management System -->
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url('main-site/assets/images/projects/task-manager.jpg')" aria-hidden="true"></div>
+                    <div class="project-image" style="background-image: url('src/assets/images/projects/task-manager.jpg')" aria-hidden="true"></div>
                     <h3>Task Management System</h3>
                     <p>Comprehensive project management tool with team collaboration.</p>
                     <div class="project-tech">
@@ -165,7 +253,7 @@
                         <span>Spring Boot</span>
                         <span>PostgreSQL</span>
                     </div>
-                    <a href="main-site/pages/projects/task-management-system.html" class="project-link">Learn More</a>
+                    <a href="src/pages/projects/task-management-system.html" class="project-link">Learn More</a>
                 </div>
             </div>
         </section>
@@ -177,18 +265,17 @@
                 <h3>Navigation</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="main-site/pages/about.html">About</a></li>
-                    <li><a href="main-site/pages/projects.html">Projects</a></li>
-                    <li><a href="main-site/pages/contact.html">Contact</a></li>
-                    <li><a href="main-site/pages/resume.html">Resume</a></li>
+                    <li><a href="src/pages/projects.html">Projects</a></li>
+                    <li><a href="src/pages/contact.html">Contact</a></li>
+                    <li><a href="src/pages/resume.html">Resume</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Projects</h3>
                 <ul>
-                    <li><a href="main-site/pages/projects/ai-image-generator.html">AI Image Generator</a></li>
-                    <li><a href="main-site/pages/projects/ai-code-assistant.html">AI Code Assistant</a></li>
-                    <li><a href="main-site/pages/projects/real-time-chat-app.html">Real-time Chat</a></li>
+                    <li><a href="src/pages/projects/ai-image-generator.html">AI Image Generator</a></li>
+                    <li><a href="src/pages/projects/ai-code-assistant.html">AI Code Assistant</a></li>
+                    <li><a href="src/pages/projects/real-time-chat-app.html">Real-time Chat</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -201,9 +288,9 @@
             <div class="footer-section">
                 <h3>Other</h3>
                 <ul>
-                    <li><a href="main-site/pages/resume.html">Resume</a></li>
-                    <li><a href="main-site/pages/certificates.html">Certificates</a></li>
-                    <li><a href="main-site/pages/testimonials.html">Testimonials</a></li>
+                    <li><a href="src/pages/resume.html">Resume</a></li>
+                    <li><a href="src/pages/certificates.html">Certificates</a></li>
+                    <li><a href="src/pages/testimonials.html">Testimonials</a></li>
                 </ul>
             </div>
             <div class="footer-section connect-section">
@@ -218,8 +305,8 @@
     </footer>
     
     <!-- Scripts -->
-    <script src="main-site/assets/js/script.js" defer></script>
-    <script src="main-site/assets/js/typewriter.js" defer></script>
-    <script src="main-site/assets/js/navbar.js" defer></script>
+    <script src="src/assets/js/script.js" defer></script>
+    <script src="src/assets/js/typewriter.js" defer></script>
+    <script src="src/assets/js/navbar.js" defer></script>
 </body>
 </html> 
