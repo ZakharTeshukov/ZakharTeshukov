@@ -1,20 +1,20 @@
 /**
- * Navbar JavaScript for Zakhar Teshukov Portfolio
- * Handles mobile navigation menu and scroll effects
+ * Layout JavaScript - Contains functionality for navbar and footer
  */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     // Mobile navigation setup
     const initMobileNavigation = () => {
         const menuToggle = document.getElementById('menu-toggle');
         const menuBox = document.querySelector('.menu-box');
         const navLinks = document.querySelector('.nav-links');
+        const closeMenu = document.querySelector('.close-menu');
         const body = document.body;
         
         // Add delay indices to nav items for staggered animation
         const navItems = document.querySelectorAll('.nav-links li');
         navItems.forEach((item, index) => {
-            item.style.setProperty('--i', index + 1);
+            item.style.setProperty('--i', index);
         });
         
         if (menuToggle) {
@@ -47,10 +47,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
             
+            // Close menu when clicking on close button
+            if (closeMenu) {
+                closeMenu.addEventListener('click', () => {
+                    menuToggle.checked = false;
+                    // Restore scrolling
+                    body.style.overflow = '';
+                    body.style.position = '';
+                    body.style.width = '';
+                    body.classList.remove('menu-open');
+                });
+            }
+            
             // Close menu on ESC key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && menuToggle.checked) {
                     menuToggle.checked = false;
+                    // Restore scrolling
                     body.style.overflow = '';
                     body.style.position = '';
                     body.style.width = '';
@@ -60,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // Navbar scroll effects
+    // Add shrink effect to navbar on scroll
     const initScrollEffect = () => {
         const navbar = document.querySelector('.main-nav');
         
@@ -74,6 +87,50 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     };
+
+    // Newsletter subscription form in footer
+    const initNewsletterForm = () => {
+        const form = document.querySelector('.newsletter-form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = form.querySelector('input[type="email"]');
+                
+                if (emailInput && emailInput.value.trim()) {
+                    // In a real implementation, this would send the subscription to a server
+                    alert('Thank you for subscribing to our newsletter!');
+                    emailInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+        }
+    };
+
+    // Smooth scrolling for anchor links
+    const initSmoothScrolling = () => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    
+                    // Calculate offset based on navbar height
+                    const navbarHeight = document.querySelector('.main-nav').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = targetPosition - navbarHeight - 20; // Extra 20px padding
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    };
     
     // Set active link based on current page
     const setActiveNavLink = () => {
@@ -86,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get the path from the href attribute
             const linkPath = link.getAttribute('href');
-            if (!linkPath) return;
             
             // Set active class for matching paths or home page
             if (currentPath.endsWith(linkPath) || 
@@ -96,51 +152,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
-    
-    // Add touch swipe support for closing menu
-    const initTouchSupport = () => {
-        let touchStartX = 0;
-        const menuToggle = document.getElementById('menu-toggle');
-        const body = document.body;
-        
-        document.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        document.addEventListener('touchend', (e) => {
-            const touchEndX = e.changedTouches[0].screenX;
-            
-            // Close menu on swipe (any direction with minimum 75px swipe)
-            if (menuToggle && menuToggle.checked && Math.abs(touchEndX - touchStartX) > 75) {
-                menuToggle.checked = false;
-                body.style.overflow = '';
-                body.style.position = '';
-                body.style.width = '';
-                body.classList.remove('menu-open');
-            }
-        });
-    };
-    
-    // Handle window resize
-    const initResizeHandler = () => {
-        const menuToggle = document.getElementById('menu-toggle');
-        const body = document.body;
-        
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768 && menuToggle && menuToggle.checked) {
-                menuToggle.checked = false;
-                body.style.overflow = '';
-                body.style.position = '';
-                body.style.width = '';
-                body.classList.remove('menu-open');
-            }
-        });
-    };
 
-    // Initialize all navigation functionality
+    // Initialize all layout functionality
     initMobileNavigation();
     initScrollEffect();
+    initNewsletterForm();
+    initSmoothScrolling();
     setActiveNavLink();
-    initTouchSupport();
-    initResizeHandler();
 }); 

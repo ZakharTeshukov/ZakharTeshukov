@@ -21,18 +21,25 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="index.html" class="logo">ZAKHAR TESHUKOV</a>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="index.html">ZAKHAR TESHUKOV</a>
+            </div>
             
-            <!-- Desktop Navigation -->
-            <div class="desktop-nav">
-                <ul class="nav-items">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button-container">
+                <div class="menu-button"></div>
+            </label>
+            
+            <div class="menu-box">
+                <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="src/pages/projects.html">Projects</a></li>
                     <li><a href="src/pages/contact.html">Contact</a></li>
                     <li><a href="src/pages/resume.html">Resume</a></li>
                 </ul>
+                
                 <div class="nav-social">
                     <a href="https://linkedin.com/in/zakhar-teshukov" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <i class="fab fa-linkedin"></i>

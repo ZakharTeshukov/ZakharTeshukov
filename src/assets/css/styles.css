@@ -294,12 +294,31 @@ main {
     }
     
     .project-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
     
     .project-image {
         height: 180px;
+    }
+    
+    .project-card h3 {
+        font-size: 1.3rem;
+        padding: 1rem 1rem 0.5rem;
+    }
+    
+    .project-card p {
+        padding: 0 1rem 0.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .project-tech {
+        padding: 0 1rem 0.75rem;
+    }
+    
+    .project-card .project-link {
+        padding: 0.7rem 0;
+        width: 85%;
     }
 }
 
@@ -322,8 +341,45 @@ main {
     }
     
     .project-tech span {
-        padding: 0.3rem 0.6rem;
         font-size: 0.75rem;
+        padding: 0.3rem 0.7rem;
+    }
+    
+    .project-image {
+        height: 200px;
+    }
+    
+    .project-card {
+        max-width: 100%;
+    }
+    
+    .project-card .project-link {
+        width: 90%;
+        margin-top: 0.5rem;
+    }
+    
+    .hero {
+        min-height: calc(100vh - 60px);
+        padding: 1rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-content .cta-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
     }
 }
 
@@ -719,7 +775,7 @@ main {
     }
     
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .hero-content p {
@@ -994,4 +1050,11 @@ main {
 .project-card .project-link:hover {
     background-color: #555;
     transform: translateY(-2px);
+}
+
+/* Ensure navbar is always visible and properly displayed on mobile */
+.navbar {
+    position: fixed !important;
+    transform: translateY(0) !important;
+    opacity: 1 !important;
 }
