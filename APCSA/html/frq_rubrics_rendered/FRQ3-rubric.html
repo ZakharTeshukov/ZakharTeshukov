@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frq3 Rubric - FRQ Rubric - AP CSA Resources</title>
+    <link rel="stylesheet" href="../custom_styles/unit_review_styles.css">
+    <style>
+        body { padding-top: 70px; }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; }
+        .content-container { max-width: 900px; margin: 2rem auto; padding: 20px; background-color: var(--bg-color); color: var(--text-color); border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .markdown-body h1, .markdown-body h2, .markdown-body h3 { color: var(--heading-color); border-bottom: 1px solid var(--table-border); padding-bottom: 0.3em; }
+        .markdown-body table { border-collapse: collapse; width: 100%; margin-bottom: 1rem; }
+        .markdown-body th, .markdown-body td { border: 1px solid var(--table-border); padding: 0.5rem; text-align: left; }
+        .markdown-body th { background-color: var(--table-header-bg); }
+        .markdown-body tr:nth-child(even) { background-color: var(--table-even-row-bg); }
+        .markdown-body code { background-color: var(--code-bg-color); padding: 0.2em 0.4em; margin: 0; font-size: 85%; border-radius: 3px; }
+        .markdown-body pre { background-color: var(--code-bg-color); padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .markdown-body pre code { padding: 0; margin: 0; font-size: inherit; background-color: transparent; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--link-color); text-decoration: none; font-weight: bold; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="navbar-brand">AP CSA Resources Home</a>
+        <button class="theme-toggle">Toggle Mode</button>
+    </nav>
+
+    <div class="content-container">
+        <a href="../view-all-frq-rubrics.html" class="back-link">&larr; Back to All FRQ Rubric Documents</a>
+        <div class="markdown-body">
+<h2>Summary</h2>
+<p>The 2024 AP Computer Science A FRQ 3 assesses students’ ability to traverse and manipulate a 1D <code>ArrayList&lt;String&gt;</code> through two methods:</p>
+<ul>
+<li><strong>Part (a)</strong> <code>isWordChain()</code> (3 points) evaluates adjacency checks and substring searches.</li>
+<li><strong>Part (b)</strong> <code>createList(String target)</code> (6 points) evaluates list construction, filtering, and element transformation.
+  A maximum of <strong>3 penalty points</strong> may be assessed per question for side effects, undeclared variables, or collection‐access errors, but only after points are earned (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>, <a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf?utm_source=chatgpt.com" title="[PDF] 2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</li>
+</ul>
+<hr />
+<h2>Overall Penalties</h2>
+<p>Penalty points (1 point each) apply <strong>only</strong> in parts that have earned credit, up to 3 per question.</p>
+<ul>
+<li><strong>Array/collection access confusion</strong> (<code>[]</code> vs. <code>get()</code>) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>)</li>
+<li><strong>Extraneous side‐effect code</strong> (e.g., printing) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>)</li>
+<li><strong>Undeclared local variables</strong> (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>)</li>
+<li><strong>Destruction of persistent data</strong> (mutating parameters) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>)</li>
+<li><strong>Void method returning a value</strong> (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>)</li>
+</ul>
+<p><em>No penalties</em> are assessed for unambiguous spelling/case issues, missing semicolons/braces when intent is clear, or extraneous non–side‐effect code (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>).</p>
+<hr />
+<h2>Part (a): <code>public boolean isWordChain()</code> (3 points)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Point</th>
+<th style="text-align: left;">Criterion &amp; Decision Rules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>Traverses all adjacent pairs</strong> of <code>wordList</code> without bounds errors. <br>• May “return early” if a violation is found ⮕ still earn point if bounds correct (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;"><strong>Checks containment</strong>: uses <code>indexOf(previous)</code> to determine whether each string contains its predecessor. <br>• May use a single comparison or compare every element to the first ⮕ still earn (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;"><strong>Returns correct boolean</strong>: <code>false</code> on first failed pair; <code>true</code> if all adjacent pairs satisfy the condition. <br>• Must use both <code>return true</code> and <code>return false</code> in appropriate contexts (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>).</td>
+</tr>
+</tbody>
+</table>
+<p><em>Total for part (a): 3 points</em> (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>)</p>
+<hr />
+<h2>Part (b): <code>public ArrayList&lt;String&gt; createList(String target)</code> (6 points)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Point</th>
+<th style="text-align: left;">Criterion &amp; Decision Rules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;"><strong>Declares and constructs</strong> an <code>ArrayList&lt;String&gt;</code> named (typically) <code>result</code>. <br>• Omission or wrong type (e.g., array) ⮕ no credit (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: left;"><strong>Traverses all elements</strong> of <code>wordList</code> without bounds errors. <br>• “Return early” is allowed if bounds remain correct (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>6</strong></td>
+<td style="text-align: left;"><em><em>Identifies strings that begin with</em> the parameter</em>* (<code>current.indexOf(target) == 0</code>). <br>• Must guard against too-short strings or use equivalent <code>substring</code>-with-length check (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>7</strong></td>
+<td style="text-align: left;"><strong>Constructs new String</strong> by removing <code>target.length()</code> characters from the start of each matching element. <br>• Off-by-one or missing substring guard affects point 6 only (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: left;"><strong>Adds at least one</strong> correctly constructed <code>String</code> to <code>result</code> via <code>result.add(...)</code>. <br>• Must call <code>add</code> on the constructed list; wrong list or wrong method ⮕ no credit (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>9</strong></td>
+<td style="text-align: left;"><strong>Returns</strong> the <code>ArrayList&lt;String&gt;</code> containing <strong>all and only</strong> appropriately revised strings, in the original order. <br>• No modification of <code>wordList</code>; no extra or missing elements; no early/misplaced return (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>).</td>
+</tr>
+</tbody>
+</table>
+<p><em>Total for part (b): 6 points</em> (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q3.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 3">AP Central</a>)</p>
+<hr />
+<p>This rubric is drawn directly from the 2024 College Board Scoring Guidelines for AP Computer Science A FRQ 3, ensuring precise alignment with official grading standards.</p>
+        </div>
+    </div>
+
+    <script src="../darkmode.js"></script>
+</body>
+</html>

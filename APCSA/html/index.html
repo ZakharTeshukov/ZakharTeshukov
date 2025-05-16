@@ -3,60 +3,107 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AP CSA Review Guides</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AP CSA Resources</title>
+    <link rel="stylesheet" href="custom_styles/index_styles.css">
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html">AP CSA Review Guides</a>
-        <button class="theme-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+        <a href="index.html" class="navbar-brand">AP CSA Resources</a>
+        <button class="theme-toggle">Toggle Mode</button>
     </nav>
 
-    <h1>AP Computer Science A Review Guides</h1>
+    <h1>AP CSA Resources</h1>
+
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search resources...">
+    </div>
     
-    <div class="unit-grid">
-        <div class="unit-card">
-            <h3>Unit 1</h3>
-            <a href="Unit-1-Review-Guide.html">Primitive Types</a>
-        </div>
-        <div class="unit-card">
-            <h3>Unit 2</h3>
-            <a href="Unit-2-Review-Guide.html">Using Objects</a>
-        </div>
-        <div class="unit-card">
-            <h3>Unit 3</h3>
-            <a href="Unit-3-Review-Guide.html">Boolean Expressions and if Statements</a>
-        </div>
-        <div class="unit-card">
-            <h3>Unit 4</h3>
-            <a href="Unit-4-Review-Guide.html">Iteration</a>
-        </div>
-        <div class="unit-card">
-            <h3>Unit 5</h3>
-            <a href="Unit-5-Review-Guide.html">Writing Classes</a>
-        </div>
-        <div class="unit-card">
-            <h3>Unit 6</h3>
-            <a href="Unit-6-Review-Guide.html">Array</a>
-        </div>
-        <div class="unit-card">
-            <h3>Unit 7</h3>
-            <a href="Unit-7-Review-Guide.html">ArrayList</a>
-        </div>
-        <div class="unit-card">
-            <h3>Unit 8</h3>
-            <a href="Unit-8-Review-Guide.html">2D Array</a>
-        </div>
-        <div class="unit-card">
-            <h3>Unit 9</h3>
-            <a href="Unit-9-Review-Guide.html">Inheritance</a>
-        </div>
-        <div class="unit-card">
-            <h3>Unit 10</h3>
-            <a href="Unit-10-Review-Guide.html">Recursion</a>
-        </div>
+    <div class="resources-container">
+        <!-- Study Materials Section -->
+        <section class="resource-section">
+            <h2>Study Materials</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>Unit Review Guides</h3>
+                    <div class="unit-list" id="review-guides-list">
+                        <a href="Unit-1-Review-Guide.html">Unit 1: Review</a>
+                        <a href="Unit-2-Review-Guide.html">Unit 2: Review</a>
+                        <a href="Unit-3-Review-Guide.html">Unit 3: Review</a>
+                        <a href="Unit-4-Review-Guide.html">Unit 4: Review</a>
+                        <a href="Unit-5-Review-Guide.html">Unit 5: Review</a>
+                        <a href="Unit-6-Review-Guide.html">Unit 6: Review</a>
+                        <a href="Unit-7-Review-Guide.html">Unit 7: Review</a>
+                        <a href="Unit-8-Review-Guide.html">Unit 8: Review</a>
+                        <a href="Unit-9-Review-Guide.html">Unit 9: Review</a>
+                        <a href="Unit-10-Review-Guide.html">Unit 10: Review</a>
+                    </div>
+                    <a href="#" class="view-all-button" id="view-all-review-guides-btn" style="display:none;">View All Review Guides</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Practice FRQs (Files)</h3>
+                    <div class="unit-list" id="practice-frqs-list">
+                        <a href="../practiceFRQs/FRQ1.java">FRQ1.java</a>
+                        <a href="../practiceFRQs/FRQ2.java">FRQ2.java</a>
+                    </div>
+                    <a href="#" class="view-all-button" id="view-all-practice-frqs-btn" style="display:none;">View All Practice FRQs (Files)</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Practice Projects (Files)</h3>
+                    <div class="unit-list" id="practice-projects-list">
+                        <a href="../practiceProjects/Task7.java">Task7.java</a>
+                        <a href="../practiceProjects/task1.java">task1.java</a>
+                        <a href="../practiceProjects/task10.java">task10.java</a>
+                        <a href="../practiceProjects/task2.java">task2.java</a>
+                        <a href="../practiceProjects/task3.java">task3.java</a>
+                        <a href="../practiceProjects/task4.java">task4.java</a>
+                        <a href="../practiceProjects/task5.java">task5.java</a>
+                        <a href="../practiceProjects/task6.java">task6.java</a>
+                        <a href="../practiceProjects/task8.java">task8.java</a>
+                        <a href="../practiceProjects/task9.java">task9.java</a>
+                    </div>
+                    <a href="#" class="view-all-button" id="view-all-practice-projects-btn" style="display:none;">View All Practice Projects (Files)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Resources Section -->
+        <section class="resource-section">
+            <h2>Additional Resources</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>FRQ Rubric</h3>
+                    <div class="folder-contents" id="frq-rubric-list">
+                        <a href="frq_rubrics_rendered/FRQ1-rubric.html">Frq1 Rubric</a>
+                        <a href="frq_rubrics_rendered/FRQ2-rubric.html">Frq2 Rubric</a>
+                        <a href="frq_rubrics_rendered/FRQ3-rubric.html">Frq3 Rubric</a>
+                        <a href="frq_rubrics_rendered/FRQ4-rubric.html">Frq4 Rubric</a>
+                    </div>
+                    <a href="#" class="view-all-button" id="view-all-frq-rubric-btn" style="display:none;">View All FRQ Rubrics</a>
+                </div>
+                <div class="resource-card">
+                    <h3>College Board Materials</h3>
+                    <div class="folder-contents" id="college-board-materials-list">
+                        <a href="../collegeBoardMeterials/AP Computer Science A Course Description Fall 2025.pdf">Ap Computer Science A Course Description Fall 2025</a>
+                        <a href="../collegeBoardMeterials/AP Computer Science A Java Reference.pdf">Ap Computer Science A Java Reference</a>
+                        <a href="../collegeBoardMeterials/AP Computer Science A Scoring Guidelines 2024.pdf">Ap Computer Science A Scoring Guidelines 2024</a>
+                    </div>
+                    <a href="#" class="view-all-button" id="view-all-college-board-materials-btn" style="display:none;">View All College Board Materials</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Review Materials (from reviewMaterials)</h3>
+                    <div class="folder-contents" id="review-materials-list">
+                        <a href="../reviewMaterials/AP Computer Science A Cheatsheet 2023.pdf">Ap Computer Science A Cheatsheet 2023</a>
+                        <a href="../reviewMaterials/AP Cram Sheet.pdf">Ap Cram Sheet</a>
+                    </div>
+                    <a href="#" class="view-all-button" id="view-all-review-materials-btn" style="display:none;">View All Review Materials</a>
+                </div>
+            </div>
+        </section>
+
     </div>
 
     <script src="darkmode.js"></script>
+    <script src="search.js"></script>
+    <script src="pagination.js"></script> 
 </body>
-</html> 
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>All Practice Projects - AP CSA Resources</title>
+    <link rel="stylesheet" href="custom_styles/unit_review_styles.css">
+    <style>
+        body { padding-top: 70px; }
+        .content-container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .item-list { list-style-type: none; padding-left: 0; }
+        .item-list li { margin-bottom: 0.75rem; }
+        .item-list a { 
+            text-decoration: none; 
+            color: var(--heading-color); 
+            font-size: 1.1rem;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .item-list a:hover { 
+            background-color: var(--table-hover);
+            color: var(--text-color);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: var(--heading-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">AP CSA Home</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </nav>
+
+    <div class="content-container">
+        <a href="index.html" class="back-link">&larr; Back to Main Page</a>
+        <h1>All Practice Projects (Files)</h1>
+        <ul class="item-list">
+            <li><a href="../practiceProjects/task1.java">task1.java</a></li>
+            <li><a href="../practiceProjects/task2.java">task2.java</a></li>
+            <li><a href="../practiceProjects/task3.java">task3.java</a></li>
+            <li><a href="../practiceProjects/task4.java">task4.java</a></li>
+            <li><a href="../practiceProjects/task5.java">task5.java</a></li>
+            <li><a href="../practiceProjects/task6.java">task6.java</a></li>
+            <li><a href="../practiceProjects/Task7.java">Task7.java</a></li>
+            <li><a href="../practiceProjects/task8.java">task8.java</a></li>
+            <li><a href="../practiceProjects/task9.java">task9.java</a></li>
+            <li><a href="../practiceProjects/task10.java">task10.java</a></li>
+            <li><a href="../practiceProjects/task11.java">task11.java</a></li>
+            <li><a href="../practiceProjects/task12.java">task12.java</a></li>
+            <!-- Add any other project files if they exist -->
+        </ul>
+    </div>
+
+    <script>
+        // Basic dark mode toggle persistence
+        function toggleDarkMode() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                document.querySelector('.theme-toggle').textContent = 'Switch to Dark Mode';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                document.querySelector('.theme-toggle').textContent = 'Switch to Light Mode';
+            }
+        }
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.querySelector('.theme-toggle').textContent = 'Switch to Light Mode';
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            document.querySelector('.theme-toggle').textContent = 'Switch to Dark Mode';
+        }
+    </script>
+</body>
+</html> 

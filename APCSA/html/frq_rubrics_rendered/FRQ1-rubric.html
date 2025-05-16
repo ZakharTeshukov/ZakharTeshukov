@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frq1 Rubric - FRQ Rubric - AP CSA Resources</title>
+    <link rel="stylesheet" href="../custom_styles/unit_review_styles.css">
+    <style>
+        body { padding-top: 70px; }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; }
+        .content-container { max-width: 900px; margin: 2rem auto; padding: 20px; background-color: var(--bg-color); color: var(--text-color); border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .markdown-body h1, .markdown-body h2, .markdown-body h3 { color: var(--heading-color); border-bottom: 1px solid var(--table-border); padding-bottom: 0.3em; }
+        .markdown-body table { border-collapse: collapse; width: 100%; margin-bottom: 1rem; }
+        .markdown-body th, .markdown-body td { border: 1px solid var(--table-border); padding: 0.5rem; text-align: left; }
+        .markdown-body th { background-color: var(--table-header-bg); }
+        .markdown-body tr:nth-child(even) { background-color: var(--table-even-row-bg); }
+        .markdown-body code { background-color: var(--code-bg-color); padding: 0.2em 0.4em; margin: 0; font-size: 85%; border-radius: 3px; }
+        .markdown-body pre { background-color: var(--code-bg-color); padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .markdown-body pre code { padding: 0; margin: 0; font-size: inherit; background-color: transparent; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--link-color); text-decoration: none; font-weight: bold; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="navbar-brand">AP CSA Resources Home</a>
+        <button class="theme-toggle">Toggle Mode</button>
+    </nav>
+
+    <div class="content-container">
+        <a href="../view-all-frq-rubrics.html" class="back-link">&larr; Back to All FRQ Rubric Documents</a>
+        <div class="markdown-body">
+<p>Before diving into the detailed point‐by‐point criteria, here’s a high‐level summary of the FRQ 1 rubric for the 2024 AP Computer Science A exam:</p>
+<ul>
+<li><strong>Total points:</strong> 9 points (Part (a): 4 points; Part (b): 5 points) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li><strong>Question focus:</strong> Methods and control structures involving simulation methods (<code>simulateOneDay</code>, <code>simulateManyDays</code>) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li><strong>Scoring approach:</strong> Award points based on the presence and correctness of key algorithmic and structural elements; penalties (up to 3 per question) are applied only after points are earned (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<hr />
+<h2>Overview of Scoring Criteria</h2>
+<p>The rubric is divided into two parts corresponding to the two methods students implement. For each part:</p>
+<ol>
+<li><strong>Point‐by‐point criteria</strong> specify exactly what feature or behavior must be in the student’s code to earn the point. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li><strong>Decision rules</strong> clarify allowable variations (e.g., off‐by‐one in comparisons, reversed comparison operators) and disallowed errors. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ol>
+<p>No part may receive negative credit; penalty points (such as array‐access confusion or extraneous side‐effects) are only deducted in subparts that have already earned credit, with a maximum of 3 penalty points per question. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</p>
+<hr />
+<h2>Part (a): <code>simulateOneDay</code> (4 points)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Point</th>
+<th style="text-align: left;">Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><strong>Random value generation:</strong>  At least one call to <code>Math.random()</code> to generate a random value.</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><strong>5% probability branch:</strong>  Use a comparison of the random value against a constant to create a 5% case.</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><strong>Random integer [10, 50]:</strong>  Cast and scale a random value to produce an integer uniformly in [10, 50].</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>Food‐consumption logic:</strong>  Multiply by <code>numBirds</code>, compare to <code>currentFood</code>, and subtract correctly in both cases.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Random value generation (1 point):</strong></li>
+</ol>
+<ul>
+<li>Student must call <code>Math.random()</code> at least once. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Even if they fail to use the generated value, the point can be earned; incorrect calls or omission of <code>Math.random()</code> disqualify. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<ol start="2">
+<li><strong>5% probability branch (1 point):</strong></li>
+</ol>
+<ul>
+<li>Code must implement two cases based on the random value (e.g., <code>if (condition &lt; 0.05) … else …</code>). (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Variations (using <code>&lt;=</code>, reversing 5%/95%, or slight casting differences) are acceptable provided the probability is correctly split. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<ol start="3">
+<li><strong>Random integer [10, 50] (1 point):</strong></li>
+</ol>
+<ul>
+<li>Student must generate an integer in [10, 50], typically via <code>(int)(Math.random()*41) + 10</code>. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Off‐by‐one casting or incorrect call of <code>Math.random</code> disqualifies. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<ol start="4">
+<li><strong>Food‐consumption logic (1 point):</strong></li>
+</ol>
+<ul>
+<li>Code must compute <code>totalEaten = numBirds * eachBirdEats</code>, compare with <code>currentFood</code>, and update <code>currentFood</code> correctly in all cases. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Acceptable even if comparisons use <code>&lt;=</code>/<code>&gt;=</code>, but reversing branches or allowing negative <code>currentFood</code> invalidates. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<hr />
+<h2>Part (b): <code>simulateManyDays</code> (5 points)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Point</th>
+<th style="text-align: left;">Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><strong>Call <code>simulateOneDay</code>:</strong>  At least one correct invocation with the <code>numBirds</code> parameter.</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><strong>Loop guard:</strong>  Loop (e.g., <code>for</code> or <code>while</code>) runs at most <code>numDays</code> times and checks <code>currentFood &gt; 0</code>.</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><strong>Day‐count algorithm:</strong>  Correctly count the number of days simulated while food remains.</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><strong>Food‐availability check:</strong>  Compare <code>currentFood</code> to 0 within loop to determine continuation.</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><strong>Return value:</strong>  Return an <code>int</code> in all cases (either days simulated or <code>numDays</code>).</td>
+</tr>
+</tbody>
+</table>
+<ol start="5">
+<li><strong>Call <code>simulateOneDay</code> (1 point):</strong></li>
+</ol>
+<ul>
+<li>Must invoke <code>simulateOneDay(numBirds)</code> within the loop. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Incorrect calls or calls on another object/class lose the point. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<ol start="6">
+<li><strong>Loop guard (1 point):</strong></li>
+</ol>
+<ul>
+<li>Loop must iterate no more than <code>numDays</code> times and guard against <code>currentFood == 0</code>. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Variations in loop construct are allowed if logically equivalent. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<ol start="7">
+<li><strong>Day‐count algorithm (1 point):</strong></li>
+</ol>
+<ul>
+<li>Code must initialize and update a counter for days where food was available. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Extra iterations are permissible if counter remains correct; failure to test or initialize counter loses credit. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<ol start="8">
+<li><strong>Food‐availability check (1 point):</strong></li>
+</ol>
+<ul>
+<li>Must compare <code>currentFood</code> to 0 inside loop to decide whether to continue simulation. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Off‐by‐one in loop context is acceptable as long as comparison exists. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<ol start="9">
+<li><strong>Return value (1 point):</strong></li>
+</ol>
+<ul>
+<li>Must return an <code>int</code> (either the count or <code>numDays</code>). (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Returning a constant is acceptable if type correct. (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<hr />
+<h2>Penalties and Common Errors</h2>
+<p>A maximum of <strong>3 penalty points</strong> may be assessed per question, <strong>only</strong> in parts that have earned credit. Common 1-point penalties:</p>
+<ul>
+<li><strong>Array/collection access confusion</strong> (e.g., using <code>[]</code> vs. <code>get()</code>) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li><strong>Extraneous side-effect code</strong> (e.g., printing, incorrect precondition) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li><strong>Undeclared local variables</strong> (using variables without declaration) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li><strong>Destruction of persistent data</strong> (modifying parameter references) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li><strong>Void method returning a value</strong> (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<p><strong>No Penalty</strong> for minor issues with no side‐effects, such as:</p>
+<ul>
+<li>Case/spelling discrepancies when unambiguous (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Use of <code>private</code>/<code>public</code> qualifier on local variables (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Missing semicolons or braces when intent is clear (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<hr />
+<p>This rubric aligns precisely with the official 2024 College Board scoring guidelines for AP Computer Science A FRQ 1, ensuring transparent and fair grading.</p>
+        </div>
+    </div>
+
+    <script src="../darkmode.js"></script>
+</body>
+</html>

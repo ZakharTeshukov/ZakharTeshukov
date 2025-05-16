@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frq4 Rubric - FRQ Rubric - AP CSA Resources</title>
+    <link rel="stylesheet" href="../custom_styles/unit_review_styles.css">
+    <style>
+        body { padding-top: 70px; }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; }
+        .content-container { max-width: 900px; margin: 2rem auto; padding: 20px; background-color: var(--bg-color); color: var(--text-color); border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .markdown-body h1, .markdown-body h2, .markdown-body h3 { color: var(--heading-color); border-bottom: 1px solid var(--table-border); padding-bottom: 0.3em; }
+        .markdown-body table { border-collapse: collapse; width: 100%; margin-bottom: 1rem; }
+        .markdown-body th, .markdown-body td { border: 1px solid var(--table-border); padding: 0.5rem; text-align: left; }
+        .markdown-body th { background-color: var(--table-header-bg); }
+        .markdown-body tr:nth-child(even) { background-color: var(--table-even-row-bg); }
+        .markdown-body code { background-color: var(--code-bg-color); padding: 0.2em 0.4em; margin: 0; font-size: 85%; border-radius: 3px; }
+        .markdown-body pre { background-color: var(--code-bg-color); padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .markdown-body pre code { padding: 0; margin: 0; font-size: inherit; background-color: transparent; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--link-color); text-decoration: none; font-weight: bold; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="navbar-brand">AP CSA Resources Home</a>
+        <button class="theme-toggle">Toggle Mode</button>
+    </nav>
+
+    <div class="content-container">
+        <a href="../view-all-frq-rubrics.html" class="back-link">&larr; Back to All FRQ Rubric Documents</a>
+        <div class="markdown-body">
+<h2>Summary</h2>
+<p>FRQ 4 on the 2024 AP Computer Science A exam focuses on traversing a 2D array (<code>grid</code>) to determine successive locations and compute the sum along a path. It is scored out of <strong>9 points</strong>: Part (a) “getNextLoc” is worth <strong>3 points</strong>, and Part (b) “sumPath” is worth <strong>6 points</strong> (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>). A maximum of <strong>3 penalty points</strong> may be assessed per question, but only in parts that have earned credit (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</p>
+<hr />
+<h2>Overall Penalties</h2>
+<p>Penalty points (1 point each) apply <strong>only</strong> in parts that have earned credit, up to 3 per question (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).
+Common 1-point penalties include:</p>
+<ul>
+<li>Array/collection access confusion (<code>[]</code> vs. <code>get()</code>) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Extraneous side-effect code (e.g., printing to output) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Local variables used but none declared (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Destruction of persistent data (mutating parameters) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+<li>Void method returning a value (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<p><em>No penalties</em> for unambiguous spelling/case issues, missing semicolons/braces when intent is clear, or extraneous non–side-effect code (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</p>
+<hr />
+<h2>Part (a): <code>public Location getNextLoc(int row, int col)</code> (3 points)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Point</th>
+<th style="text-align: left;">Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;">Guards against out-of-bounds access for <strong>any</strong> returned <code>Location</code>.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;">Accesses both <code>grid[row][col+1]</code> and <code>grid[row+1][col]</code> (right and below elements).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;">Returns the <strong>correct</strong> new <code>Location</code> in all four cases (bottom row wrap, rightmost column wrap, smaller of the two neighbors).</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Guards against out-of-bounds access</strong>: The method must include checks so that any <code>Location</code> returned has valid <code>row</code> and <code>col</code> indices within <code>grid</code> bounds (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</li>
+<li><strong>Accesses both right and below elements</strong>: The implementation must read <code>grid[row][col+1]</code> and <code>grid[row+1][col]</code> to compare values (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</li>
+<li><strong>Returns correct <code>Location</code></strong>: Depending on whether at bottom row, rightmost column, or which neighbor is smaller, the method must return the appropriately constructed <code>Location</code> object with exactly one of the four cases handled (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</li>
+</ol>
+<p><em>Total for part (a): 3 points.</em></p>
+<hr />
+<h2>Part (b): <code>public int sumPath(int row, int col)</code> (6 points)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Point</th>
+<th style="text-align: left;">Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;">Initializes and <strong>increments</strong> a <code>sum</code> variable to accumulate <code>grid</code> values.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: left;">Iteratively determines the path by repeatedly calling <code>getNextLoc</code> while <strong>not</strong> at the bottom-right corner (no bounds errors).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>6</strong></td>
+<td style="text-align: left;">Calls <code>getNextLoc</code> within the context of a loop to advance the current position.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>7</strong></td>
+<td style="text-align: left;">Calls <code>getRow()</code> and <code>getCol()</code> on the returned <code>Location</code> object to update <code>row</code> and <code>col</code>.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: left;">Accesses <code>grid[row][col]</code> at positions derived from successive <code>getNextLoc</code> calls.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>9</strong></td>
+<td style="text-align: left;">Computes the sum of <strong>all</strong> visited grid values including the <strong>first</strong> and <strong>last</strong> positions and returns that total.</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li><strong>Initializes and increments <code>sum</code></strong>: Must declare <code>int sum = 0;</code> (or equivalent in recursion) and add each visited grid element to <code>sum</code> (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</li>
+<li><strong>Determines path correctly</strong>: Loop must continue while <code>(row &lt; grid.length – 1 || col &lt; grid[0].length – 1)</code> to visit all positions up to bottom-right without out-of-bounds access (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</li>
+<li><strong>Calls <code>getNextLoc</code></strong>: Each iteration must invoke <code>getNextLoc(row, col)</code> on <code>this</code> (use of <code>this</code> optional) with two <code>int</code> parameters (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</li>
+<li><strong>Uses <code>getRow()</code>/<code>getCol()</code></strong>: After obtaining a <code>Location</code>, the code must call <code>loc.getRow()</code> and <code>loc.getCol()</code> to update <code>row</code> and <code>col</code> (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</li>
+<li><strong>Accesses grid at new positions</strong>: Must read <code>grid[row][col]</code> based on the updated coordinates each time (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</li>
+<li><strong>Computes full path sum</strong>: The returned integer must equal the sum of all <code>grid</code> values along the path, including both starting and ending cells; failing to include either endpoint loses credit (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf" title="2024 Scoring Guidelines - AP Computer Science A">AP Central</a>).</li>
+</ol>
+<p><em>Total for part (b): 6 points.</em>
+<strong>Total for question 4: 9 points.</strong></p>
+        </div>
+    </div>
+
+    <script src="../darkmode.js"></script>
+</body>
+</html>

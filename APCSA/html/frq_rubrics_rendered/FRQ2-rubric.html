@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frq2 Rubric - FRQ Rubric - AP CSA Resources</title>
+    <link rel="stylesheet" href="../custom_styles/unit_review_styles.css">
+    <style>
+        body { padding-top: 70px; }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; }
+        .content-container { max-width: 900px; margin: 2rem auto; padding: 20px; background-color: var(--bg-color); color: var(--text-color); border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .markdown-body h1, .markdown-body h2, .markdown-body h3 { color: var(--heading-color); border-bottom: 1px solid var(--table-border); padding-bottom: 0.3em; }
+        .markdown-body table { border-collapse: collapse; width: 100%; margin-bottom: 1rem; }
+        .markdown-body th, .markdown-body td { border: 1px solid var(--table-border); padding: 0.5rem; text-align: left; }
+        .markdown-body th { background-color: var(--table-header-bg); }
+        .markdown-body tr:nth-child(even) { background-color: var(--table-even-row-bg); }
+        .markdown-body code { background-color: var(--code-bg-color); padding: 0.2em 0.4em; margin: 0; font-size: 85%; border-radius: 3px; }
+        .markdown-body pre { background-color: var(--code-bg-color); padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .markdown-body pre code { padding: 0; margin: 0; font-size: inherit; background-color: transparent; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--link-color); text-decoration: none; font-weight: bold; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="navbar-brand">AP CSA Resources Home</a>
+        <button class="theme-toggle">Toggle Mode</button>
+    </nav>
+
+    <div class="content-container">
+        <a href="../view-all-frq-rubrics.html" class="back-link">&larr; Back to All FRQ Rubric Documents</a>
+        <div class="markdown-body">
+<p>Before diving into the detailed criteria, here is a concise overview of the FRQ 2 scoring rubric for the 2024 AP Computer Science A exam:</p>
+<ul>
+<li><strong>Total points:</strong> 9 points across 9 distinct rubric items (Points 1–9) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</li>
+<li><strong>Question focus:</strong> Definition of a new class (<code>Scoreboard</code>) with appropriate instance variables, constructor, and two methods (<code>recordPlay</code> and <code>getScore</code>) implementing specified behaviors (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</li>
+<li><strong>Scoring approach:</strong> Award each of 9 points for presence and correctness of key class components or behaviors; apply up to 3 penalty points per question only in parts that have earned credit (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>, <a href="https://apcentral.collegeboard.org/media/pdf/ap24-sg-computer-science-a.pdf?utm_source=chatgpt.com" title="[PDF] 2024 Scoring Guidelines - AP Computer Science A">AP Central</a>)</li>
+</ul>
+<hr />
+<h2>Penalties and “No Penalty” List</h2>
+<ul>
+<li><strong>Maximum penalties:</strong> Up to 3 total per question, only in parts that have already earned credit (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</li>
+<li><strong>1-point penalties include:</strong> array/collection access confusion (<code>[]</code> vs. <code>get()</code>), extraneous side-effects (e.g. printing), undeclared locals, destruction of persistent data, or returning a value from a <code>void</code> method (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</li>
+<li><strong>No penalty for minor issues</strong> (e.g., missing semicolons/braces when intent is clear, unambiguous spelling/case discrepancies, or extraneous non-side-effect code) (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</li>
+</ul>
+<hr />
+<h2>Canonical Solution (Excerpt)</h2>
+<pre><code class="language-java">public class Scoreboard {
+  private String team1Name, team2Name;
+  private int whoseTurn;
+  private int score1, score2;
+
+  public Scoreboard(String team1, String team2) {
+    team1Name = team1;
+    team2Name = team2;
+    whoseTurn = 1;
+    score1 = 0;
+    score2 = 0;
+  }
+
+  public void recordPlay(int points) { … }
+
+  public String getScore() { … }
+}
+</code></pre>
+<p>(<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</p>
+<hr />
+<h2>Scoring Criteria and Decision Rules</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Point</th>
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: left;">Decision Rules &amp; Common Errors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;">Declares class header <code>class Scoreboard</code></td>
+<td style="text-align: left;">Must be <code>public class Scoreboard</code> or <code>class Scoreboard</code>; wrong classname/access loses point (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;">Declares at least one <code>private String</code> and one <code>private int</code> instance variable</td>
+<td style="text-align: left;">Static or out-of-class declarations lose point; mis‐typed types lose point (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;">Declares <code>public Scoreboard(String, String)</code> and initializes both team-name variables</td>
+<td style="text-align: left;">Constructor must be <code>public</code>, correct name, and assign both parameters to instance fields (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;">Declares method headers <code>public void recordPlay(int …)</code> and <code>public String getScore()</code></td>
+<td style="text-align: left;">Missing or incorrect headers (name, return type, parameters, or access) lose point (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: left;"><code>recordPlay</code> checks for parameter value of zero</td>
+<td style="text-align: left;">Must include <code>if (points == 0)</code> (or equivalent); failure to test zero loses point (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>6</strong></td>
+<td style="text-align: left;"><code>recordPlay</code> increases at least one score instance variable</td>
+<td style="text-align: left;">Must update either <code>score1</code> or <code>score2</code> when points &gt; 0; omission loses point (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>7</strong></td>
+<td style="text-align: left;"><code>recordPlay</code> switches active team when parameter is zero</td>
+<td style="text-align: left;">Must toggle <code>whoseTurn</code> (or boolean flag) only when points == 0; incorrect placement loses point (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: left;"><code>recordPlay</code> adds correct number of points to the active team’s score (algorithm)</td>
+<td style="text-align: left;">Must add exactly <code>points</code> to the proper score field; switching on positive or wrong field loses point (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>9</strong></td>
+<td style="text-align: left;"><code>getScore</code> builds and returns the specified string</td>
+<td style="text-align: left;">Must return a <code>String</code> in format <code>score1–score2–&lt;activeTeamName&gt;</code> including both hyphens; printing or omitting hyphens loses point (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Total for question 2: 9 points</em> (<a href="https://apcentral.collegeboard.org/media/pdf/ap24-apc-computer-science-a-q2.pdf" title="2024 Student Samples and Commentaries: AP Computer Science A - FRQ 2">AP Central</a>)</p>
+<hr />
+<p>This rubric reflects the official 2024 College Board scoring guidelines for AP Computer Science A FRQ 2, ensuring each element of the student’s class design and method implementation is evaluated precisely and consistently.</p>
+        </div>
+    </div>
+
+    <script src="../darkmode.js"></script>
+</body>
+</html>

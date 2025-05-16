@@ -1,6 +1,6 @@
 package practiceFRQs;
 
-public class FRQ1_1 {
+public class FRQ1 {
     /**
      * Returns the sum of the elements of arr.
      * The array arr contains at least one element.

@@ -2,13 +2,13 @@
 
 package practiceFRQs;
 
-public class FRQ2_1_2 {
+public class FRQ2 {
 
     private String title;
     private String author;
     private int pages;
 
-    public FRQ2_1_2(String title, String author, int pages) {
+    public FRQ2(String title, String author, int pages) {
         this.title = title;
         this.author = author;
         this.pages = pages;
@@ -46,7 +46,7 @@ public class FRQ2_1_2 {
     }
 
     public static void main(String[] args) {
-        FRQ2_1_2 celcius = new FRQ2_1_2("Celcius", "Zakhar", 492);
+        FRQ2 celcius = new FRQ2("Celcius", "Zakhar", 492);
 
         System.out.println(celcius.toString());
         System.out.println("Long read?" + celcius.isLongRead());

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Unit-9-Review-Guide</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="custom_styles/unit_review_styles.css">
 </head>
 <body>
     
@@ -49,7 +49,7 @@
 <li><strong>Override</strong> replaces superclass method in subclass.</li>
 <li>Only <strong>non-static</strong> methods.</li>
 <li>Annotate with <code>@Override</code> (optional but recommended).</li>
-<li><strong>Private methods</strong> can’t be overridden—they’re not inherited.</li>
+<li><strong>Private methods</strong> can't be overridden—they're not inherited.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="nd">@Override</span>
 <span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doWork</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -71,8 +71,8 @@
 <span class="w">  </span><span class="nd">@Override</span>
 <span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">applyBrakes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 <span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">emergencyOverride</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">applyBrakes</span><span class="p">();</span><span class="w">      </span><span class="c1">// Car’s version</span>
-<span class="w">    </span><span class="n">checkSurroundings</span><span class="p">();</span><span class="w">      </span><span class="c1">// current class’s override</span>
+<span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">applyBrakes</span><span class="p">();</span><span class="w">      </span><span class="c1">// Car's version</span>
+<span class="w">    </span><span class="n">checkSurroundings</span><span class="p">();</span><span class="w">      </span><span class="c1">// current class's override</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -100,7 +100,7 @@
 <li><strong>Reference variable</strong> type determines <strong>accessible methods</strong>.</li>
 <li><strong>Object type</strong> determines <strong>which implementation</strong> (override) runs.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Lion</span><span class="p">();</span><span class="w">    </span><span class="c1">// can call Animal’s methods</span>
+<div class="codehilite"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Lion</span><span class="p">();</span><span class="w">    </span><span class="c1">// can call Animal's methods</span>
 <span class="n">Animal</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bat</span><span class="p">();</span><span class="w">     </span><span class="c1">// same reference type</span>
 <span class="c1">// a.run(); // ❌ if run() is only in Mammal</span>
 <span class="n">a</span><span class="p">.</span><span class="na">sleep</span><span class="p">();</span><span class="w"> </span><span class="c1">// ✔ inherited from Animal, overridden in Lion if exists</span>
@@ -112,7 +112,7 @@
 <p><code>java
   Animal[] zoo = { new Lion(), new Dragon(), new Bat() };
   for(Animal x : zoo) x.eat();
-  // dynamic dispatch calls each subclass’s eat()</code></p>
+  // dynamic dispatch calls each subclass's eat()</code></p>
 <hr />
 <h2>7. Constructors &amp; Inheritance</h2>
 <ul>

@@ -1,0 +1,222 @@
+/* Index Page Styles */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --heading-color: #2c3e50;
+    /* code-bg, code-text, table-border, table-header-bg, table-hover may not be strictly necessary for index if no code/tables */
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --navbar-shadow: rgba(0, 0, 0, 0.1);
+    --table-header-bg: #f5f5f5; /* Used by .unit-card background */
+    --table-border: #ddd; /* Added for search bar */
+    --focus-shadow-color: rgba(44, 62, 80, 0.25); /* Added for focus effects */
+    --max-content-width: 1200px; /* Added max content width */
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --heading-color: #81a1c1;
+    /* code-bg, code-text, table-border, table-header-bg, table-hover may not be strictly necessary for index if no code/tables */
+    --navbar-bg: rgba(26, 26, 26, 0.95);
+    --navbar-shadow: rgba(0, 0, 0, 0.2);
+    --table-header-bg: #2c2c2c; /* Used by .unit-card background */
+    --table-border: #404040; /* Added for search bar */
+    --focus-shadow-color: rgba(129, 161, 193, 0.35); /* Added for focus effects */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 4rem 2.5rem 2rem; /* Increased side padding */
+    line-height: 1.6;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    max-width: var(--max-content-width);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--heading-color);
+    margin-top: 2.5rem; /* Increased top margin */
+    margin-bottom: 1.5rem; /* Added bottom margin */
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--heading-color);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* Navigation bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--navbar-bg);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px var(--navbar-shadow);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: var(--heading-color);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+    padding: 8px 16px;
+    background-color: var(--heading-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    opacity: 0.9;
+}
+
+/* Homepage styling */
+.unit-grid, .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider cards */
+    gap: 2rem; /* Increased gap */
+    margin: 2.5rem 0; /* Increased margin */
+}
+
+.unit-card, .resource-card {
+    background: var(--table-header-bg);
+    border-radius: 12px; /* Increased border radius */
+    padding: 2rem; /* Increased padding */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.unit-card:hover, .resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.unit-card h3, .resource-card h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--heading-color);
+}
+
+.unit-card a, .resource-card a {
+    color: var(--heading-color);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0; /* Increased padding */
+    transition: all 0.2s ease;
+    font-size: 1.1rem; /* Slightly larger font */
+}
+
+/* Styling for lists of links within cards */
+.unit-list, .folder-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Space between links */
+}
+
+/* Search bar styling */
+.search-container {
+    margin: 2.5rem auto; /* Increased margin */
+    padding: 0 2rem; /* Increased padding */
+    max-width: 800px; /* Wider search container */
+}
+
+#search-bar {
+    width: 100%;
+    padding: 1rem 1.5rem; /* Increased padding */
+    border: 2px solid var(--table-border); /* Thicker border */
+    border-radius: 12px; /* Increased border radius */
+    font-size: 1.1rem; /* Larger font size */
+    background-color: var(--table-header-bg);
+    color: var(--text-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+#search-bar::placeholder {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: var(--heading-color);
+    background-color: var(--bg-color); /* Change background on focus */
+    box-shadow: 0 0 0 3px var(--focus-shadow-color), 0 1px 5px rgba(0,0,0,0.1);
+}
+
+/* "View All" Button Styling */
+.view-all-button {
+    display: block; /* Or inline-block */
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--heading-color);
+    color: var(--bg-color) !important; /* Ensure text color contrasts with button background */
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.view-all-button:hover {
+    background-color: var(--text-color); /* Darken or lighten based on theme */
+    color: var(--bg-color) !important;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 4rem 1.5rem 1.5rem; /* Smaller padding on mobile */
+    }
+    
+    .unit-grid, .resource-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+} 
