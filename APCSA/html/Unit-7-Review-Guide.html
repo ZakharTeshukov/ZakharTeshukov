@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unit-7-Review-Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html">AP CSA Review Guides</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+    </nav>
+    
+    <p><strong>AP Computer Science A — Unit 7 Review: ArrayList</strong></p>
+<hr />
+<h2>1. Array vs. ArrayList</h2>
+<ul>
+<li><strong>Array</strong>: fixed-size, indexed container for primitives or objects.</li>
+<li><strong>ArrayList</strong>: dynamic-size list, only holds <strong>object</strong> types, resizes automatically.</li>
+</ul>
+<hr />
+<h2>2. Setup &amp; Declaration</h2>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+
+<span class="c1">// Declare &amp; instantiate an empty ArrayList of String</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="c1">// Declare &amp; instantiate with initial values</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">));</span>
+</code></pre></div>
+
+<ul>
+<li>Must <code>import java.util.ArrayList</code>.</li>
+<li>Use <strong>wrapper classes</strong> for primitives (e.g., <code>Integer</code>, <code>Double</code>).</li>
+<li><strong>Autoboxing</strong> wraps/unwraps primitives automatically most of the time.</li>
+</ul>
+<hr />
+<h2>3. Core Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>ArrayList Syntax</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add to end</td>
+<td><code>list.add(item)</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>Add at index</td>
+<td><code>list.add(index, item)</code></td>
+<td>void</td>
+</tr>
+<tr>
+<td>Get element</td>
+<td><code>list.get(index)</code></td>
+<td>element at <code>index</code></td>
+</tr>
+<tr>
+<td>Set element</td>
+<td><code>list.set(index, item)</code></td>
+<td>old element</td>
+</tr>
+<tr>
+<td>Remove element</td>
+<td><code>list.remove(index)</code> or <code>list.remove(obj)</code></td>
+<td>removed element</td>
+</tr>
+<tr>
+<td>Size</td>
+<td><code>list.size()</code></td>
+<td><code>int</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Removing/inserting shifts subsequent elements and renumbers indices.</li>
+</ul>
+<hr />
+<h2>4. Traversal</h2>
+<h3>▶️ Standard <code>for</code> Loop</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Use <code>.size()</code> (not <code>.length</code>).</li>
+<li>Safe-guard against <code>IndexOutOfBounds</code> by checking <code>i &lt; size()</code> each iteration.</li>
+</ul>
+<h3>▶️ Enhanced <code>for</code> Loop</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Cannot modify the list’s structure (add/remove) or know the index inside the loop.</li>
+</ul>
+<hr />
+<h2>5. Wrapper Classes &amp; Autoboxing</h2>
+<ul>
+<li>
+<p>Primitives cannot be stored directly; use their wrapper types:</p>
+</li>
+<li>
+<p><code>int</code> → <code>Integer</code></p>
+</li>
+<li><code>double</code> → <code>Double</code></li>
+<li><code>boolean</code> → <code>Boolean</code></li>
+<li><strong>Manual Boxing/Unboxing</strong>:</li>
+</ul>
+<p><code>java
+  Integer obj = Integer.valueOf(5);
+  int x = obj.intValue();</code>
+* <strong>Autoboxing</strong>: Java automatically converts between <code>int</code>↔<code>Integer</code> when using <code>add()</code>, <code>get()</code>, etc.</p>
+<hr />
+<h2>6. Removing All Occurrences Algorithm</h2>
+<p><strong>Goal</strong>: Remove every occurrence of a target value and optionally count or collect them.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">removeAll</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">items</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">removed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">items</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="n">target</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">removed</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">items</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">removed</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Traverse backwards</strong> (<code>size()-1</code> ↓ <code>0</code>) to avoid skipping after removals.</li>
+<li>Use <code>equals()</code> or <code>equalsIgnoreCase()</code> for strings; use <code>==</code>, <code>&gt;</code>, <code>&lt;</code> for wrapper types.</li>
+<li>To <strong>count</strong> removals, increment a counter instead of collecting.</li>
+<li>To support <strong>partial matches</strong>, replace <code>equals()</code> with <code>contains()</code> or <code>indexOf()</code> check.</li>
+</ul>
+<hr />
+<h2>7. Converting Array to ArrayList</h2>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">};</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Declare empty <code>ArrayList&lt;Wrapper&gt;</code> then <strong>loop</strong> through array, adding each element.</li>
+</ul>
+<hr />
+<h2>8. Key Tips</h2>
+<ul>
+<li>Remember <strong>zero-based</strong> indices and dynamic sizing.</li>
+<li>Beware of <strong>shifting</strong> when adding/removing—indices change.</li>
+<li>Use correct <strong>wrapper class</strong> for primitive data.</li>
+<li>Prefer <strong>backward traversal</strong> for safe removal.</li>
+<li>Choose between <code>for</code> and <strong>enhanced for</strong> based on whether you need index control or modifications.</li>
+</ul>
+<hr />
+<p><strong>Master these patterns</strong> for AP CSA ArrayList questions!</p>
+    <script src="darkmode.js"></script>
+</body>
+</html>

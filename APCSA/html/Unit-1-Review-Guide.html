@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unit-1-Review-Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html">AP CSA Review Guides</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+    </nav>
+    
+    <p>Here’s a cleaner, more structured, and professional format of your AP Computer Science A video script for <strong>Unit 1: Introduction to Java Programming</strong>. It is broken down with clear section headers, concise language, and natural transitions for both teaching and YouTube engagement.</p>
+<hr />
+<h3>🎬 Intro</h3>
+<p><strong>Hello and welcome to the new AP Computer Science A video series — Unit 1!</strong>
+If you want to jump ahead to a specific topic, check out the time markers in the video description.</p>
+<p>I'll be updating this series frequently, so make sure to <strong>subscribe</strong> and stay up to date with new content.</p>
+<p>For this series, I'm using the <strong>jGRASP IDE</strong>, but feel free to use any IDE you’re comfortable with. If you need help installing jGRASP, check the link in the description.</p>
+<hr />
+<h3>🧱 Part 1: Creating Your First Java Class</h3>
+<p>In Java, every program must start with <strong>at least one class</strong>. To create a class, type:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyFirstProgram</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// code goes here</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>The class name must be written in <strong>PascalCase</strong> (each word capitalized, no spaces).</li>
+<li>The file name must exactly match the class name, but with <code>.java</code> at the end.</li>
+<li>Java uses <strong>curly brackets <code>{}</code></strong> to define where blocks of code begin and end — including classes and methods.</li>
+</ul>
+<hr />
+<h3>🧠 Part 2: Writing the <code>main</code> Method</h3>
+<p>Every Java program needs a <strong><code>main</code> method</strong> — this is the entry point of your code:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// code goes here</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>This tells the computer where to start running your code.</li>
+<li>Inside the curly brackets of <code>main</code>, we’ll write commands.</li>
+<li>Remember: open a curly bracket <code>{</code> → <strong>indent</strong> everything inside → close with <code>}</code>.</li>
+</ul>
+<hr />
+<h3>📤 Part 3: Printing to the Console</h3>
+<p>Now let’s print something!</p>
+<div class="codehilite"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<ul>
+<li><code>System</code> (capital S) is a built-in Java class.</li>
+<li><code>out.println</code> sends output to the console.</li>
+<li>Text inside <strong>quotes</strong> is called a <strong>String literal</strong>.</li>
+<li><strong>Don’t forget the semicolon</strong> <code>;</code> at the end of this statement.</li>
+</ul>
+<hr />
+<h3>🧪 Part 4: Running the Code</h3>
+<p>To run your program:</p>
+<ol>
+<li><strong>Build → Compile</strong> (checks for errors and converts to bytecode).</li>
+<li><strong>Build → Run</strong> (executes your program).</li>
+<li>You should see <code>Hello, world!</code> in the console.</li>
+</ol>
+<hr />
+<h3>📦 Part 5: Working with Variables</h3>
+<p>A <strong>variable</strong> stores data you can use and modify. Let's declare an <code>int</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">        </span><span class="c1">// Declaration</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">       </span><span class="c1">// Initialization</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">        </span><span class="c1">// Change the value</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">// Increment x by 1</span>
+</code></pre></div>
+
+<p>Java treats the <code>=</code> sign like a <strong>left-pointing arrow</strong>:
+→ It evaluates the right side, then stores the result in the variable on the left.</p>
+<hr />
+<h3>✍️ Naming Variables</h3>
+<p>Variable names follow <strong>lowerCamelCase</strong>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">myFinalScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</code></pre></div>
+
+<ul>
+<li>First word starts lowercase.</li>
+<li>Every following word starts with a capital letter.</li>
+<li>No spaces or symbols.</li>
+</ul>
+<p>To print a variable’s value:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myFinalScore</span><span class="p">);</span>
+</code></pre></div>
+
+<p>(Notice: no quotes around the variable name, or it will print the text <code>"myFinalScore"</code> instead of its value.)</p>
+<hr />
+<h3>🔢 Part 6: Primitive Data Types</h3>
+<p>Java has <strong>8 built-in (primitive) data types</strong>. You only need to master <strong>three</strong> for the AP exam:</p>
+<ol>
+<li><strong>int</strong> → whole numbers</li>
+<li><strong>double</strong> → decimals</li>
+<li><strong>boolean</strong> → <code>true</code> or <code>false</code></li>
+</ol>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Note: You <strong>can’t assign a <code>double</code> to an <code>int</code></strong> without <strong>casting</strong>:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="mf">3.99</span><span class="p">;</span><span class="w">  </span><span class="c1">// a = 3 (cuts off decimal)</span>
+</code></pre></div>
+
+<hr />
+<h3>➗ Part 7: Arithmetic Operators</h3>
+<p>You can perform math using operators:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">+</span><span class="w">   </span><span class="c1">// addition</span>
+<span class="o">-</span><span class="w">   </span><span class="c1">// subtraction</span>
+<span class="o">*</span><span class="w">   </span><span class="c1">// multiplication</span>
+<span class="o">/</span><span class="w">   </span><span class="c1">// division</span>
+<span class="o">%</span><span class="w">   </span><span class="c1">// modulus (remainder)</span>
+</code></pre></div>
+
+<p>Examples:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mi">6</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w">   </span><span class="c1">// 10</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mi">11</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">  </span><span class="c1">// 2 (11 ÷ 3 = 3 R2)</span>
+</code></pre></div>
+
+<hr />
+<h3>🔄 Part 8: Shorthand and Unary Operators</h3>
+<p>You can <strong>update variable values</strong> using shorthand:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">x</span><span class="o">++</span><span class="p">;</span><span class="w">          </span><span class="c1">// same as above</span>
+
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">x</span><span class="o">--</span><span class="p">;</span><span class="w">          </span><span class="c1">// same as above</span>
+
+<span class="n">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">       </span><span class="c1">// shorthand for x = x * 3;</span>
+</code></pre></div>
+
+<p>For <strong>booleans</strong>, we can use the <strong>not operator</strong>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">boolean</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">z</span><span class="p">;</span><span class="w">       </span><span class="c1">// flips z to false</span>
+</code></pre></div>
+
+<hr />
+<h3>📚 Bonus: Explore More</h3>
+<p>To learn more about Java's data types, search:
+<strong>“primitive data types site\:oracle.com”</strong>
+and click the first result — it’s the official documentation.</p>
+<hr />
+<h3>✅ Wrap-Up</h3>
+<p>That’s it for <strong>Unit 1</strong> — we covered:</p>
+<ul>
+<li>Creating your first class and method</li>
+<li>Printing to the console</li>
+<li>Using variables and data types</li>
+<li>Performing arithmetic</li>
+<li>Understanding Java syntax rules</li>
+</ul>
+<p>🧠 If you’re preparing for the AP Computer Science A exam, mastering these basics is crucial.
+📌 Like, subscribe, and check the playlist for the next unit!</p>
+<hr />
+<p>Would you like this formatted into a PDF or slide deck too?</p>
+    <script src="darkmode.js"></script>
+</body>
+</html>

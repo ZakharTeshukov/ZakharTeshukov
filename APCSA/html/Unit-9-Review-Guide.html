@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unit-9-Review-Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html">AP CSA Review Guides</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+    </nav>
+    
+    <p><strong>AP Computer Science A — Unit 9 Review: Inheritance, Polymorphism &amp; Constructors</strong></p>
+<hr />
+<h2>1. Inheritance Basics</h2>
+<ul>
+<li><strong>Superclass</strong>: Parent class (e.g., <code>Animal</code>).</li>
+<li><strong>Subclass</strong>: Child class that <strong>extends</strong> a superclass (e.g., <code>Tiger</code> extends <code>Animal</code>).</li>
+<li><strong><code>extends</code></strong> keyword declares a subclass:</li>
+</ul>
+<p><code>java
+  class Animal { ... }
+  class Tiger extends Animal { ... }</code>
+* Java classes that omit <code>extends</code> implicitly extend <code>Object</code>.
+* <strong>Single inheritance</strong>: one direct superclass; <strong>multiple subclasses</strong> allowed.
+* <strong><code>protected</code></strong>, <code>public</code> members inherited; <strong><code>private</code></strong> are not (but exist, accessible via superclass methods).</p>
+<hr />
+<h2>2. Method Inheritance &amp; Access</h2>
+<ul>
+<li><strong>Inherited methods</strong>: All non-<code>private</code> instance methods from superclass.</li>
+<li><strong>Private methods</strong>: Not inherited; can only be called within their own class.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">Worker</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doWork</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">earnMinWage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">Tradesperson</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Worker</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// inherits doWork(), not earnMinWage()</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doSkilledWork</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2>3. Method Overriding</h2>
+<ul>
+<li><strong>Override</strong> replaces superclass method in subclass.</li>
+<li>Only <strong>non-static</strong> methods.</li>
+<li>Annotate with <code>@Override</code> (optional but recommended).</li>
+<li><strong>Private methods</strong> can’t be overridden—they’re not inherited.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doWork</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">// subclass-specific behavior</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2>4. The <code>super</code> Keyword</h2>
+<ul>
+<li><strong><code>super.method()</code></strong> calls the version in the immediate superclass (bypasses override).</li>
+<li><strong><code>super(args)</code></strong> in a constructor calls a superclass constructor (must be first line).</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">applyBrakes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkSurroundings</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">SelfDrivingCar</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Car</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">applyBrakes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">emergencyOverride</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">applyBrakes</span><span class="p">();</span><span class="w">      </span><span class="c1">// Car’s version</span>
+<span class="w">    </span><span class="n">checkSurroundings</span><span class="p">();</span><span class="w">      </span><span class="c1">// current class’s override</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2>5. Accessing Private Superclass Fields</h2>
+<ul>
+<li><strong>Direct access</strong> to superclass <code>private</code> fields is <strong>not</strong> allowed.</li>
+<li>Use <strong>inherited getters/setters</strong> provided by superclass.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numLegs</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getNumLegs</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">numLegs</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">Bird</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">report</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">getNumLegs</span><span class="p">());</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2>6. Polymorphism &amp; Variable Types</h2>
+<ul>
+<li><strong>Reference variable</strong> type determines <strong>accessible methods</strong>.</li>
+<li><strong>Object type</strong> determines <strong>which implementation</strong> (override) runs.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Lion</span><span class="p">();</span><span class="w">    </span><span class="c1">// can call Animal’s methods</span>
+<span class="n">Animal</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bat</span><span class="p">();</span><span class="w">     </span><span class="c1">// same reference type</span>
+<span class="c1">// a.run(); // ❌ if run() is only in Mammal</span>
+<span class="n">a</span><span class="p">.</span><span class="na">sleep</span><span class="p">();</span><span class="w"> </span><span class="c1">// ✔ inherited from Animal, overridden in Lion if exists</span>
+</code></pre></div>
+
+<ul>
+<li>Useful for <strong>heterogeneous collections</strong> and <strong>general-purpose methods</strong>:</li>
+</ul>
+<p><code>java
+  Animal[] zoo = { new Lion(), new Dragon(), new Bat() };
+  for(Animal x : zoo) x.eat();
+  // dynamic dispatch calls each subclass’s eat()</code></p>
+<hr />
+<h2>7. Constructors &amp; Inheritance</h2>
+<ul>
+<li><strong>Every class</strong> needs a constructor (default no-arg inserted if none).</li>
+<li><strong>Subclass constructor</strong> must call a <strong>superclass constructor</strong> first (via <code>super(...)</code>) or default no-arg if no explicit call.</li>
+<li><strong>Constructors are not inherited</strong>; each class defines its own.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Vehicle</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">Airplane</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Airplane</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">seats</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">super</span><span class="p">(</span><span class="n">type</span><span class="p">);</span><span class="w">           </span><span class="c1">// call Vehicle(String)</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">seats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seats</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>If superclass lacks no-arg constructor, subclass <strong>must</strong> explicitly call a matching <code>super(...)</code>.</li>
+</ul>
+<hr />
+<h2>8. Overloaded Constructors</h2>
+<ul>
+<li>Multiple constructors in same class, same name, different signatures (param number, types, order).</li>
+<li>Must differ in parameter list; return type and names irrelevant.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Robot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Robot</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Robot</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Robot</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2>9. Key Takeaways</h2>
+<ol>
+<li><strong><code>extends</code></strong> defines inheritance; <strong><code>super</code></strong> accesses parent behavior.</li>
+<li><strong>Override</strong> non-static methods for polymorphic behavior; use <code>@Override</code>.</li>
+<li><strong>Constructors</strong> chain via <code>super(...)</code> and/or <code>this(...)</code>; default provided only if none written.</li>
+<li><strong>Polymorphism</strong>: reference vs. object type distinction for compile-time vs. runtime resolution.</li>
+<li><strong>Access control</strong>: <code>private</code> not inherited; use superclass-provided accessors.</li>
+</ol>
+<hr />
+<p><strong>Master these concepts</strong> to design and leverage class hierarchies effectively in your AP CSA projects and exam answers!</p>
+    <script src="darkmode.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unit-4-Review-Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html">AP CSA Review Guides</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+    </nav>
+    
+    <p><strong>AP Computer Science A - Unit 4 Review: Lesson 4</strong></p>
+<hr />
+<p><strong>Overview</strong>
+This lesson explores the three main types of loops in Java: <code>for</code>, <code>while</code>, and <code>do-while</code>. It also demonstrates practical applications such as reversing a string using a <code>for</code> loop and introduces the concept of nested loops, which are especially useful when working with multi-dimensional data structures.</p>
+<hr />
+<h3><strong>1. For Loops</strong></h3>
+<p><strong>Purpose:</strong> Repeat a block of code a specific number of times.</p>
+<p><strong>Structure:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">initialization</span><span class="p">;</span><span class="w"> </span><span class="n">test</span><span class="p">;</span><span class="w"> </span><span class="n">update</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// body of loop</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Example: Printing 0 to 3</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Execution Steps:</strong></p>
+<ul>
+<li>Initialize <code>i = 0</code></li>
+<li>Test <code>i &lt; 4</code>: If true, execute body</li>
+<li>Print value of <code>i</code></li>
+<li>Update <code>i++</code></li>
+<li>Repeat until <code>i &lt; 4</code> is false</li>
+</ul>
+<hr />
+<h3><strong>2. While Loops</strong></h3>
+<p><strong>Purpose:</strong> Repeat a block of code <em>while</em> a condition is true.</p>
+<p><strong>Structure:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// body of loop</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Example: Countdown from 4</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="n">i</span><span class="o">--</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Be cautious of infinite loops. If <code>i</code> is never changed inside the loop, it runs forever.</li>
+<li>A <code>while</code> loop may never run if the initial condition is false.</li>
+</ul>
+<hr />
+<h3><strong>3. Do-While Loops</strong></h3>
+<p><strong>Purpose:</strong> Like a <code>while</code> loop, but guarantees the body executes <em>at least once</em>.</p>
+<p><strong>Structure:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// body of loop</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">);</span>
+</code></pre></div>
+
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">;</span>
+<span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="n">i</span><span class="o">--</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div>
+
+<p><strong>Note:</strong> Ends with a semicolon after the condition.</p>
+<hr />
+<h3><strong>4. String Reversal Using For Loop</strong></h3>
+<p><strong>Goal:</strong> Reverse the characters in a string.</p>
+<p><strong>Example Code:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pupils&quot;</span><span class="p">;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">reverse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">original</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">reverse</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">original</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">reverse</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: slipup</span>
+</code></pre></div>
+
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><code>substring(i, i + 1)</code> extracts one character at a time.</li>
+<li>Strings are 0-indexed; loop starts at <code>length - 1</code>.</li>
+</ul>
+<hr />
+<h3><strong>5. Nested Loops</strong></h3>
+<p><strong>Definition:</strong> A loop inside another loop.</p>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;i = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, j = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Execution:</strong></p>
+<ul>
+<li>Outer loop runs twice (<code>i = 0</code> and <code>i = 1</code>)</li>
+<li>For each outer loop run, inner loop runs three times (<code>j = 0, 1, 2</code>)</li>
+<li>Total iterations of inner loop: 2 * 3 = 6</li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Two-dimensional arrays</li>
+<li>Complex pattern generation</li>
+</ul>
+<hr />
+<h3><strong>Summary Table</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Loop Type</th>
+<th>Condition Location</th>
+<th>Runs at Least Once?</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>For</td>
+<td>Beginning</td>
+<td>No</td>
+<td>Known iteration counts</td>
+</tr>
+<tr>
+<td>While</td>
+<td>Beginning</td>
+<td>No</td>
+<td>Condition-based repeats</td>
+</tr>
+<tr>
+<td>Do-While</td>
+<td>End</td>
+<td>Yes</td>
+<td>At least one execution</td>
+</tr>
+<tr>
+<td>Nested Loop</td>
+<td>Varies</td>
+<td>Varies</td>
+<td>2D arrays or grids</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Key Terms:</strong></p>
+<ul>
+<li><strong>Counter Variable:</strong> Tracks iterations (e.g., <code>i</code>, <code>j</code>)</li>
+<li><strong>Condition/Test Expression:</strong> Boolean controlling loop continuation</li>
+<li><strong>Update Expression:</strong> Changes counter after each iteration</li>
+<li><strong>Infinite Loop:</strong> A loop that never ends due to a non-false condition</li>
+<li><strong>Substring Method:</strong> <code>substring(start, end)</code> retrieves part of a string (exclusive of <code>end</code>)</li>
+</ul>
+<hr />
+<p><strong>Next Steps:</strong></p>
+<ul>
+<li>Practice writing loops with different conditions and structures</li>
+<li>Trace loop execution step-by-step to predict output</li>
+<li>Try modifying the string reversal algorithm to skip vowels</li>
+<li>Implement a nested loop to print a multiplication table</li>
+</ul>
+<hr />
+<p><strong>End of Lesson 4 Review</strong></p>
+    <script src="darkmode.js"></script>
+</body>
+</html>

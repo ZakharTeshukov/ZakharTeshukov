@@ -1,0 +1,603 @@
+welcome in these lessons on AP Computer
+Science a unit 10 recursion will cover
+the six topics listed here
+to jump to a specific lesson check out
+the timestamps
+recursion is a programming technique
+where an algorithm breaks down the
+problem into a smaller piece and calls
+the same method again to solve that
+smaller piece
+depending on your programming language
+you may use the term function or
+procedure instead of method for this
+lesson I'm going to use the term method
+when a recursive method calls itself
+it's called a recursive case
+when it finishes up without calling
+itself it's called a base case
+every recursive method must eventually
+hit a base case otherwise it will keep
+going until it runs out of memory
+before we jump into an example of
+recursion let's look at a mathematical
+algorithm to calculate factorials if you
+don't remember factorials hang in there
+for 60 seconds and I guarantee you'll be
+good
+so what's a factorial a factorial is the
+product of a positive integer multiplied
+by all positive integers below it for
+example 5 factorial is 5 times 4 times 3
+times 2 times 1 which equals 120. both
+zero factorial and one factorial are
+equal to one this will be important
+later
+in math class you learn to calculate
+factorials iteratively let's go back and
+look at 5 factorial we start with the 5
+and keep multiplying it by n minus 1
+until we get to one
+if you stop and think you could see how
+you could program this algorithm
+iteratively using a loop now here's
+where it gets interesting we're going to
+use a recursive technique to solve a
+factorial
+we saw that the iterative way to
+calculate 5 factorial is five times four
+times three times two times one
+but we could also say that 5 factorial
+is equal to 5 times 4 factorial After
+All 4 factorial is four times three
+times two times one
+and we can say 4 factorial is equal to 4
+times 3 factorial we can keep this up
+until we hit one factorial and we know
+that one factorial equals one
+in this algorithm one factorial is our
+base case because it provides a solution
+without calling our factorial algorithm
+again
+let's write this out in pseudocode
+I've got the method fact algo that takes
+in a parameter n if n is 0 or 1 then we
+hit the base case and just return one
+if n is greater than one we multiply n
+times the factorial of n minus 1.
+we calculate the factorial of n minus 1
+by calling fact I'll go again
+now we're going to trace through the
+pseudocode and I'm going to play the
+part of the fact algo method
+I'm the first call of fat algo let's see
+what they gave me for n
+n is three so we're going to solve for
+three factorial
+let's look at the pseudo code
+3 isn't equal to zero and it isn't equal
+to one so I can move on
+however 3 is greater than one so I'll
+execute the indented line of code
+I'm going to multiply three times
+whatever 2 factorial is
+to figure out 2 factorial I'll call fact
+I'll go again
+let's see what they gave me for n
+n equals two
+well 2 isn't equal to 0 and isn't equal
+to one so I can move on
+however 2 is greater than 1 so I'll
+execute the indented line of code
+I'm going to multiply two times whatever
+one factorial is
+to figure out one factorial I'll call
+fact I'll go again
+let's see what they gave me for n
+n is 1.
+well 1 isn't equal to zero but it is
+equal to one so I'm going to execute the
+indented line of code
+I've reached the base case so I'll just
+return one
+now I know that 1 factorial is one so I
+can multiply it by my n which is 2. 2
+times 1 is 2 so I'm going to return two
+now I know that 2 factorial is two so I
+can multiply it by my n which is 3.
+three times two is six so I'll return
+the final answer of 3 factorial which is
+6.
+so that's how a computer executes a
+recursive program
+let's go back and look at the pseudocode
+again
+notice that each time we make a
+recursive call it's getting closer to
+the base case
+it's crucial to write recursive
+algorithms this way because otherwise
+you'll keep making recursive calls until
+you eventually run out of space in
+memory and get a stack overflow
+actually even if you write a recursive
+algorithm correctly you can still run
+out of memory when we calculated three
+factorial that resulted in three calls
+to our method fact algo
+we were in no danger of running out of
+memory there
+but instead imagine if you tried a
+hundred thousand factorial you'd need a
+hundred thousand calls to fact algo
+you'd run out of space on the stack long
+before you hit the base case
+this is one reason that some types of
+problems aren't well suited to recursion
+now let's look at the program but
+instead of pseudocode it's written in
+Java
+or JavaScript
+or python
+in the Java JavaScript and python
+examples we followed the same recursive
+algorithm but with language specific
+syntax
+now you never have to write an algorithm
+recursively because any recursive
+algorithm can also be written
+iteratively but sometimes the recursion
+solution is more elegant calculating
+factorials is a classic example of that
+now to learn even more about recursion
+join me in the next video let's look at
+this recursive problem if you want you
+can pause the video and solve it
+the method Enigma has int-parameters a
+and z
+if a and z are equal we hit a base case
+and return a plus Z
+if a is greater than Z we get a
+recursive case and return a plus
+whatever is returned by a call to Enigma
+that passes a minus 2 and z finally if
+it makes it down to the last line it
+must be that a is less than Z we have an
+alternate recursive call that returns Z
+plus whatever is returned by a call that
+passes A and Z minus 1.
+alternatively I could have written it
+this way and it would behave the same
+way I find the second way preferable but
+I want you to see the different ways a
+problem can be written
+let's say a call was made to Enigma that
+passes eight and three eight gets passed
+to the parameter a and three gets passed
+to the parameter Z
+a frame gets pushed onto the stack
+a equals z is false so we continue on
+a greater than Z is true so this Frame
+will return eight plus whatever is
+returned by Enigma six
+three
+Enigma 6 3 is pushed onto the stack
+a equals z is false so we continue on
+a greater than Z is true so this Frame
+will return six plus whatever is
+returned by Enigma
+4 3.
+Enigma 4 3 is pushed onto the stack
+a equals z is false so we continue on
+a greater than C is true so this Frame
+will return four plus whatever is
+returned by Enigma 2 3. Enigma 2 3 is
+pushed onto the stack
+a equals z is false so we continue on
+a greater than Z is also false so we
+continue on
+this Frame will return three plus
+whatever is returned by Enigma 2 2
+Enigma 2 2 is pushed onto the stack
+a equals z is true
+we've reached a base case and returned
+four
+this Frame is popped off the stack
+now the next call can add four to three
+return seven and pop the frame off the
+stack
+the next call adds seven to four returns
+eleven and Pops the frame off the stack
+the next call adds 11 to 6 returns 17
+and Pops the frame off the stack
+finally this call adds 17 to 8 and
+returns 25. the initial call Enigma 8 3
+has returned 25. in this lesson you'll
+learn about tree recursion and binary
+recursion the example will be in Java
+but you can apply this concept to other
+programming languages some quick facts
+tree recursion is when a recursive
+message simultaneously calls itself
+multiple times there can be two three
+four or more simultaneous calls binary
+recursion is tree recursion where it
+makes two calls at once a well-known
+binary recursion algorithm that we're
+going to look at calculates the
+Fibonacci sequence the first two digits
+of the Fibonacci sequence are zero and
+one later digits are calculated by
+adding the two previous digits let's
+take a look at the Fibonacci sequence
+we start out with zero and one
+our third digit is the sum of the two
+previous digits so zero plus one equals
+one
+then one plus one equals two
+one plus two equals three
+three plus two equals five and so on
+this is a problem that's well made for
+recursion because we calculate our
+current value by adding the two previous
+values which can also be calculated by
+adding their two previous values
+let's write some code to calculate the
+Fibonacci sequence recursively
+first we'll make a method that returns
+an INT and takes in an INT parameter
+called digit the digit parameter will be
+what digit in the Fibonacci sequence
+we're looking for
+in the body we start by writing the base
+case
+if we're looking for digit 1 or digit 2
+we're simply going to return digit minus
+one
+in our recursive case we're going to add
+the sum of the two digits before the
+current one
+we'll call the same method twice passing
+digit minus 1 and digit minus 2 to
+calculate the two previous digits
+here we add a main method that's going
+to call fib and pass the argument 5 so
+it'll print out the fifth digit in the
+Fibonacci sequence
+we'll trace it out by drawing a
+recursion tree recursion trees are a
+useful technique for visualizing and
+understanding the behavior of tree
+recursive algorithms including binary
+recursion we start with our first call
+to fib and pass the value 5. this is not
+the base case because digits is not
+equal to one or two
+we go to the recursive case and make two
+calls to the same method we call FIB
+digit minus one which is four and then
+digit minus two which is 3. you can see
+how the two calls Branch off
+I usually go down the left tree branch
+and then go back around and fill out
+anything I need to
+we go to the FIB 4 node 4 goes into the
+digit parameter
+we see that it's not one or two so we're
+going to make a call to FIB 3 and then
+fib 2.
+we go to the FIB 3 node
+3 is not equal to one or two so we make
+a call to FIB 2 and then fib 1.
+now we've hit two base cases if we pass
+FIB the value 2 it'll return one if we
+pass FIB the value 1 it'll return 0.
+so now we can add up these two values
+and finish the FIB 3 node
+FIB 3 will return one plus zero which is
+one
+now we can go back to FIB 2. we already
+know what FIB 2 returns because we can
+see it from this example
+we don't have to look at the code we can
+just say that FIB 2 will return one
+next we go back to fib4 which adds one
+plus one and returns two
+we also know that FIB 3 is always going
+to return one so we don't have to create
+the extra branches on this end of the
+tree we just cross out this node and
+write in one
+and then to calculate FIB five we add 2
+plus 1. I'll call the FIB five will
+return 3 because 3 is the fifth digit in
+the Fibonacci sequence
+depending on the problem you are tracing
+you may not be able to Simply fill in
+the other parts of the tree you may have
+to draw out additional branches but it's
+always valuable to see if there's ones
+that have already been calculated
+another important thing to remember is
+you're not always going to be adding the
+two calls together you could be
+subtracting them multiplying dividing or
+doing some other operation
+tree and binary recursion have practical
+applications Beyond Fibonacci for
+example merge sort and binary search can
+use binary recursion tree recursion can
+be used to generate permutations draw
+fractals and solve mazes by grasping the
+versatility of these Concepts you can
+apply them to a variety of programming
+challenges
+take a look at this binary recursive
+problem if you want you can pause the
+video and solve it
+the method riddle has an into parameter
+num
+it has a recursive case first where it
+calls itself and passes num plus one
+then subtracts a second call in which it
+passes num plus two the base case
+Returns the value of num let's say we
+call riddle and pass it the value 2. in
+this stack frame num has a value of 2.
+num is less than 5 so it makes the calls
+riddle 3 and riddle 4.
+in this Frame num is 3 so we make a call
+to riddle 4 and riddle five
+in this Frame num is four so we make a
+call to riddle five and riddle six
+here num is five so we hit the base case
+return five and pop this Frame off the
+stack
+the riddle six call also hits the base
+case and returns six
+riddle 4 calculates five minus six and
+returns negative one
+let's look to see if we can fill
+anything else out without tracing it we
+already know riddle 5 returns five so we
+can just plug that in here
+we also know that riddle 4 returns
+negative one so we can plug that in here
+riddle three calculates negative one
+minus five and returns negative six
+riddle 2 calculates negative six minus
+negative one which is negative five
+so our initial call of riddle 2 returns
+negative five
+in this tutorial we'll explore head and
+tail recursion some important facts to
+know head recursion is when a recursive
+call happens at the beginning of the
+method before other processing
+tail recursion is when a recursive call
+happens at the end of the method after
+other processing there are other
+circumstances where other processing may
+happen both before and after a recursive
+call
+our code samples are written in Java but
+these Concepts can be applied to other
+programming languages like JavaScript
+python or C plus
+let's start with head recursion in this
+snippet we have a method called mystery
+that takes an INT input and prints the
+numbers from 0 to the input value in
+ascending order notice that the
+recursive call happens at the beginning
+of the method before other processing
+now let's write a main method and see
+what happens when we call mystery with
+the argument 3.
+a call stack is a lifo structure which
+stands for last in first out pay
+attention to how new stack frames are
+pushed onto the top of the stack the
+newer frames at the top will be the
+first to be popped off the stack
+we start with a call to the main method
+and push a frame onto the stack when
+main calls mystery 3 another frame is
+pushed onto the stack with X set to 3.
+we check if x is greater than zero three
+is greater than zero so we make another
+call to the method x minus 1 is 2 so we
+call mystery 2 and push it onto the
+stack the system out print line at the
+end of the method won't be processed
+until we work our way back down the
+stack in this Frame X is two we check is
+X greater than zero it is so we call
+mystery x minus 1 and push mystery 1
+onto the stack in this Frame X is one we
+check is X greater than zero it is so we
+call mystery x minus one and push
+mystery zero onto the stack in this
+Frame X is zero we check is X greater
+than zero it isn't so we don't make a
+recursive call we continue on to the
+next line and print 0 to the console now
+that we've finished this method we pop
+this Frame frame off the top of the
+stack we continue down to the next frame
+and complete the unprocessed portion
+here x is one so we'll output one then
+we'll pop this Frame off the stack in
+the next frame X is 2 so we output 2 and
+pop it off the top of the stack we go to
+the next frame where X is 3 output 3
+then pop it off the stack the call
+domain completes and its frame is popped
+off the stack now let's look at our
+second code example which demonstrates
+tail recursion this almost identical
+method also called mystery takes an INT
+input and prints the numbers from the
+input value down to zero in descending
+order using tail recursion in this case
+the recursive call happens at the end of
+the method after other processing we
+start with a call to the main method and
+push a frame onto the stack when main
+calls mystery 3 another frame is pushed
+onto the stack with X set to 3. we print
+X and output 3 to the console we check
+is X greater than 3 it is so we make
+another call to mystery x minus one we
+call mystery 2 and another frame is
+pushed onto the stack with X set to two
+we print out the x value which outputs 2
+to the console we check is X greater
+than zero it is so we make another call
+to mystery x minus one we call mystery
+one and another frame is pushed onto the
+stack with X set to one we print out the
+x value which outputs one to the console
+we check is X greater than zero it is so
+we make another call to mystery x minus
+one we call mystery zero and another
+frame is pushed onto the stack with X
+set to zero we print out the x value
+which outputs zero to the console we
+check is X greater than zero it is not
+so we don't make the recursive call and
+finish up this run of the method we pop
+the frame off the top of the stack next
+we finish up mystery one and pop the
+frame off the stack we finish up mystery
+2 and pop the frame off the stack we
+finish up mystery three and pop the
+frame off the stack
+the call domain completes and its frame
+is popped off the stack you can see the
+ordering of the outputs is opposite to
+our head recursion example
+let's take a look at the full Java code
+for both the head recursion and tail
+recursion mystery methods side by side
+as you can see the primary difference
+between the two methods is the placement
+of the recursive call in head recursion
+the call occurs before the other
+processing while in tail recursion the
+call occurs after the other processing
+now let's examine a third code example
+which demonstrates a method that
+combines both head and tail recursion
+techniques to Showcase their effects
+within the single code snippet in this
+mystery method we'll first increment the
+input value by 1 in print it second we
+make the recursive call finally we
+decrement the input value by 1 and print
+it again this allows us to see the
+effects of both head and tail recursion
+in a single code snippet for practice
+try it on your own I'll leave the
+solution in the video description at
+first look this problem can seem
+overwhelming but we're going to go
+through it make some notes and then it
+will be much more manageable I encourage
+you to consider this approach when
+looking at a difficult problem if you
+want you can pause the video here and
+solve it
+also if you want to learn more about how
+recursion Works check out the link to
+the playlist
+the puzzle method has one string
+parameter called word
+the return type is void so it won't
+return anything and then explicit return
+statement is optional
+the recursive case is in the middle of
+the method
+the base case is implicit with a void
+method you don't have to have an
+explicit return statement the method
+will automatically return nothing when
+it reaches the end
+this piece of code will execute as soon
+as the method is called it will run as
+we are going up the stack
+this piece of code will execute after
+the recursive call above has finished it
+will run as we are coming back down the
+stack
+now let's look at what each piece of
+code does having a Java reference sheet
+handy can make this easier
+this line will print out the value of
+the word parameter except for its last
+character if word has more than three
+characters puzzle will be called again
+and will be passed the value of word
+without the first character remember
+word will have different values in
+different stack frames
+this piece of code prints one star for
+each character in the word it uses print
+instead of print line so all the stars
+will be on the same line after the for
+Loop is done a print line will go to the
+next line
+suppose a call was made to puzzle and
+the string drosty was passed a frame is
+placed on the stack and for this Frame
+word is set to d r o s t e
+d r o s t is output to the console don't
+confuse what is output to the console to
+the value of the word variable
+word has a length of six which is
+greater than three so puzzle is called
+and passed r-o-s-t-e
+a frame is placed on the stack and for
+this Frame word is set to r o s t e r o
+s t is outputted to the console word
+length is greater than three so puzzle
+is called and passed o s t e
+a frame is placed on the stack and for
+this Frame word is set to o s t e o s t
+is output to the console word lengths is
+greater than three so puzzle is called
+and passed s-t-e a frame is placed on
+the stack and for this Frame word is set
+to Ste s t is output to the console word
+length is not greater than three so a
+recursive call is not made we continue
+on and print off three stars then a new
+line we reach the implicit return at the
+end of the method and pop the frame off
+the stack back to this Frame we pick up
+where we left off
+it prints four stars and Pops the frame
+off the stack on this Frame we pick up
+where we left off it prints five stars
+and Pops the frame off the stack on this
+Frame we pick up where we left off it
+prints six stars and Pops the frame off
+the stack this is what we got when we
+passed the string drosty
+as an extra challenge figure out one of
+the following and tell me in the
+comments
+first what could be a value we could
+pass when we called puzzle that would
+cause a compile time error where the
+program wouldn't even start to run
+second what value could cause a runtime
+error index out of bounds exception
+third what value could cause a runtime
+error null pointer exception
+if you have any questions or want to
+share your experience with recursion
+feel free to leave a comment below to
+keep learning click on the next video
+otherwise check out the full playlist
+see you soon

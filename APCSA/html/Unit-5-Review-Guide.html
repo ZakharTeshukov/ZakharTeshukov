@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unit-5-Review-Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html">AP CSA Review Guides</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+    </nav>
+    
+    <p>Below is the <strong>complete review sheet for AP Computer Science A – Unit 5: Writing Classes</strong>, combining both parts of Lesson 5 into one cohesive document.</p>
+<hr />
+<h1>📘 Unit 5 Review: Writing Classes in Java</h1>
+<h2>1. Object-Oriented Basics</h2>
+<ul>
+<li><strong>Object (Instance)</strong>: holds state (fields) and behavior (methods).</li>
+<li><strong>Class</strong>: a blueprint defining fields and methods for its objects.</li>
+</ul>
+<hr />
+<h2>2. Static vs. Non-Static Members</h2>
+<table>
+<thead>
+<tr>
+<th>Member Type</th>
+<th>Keyword</th>
+<th>Belongs To</th>
+<th>Accessible By</th>
+<th>Shared?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Class Variable</td>
+<td><code>static</code></td>
+<td>The class</td>
+<td>Static &amp; non-static methods</td>
+<td>Yes (one copy)</td>
+</tr>
+<tr>
+<td>Instance Variable</td>
+<td><em>(none)</em></td>
+<td>Each object</td>
+<td>Non-static methods</td>
+<td>No (per instance)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Static methods</strong> can only access static fields.</li>
+<li><strong>Non-static methods</strong> can access both instance and static fields.</li>
+</ul>
+<hr />
+<h2>3. Declaring Methods</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">accessModifier</span><span class="w"> </span><span class="o">[</span><span class="kd">static</span><span class="o">]</span><span class="w"> </span><span class="n">returnType</span><span class="w"> </span><span class="nf">methodName</span><span class="p">(</span><span class="n">parameterList</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// method body</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Access Modifiers</strong>: <code>public</code> (anywhere) or <code>private</code> (within class).</li>
+<li><strong><code>static</code></strong> marks class methods; omit for non-static.</li>
+<li><strong>Return Type</strong>: <code>void</code> (no return) or any primitive/object type.</li>
+<li><strong>Method Name</strong>: lowerCamelCase, descriptive.</li>
+<li><strong>Parameters</strong>: comma-separated; each has a type and name.</li>
+</ul>
+<hr />
+<h2>4. Getter &amp; Setter Methods</h2>
+<ul>
+<li><strong>Why?</strong> Fields are often <code>private</code> for encapsulation; getters/setters allow controlled access.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">studentId</span><span class="p">;</span><span class="w">            </span><span class="c1">// instance field</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">mascot</span><span class="p">;</span><span class="w">     </span><span class="c1">// class field</span>
+
+<span class="w">    </span><span class="c1">// Getter for instance field</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getStudentId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">studentId</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Setter for instance field</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setStudentId</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">newId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">studentId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newId</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Getter for class field</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getMascot</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">mascot</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Setter for class field</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMascot</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">newMascot</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mascot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newMascot</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><strong>getX()</strong> returns the field’s value.</li>
+<li><strong>setX(value)</strong> assigns a new value to the field.</li>
+</ul>
+<hr />
+<h2>5. Constructors</h2>
+<ul>
+<li><strong>Constructor</strong>: special method named exactly like the class, no return type, runs when you <code>new</code> an object.</li>
+<li><strong>Uses</strong>: initialize fields, call helper methods.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Robot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">fuelSource</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// No-arg constructor</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Robot</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">fuelSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Electricity&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">randomName</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Overloaded constructor</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Robot</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">newName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">fuelSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Electricity&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newName</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Overloaded Constructors</strong>: multiple constructors with different parameter lists.</li>
+<li>If <strong>no constructors</strong> are provided, Java supplies a <strong>default no-arg constructor</strong>.</li>
+</ul>
+<hr />
+<h2>6. The <code>this</code> Keyword</h2>
+<ul>
+<li><code>this</code> refers to the <strong>current object</strong>.</li>
+<li><strong>Disambiguate fields vs. parameters</strong>:</li>
+</ul>
+<p><code>java
+  private int x;
+  public void setX(int x) {
+      this.x = x;
+  }</code>
+* <strong>Call another constructor</strong>:</p>
+<p><code>java
+  public Robot() {
+      this("Wall-E");  // must be first line
+  }</code>
+* <strong>Pass current object</strong>:</p>
+<p><code>java
+  otherObj.process(this);</code></p>
+<hr />
+<h2>7. Method Overloading</h2>
+<p>Define multiple methods with <strong>same name</strong> but <strong>different signatures</strong>:</p>
+<p>✔ Valid overload if one of:</p>
+<ul>
+<li>Different <strong>number</strong> of parameters, or</li>
+<li>Different <strong>types</strong> of parameters, or</li>
+<li>Different <strong>order</strong> of parameter types.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">outputAnswer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">…</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">outputAnswer</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">…</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">outputAnswer</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">…</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+
+<p>✖ Invalid overload if signatures collide (even with different return types or parameter names).</p>
+<hr />
+<h2>8. Scope &amp; Lifetime of Variables</h2>
+<ul>
+<li><strong>Scope</strong>: where a variable can be accessed (determined by where declared).</li>
+<li><strong>Lifetime</strong>: when it exists in memory (from creation to destruction).</li>
+</ul>
+<h3>Examples</h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">       </span><span class="c1">// scope: entire method; lifetime: until main ends</span>
+
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">   </span><span class="c1">// scope: this block only; lifetime: block’s execution</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w">  </span><span class="c1">// scope &amp; lifetime: each iteration of this loop</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Local variables</strong> (in methods/blocks) die when the block/method exits.</li>
+<li><strong>Parameters</strong> act like locals, created when method runs, destroyed on return.</li>
+<li><strong>Instance fields</strong> exist as long as the object exists.</li>
+<li><strong>Static fields</strong> exist once the class is loaded, until program ends.</li>
+</ul>
+<hr />
+<h3>End of Unit 5 Review</h3>
+<p>Practice creating classes, constructors, getters/setters, and overloaded methods. Trace memory with <code>this</code> and variable scope to solidify your understanding!</p>
+    <script src="darkmode.js"></script>
+</body>
+</html>

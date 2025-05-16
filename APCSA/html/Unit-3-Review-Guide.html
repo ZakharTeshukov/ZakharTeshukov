@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unit-3-Review-Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html">AP CSA Review Guides</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+    </nav>
+    
+    <p><strong>AP Computer Science A - Unit 3 Review: Boolean Expressions and Conditional Statements</strong></p>
+<hr />
+<h3>1. Boolean Expressions</h3>
+<ul>
+<li>A <strong>boolean expression</strong> evaluates to either <code>true</code> or <code>false</code>.</li>
+<li>Common use: inside an <code>if</code> statement.</li>
+<li>Example:</li>
+</ul>
+<p><code>java
+  if (3 &gt; 2) {
+      // Executes because expression is true
+  }</code></p>
+<hr />
+<h3>2. Relational Operators</h3>
+<ul>
+<li>
+<p>Used to compare two values:</p>
+</li>
+<li>
+<p><code>==</code> : equals (used with <strong>primitive</strong> types)</p>
+</li>
+<li><code>!=</code> : not equal</li>
+<li><code>&gt;</code>  : greater than</li>
+<li><code>&lt;</code>  : less than</li>
+<li><code>&gt;=</code> : greater than or equal to</li>
+<li><code>&lt;=</code> : less than or equal to</li>
+<li>
+<p><strong>Important:</strong></p>
+</li>
+<li>
+<p><code>==</code> is not the same as <code>=</code> (assignment).</p>
+</li>
+<li><code>==</code> is only for primitives. Use <code>.equals()</code> for object comparisons.</li>
+</ul>
+<hr />
+<h3>3. Conditional (Logical) Operators</h3>
+<ul>
+<li>
+<p>Combine boolean expressions:</p>
+</li>
+<li>
+<p><code>&amp;&amp;</code> : AND (both must be true)</p>
+</li>
+<li><code>||</code> : OR (either can be true)</li>
+<li>
+<p><strong>Short-Circuiting</strong>:</p>
+</li>
+<li>
+<p>In <code>&amp;&amp;</code>, if the first condition is false, the second is not evaluated.</p>
+</li>
+<li>In <code>||</code>, if the first condition is true, the second is not evaluated.</li>
+<li><strong>Avoids errors</strong>, e.g., dividing by zero.</li>
+</ul>
+<hr />
+<h3>4. If / Else If / Else Statements</h3>
+<ul>
+<li>Allow decision-making based on boolean expressions.</li>
+<li><strong>Syntax:</strong></li>
+</ul>
+<p><code>java
+  if (condition) {
+      // Executes if condition is true
+  } else if (anotherCondition) {
+      // Executes if above is false and this is true
+  } else {
+      // Executes if all above are false
+  }</code>
+* <strong>Rules:</strong></p>
+<ul>
+<li><code>if</code> and <code>else if</code> need a boolean expression.</li>
+<li><code>else</code> does <strong>not</strong> take a boolean expression.</li>
+<li>Only <strong>one</strong> block is executed in an <code>if-else if-else</code> chain.</li>
+</ul>
+<hr />
+<h3>5. Code Tracing Example</h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Runs</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Skipped</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Runs</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3>6. Nested If-Else Statements</h3>
+<ul>
+<li>You can place <code>if-else</code> structures <strong>inside</strong> one another.</li>
+<li>Use indentation and comments to keep them clear.</li>
+<li>Example:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Runs</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;D&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;E&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3>7. Common Errors</h3>
+<ul>
+<li>
+<p><strong>Semicolon after <code>if</code>, <code>else if</code>, or <code>else</code></strong>:</p>
+</li>
+<li>
+<p>Breaks the structure; block executes regardless.</p>
+</li>
+<li>
+<p><strong>Adding condition to <code>else</code></strong>:</p>
+</li>
+<li>
+<p>Invalid: <code>else (x &lt; 5)</code> → causes a compile error.</p>
+</li>
+<li>
+<p><strong>Multiple statements without curly braces</strong>:</p>
+</li>
+<li>
+<p>Only the first statement is considered inside the <code>if</code>.</p>
+</li>
+<li>Use <code>{}</code> for clarity and correctness.</li>
+</ul>
+<hr />
+<h3>8. One-Line Conditionals</h3>
+<ul>
+<li>If only one line of code is needed, curly braces <code>{}</code> can be omitted.</li>
+<li>Example:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;X is large&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<hr />
+<p><strong>Summary:</strong></p>
+<ul>
+<li>Master relational and conditional operators.</li>
+<li>Understand the flow of if-else chains.</li>
+<li>Use short-circuit logic to avoid runtime errors.</li>
+<li>Trace and debug code to confirm logic correctness.</li>
+<li>Avoid common syntax errors by understanding Java rules.</li>
+</ul>
+<p>Practice writing and tracing <code>if-else</code> structures to prepare for AP CSA exam questions!</p>
+    <script src="darkmode.js"></script>
+</body>
+</html>

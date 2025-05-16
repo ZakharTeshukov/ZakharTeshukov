@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unit-2-Review-Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html">AP CSA Review Guides</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+    </nav>
+    
+    <p>Certainly! Here is the <strong>fully updated and unified Java review guide</strong>, now with both parts of the lesson included and organized for clarity:</p>
+<hr />
+<h1>📘 Java Review Guide: Classes, Methods, Strings, and Operators</h1>
+<hr />
+<h2>📍 SECTION 1: Classes and Methods</h2>
+<h3>✅ Understanding Method Types</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method</strong></td>
+<td>A behavior or function defined in a class.</td>
+</tr>
+<tr>
+<td><strong>Static</strong></td>
+<td>Belongs to the class itself. Called using <code>ClassName.methodName()</code>.</td>
+</tr>
+<tr>
+<td><strong>Non-static</strong></td>
+<td>Belongs to an individual object. Requires creating an instance to access.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>🎂 Example: <code>Cake</code> and <code>Bakery</code> Classes</h3>
+<h4>🔹 Static Method – <code>listFlavorChoices</code></h4>
+<ul>
+<li><strong>Belongs to</strong>: Cake class itself.</li>
+<li><strong>Call with</strong>: <code>Cake.listFlavorChoices();</code></li>
+<li><strong>Returns</strong>: <code>String</code> (list of flavors).</li>
+<li><strong>Important</strong>: Return value must be stored or printed.</li>
+</ul>
+<p><code>java
+  System.out.println(Cake.listFlavorChoices());</code></p>
+<h4>🔹 Non-static Method – <code>howManyCalories</code></h4>
+<ul>
+<li><strong>Belongs to</strong>: Cake objects.</li>
+<li>
+<p><strong>Steps</strong>:</p>
+</li>
+<li>
+<p>Create a <code>Cake</code> object:</p>
+<p><code>java
+ Cake vanilla = new Cake();</code>
+  2. Call the method:</p>
+<p><code>java
+ int calories = vanilla.howManyCalories();</code></p>
+</li>
+</ul>
+<h4>🔹 Non-static Method – <code>addWriting</code></h4>
+<ul>
+<li><strong>Has Parameter</strong>: Takes a <code>String</code>.</li>
+<li><strong>Call with</strong>:</li>
+</ul>
+<p><code>java
+  vanilla.addWriting("Happy Birthday");</code></p>
+<h4>🔒 Private Method – <code>mixIngredients</code></h4>
+<ul>
+<li><strong>Private Access</strong>: Only callable <strong>within</strong> the Cake class.</li>
+<li><strong>Can be called indirectly</strong> via public methods in the Cake class.</li>
+</ul>
+<hr />
+<h3>🧠 Key Method Concepts</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access Modifier</td>
+<td><code>public</code>, <code>private</code>, etc. (controls visibility)</td>
+</tr>
+<tr>
+<td>Return Type</td>
+<td>e.g., <code>int</code>, <code>String</code>, <code>void</code></td>
+</tr>
+<tr>
+<td>Method Name</td>
+<td>Identifier like <code>howManyCalories</code></td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>Inputs like <code>(String message)</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>📍 SECTION 2: Strings in Java</h2>
+<h3>📘 What Is a String?</h3>
+<ul>
+<li>A <strong>data type</strong> that holds text.</li>
+<li>Internally, a string is an <strong>array of <code>char</code></strong>.</li>
+<li>Strings are <strong>objects</strong>, not primitives.</li>
+</ul>
+<hr />
+<h3>🧱 Memory &amp; Storage</h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stack</strong></td>
+<td>Stores variable references.</td>
+</tr>
+<tr>
+<td><strong>Heap</strong></td>
+<td>Stores objects.</td>
+</tr>
+<tr>
+<td><strong>String Pool</strong></td>
+<td>Optimized memory for string literals. Same values point to the same object.</td>
+</tr>
+<tr>
+<td><strong>Immutable</strong></td>
+<td>Strings <strong>cannot be changed</strong> once created. Any changes produce a new string.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>📄 Declaring Strings</h3>
+<h4>✅ Common Way (String Pool used)</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+</code></pre></div>
+
+<h4>⚠️ Less Common (Bypassing String Pool)</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<hr />
+<h3>🆚 Equality</h3>
+<h4>Referential Equality (<code>==</code>)</h4>
+<ul>
+<li>Compares <strong>memory locations</strong>.</li>
+<li>True only if both variables point to <strong>same object</strong>.</li>
+</ul>
+<h4>Value Equality (<code>.equals</code>)</h4>
+<ul>
+<li>Compares the <strong>contents</strong> of the strings.</li>
+<li>Preferred way for comparing strings:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="n">a</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w">          </span><span class="c1">// true if values are the same</span>
+<span class="n">a</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// ignores capitalization</span>
+</code></pre></div>
+
+<hr />
+<h3>🛠 Useful String Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>length()</code></td>
+<td>Returns the number of characters.</td>
+</tr>
+<tr>
+<td><code>substring(start)</code></td>
+<td>Returns part of the string starting at index <code>start</code>.</td>
+</tr>
+<tr>
+<td><code>substring(start, end)</code></td>
+<td>Returns characters from <code>start</code> (inclusive) to <code>end</code> (exclusive).</td>
+</tr>
+<tr>
+<td><code>equals(otherString)</code></td>
+<td>Checks for value equality (case-sensitive).</td>
+</tr>
+<tr>
+<td><code>equalsIgnoreCase(otherString)</code></td>
+<td>Value equality ignoring case.</td>
+</tr>
+<tr>
+<td><code>compareTo(otherString)</code></td>
+<td>Returns difference in Unicode values; 0 if equal.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>🧪 String Examples</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hi&quot;</span><span class="p">;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;howdy&quot;</span><span class="p">;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">&quot;Hi&quot;</span><span class="p">);</span>
+
+<span class="c1">// Comparisons</span>
+<span class="n">e</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">f</span><span class="p">;</span><span class="w">                  </span><span class="c1">// true (same object)</span>
+<span class="n">e</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">h</span><span class="p">;</span><span class="w">                  </span><span class="c1">// false (different objects)</span>
+<span class="n">e</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">h</span><span class="p">);</span><span class="w">             </span><span class="c1">// false (case-sensitive)</span>
+<span class="n">e</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="n">h</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+<span class="n">g</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w">              </span><span class="c1">// 5</span>
+<span class="n">g</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">          </span><span class="c1">// &quot;wdy&quot;</span>
+<span class="n">g</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w">       </span><span class="c1">// &quot;owd&quot;</span>
+</code></pre></div>
+
+<hr />
+<h2>📍 SECTION 3: The Plus <code>+</code> Operator in Java</h2>
+<h3>➕ Dual Purposes of <code>+</code></h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Addition</strong></td>
+<td>Adds numeric values (int + int, double + double).</td>
+</tr>
+<tr>
+<td><strong>Concatenation</strong></td>
+<td>Joins two strings together.</td>
+</tr>
+</tbody>
+</table>
+<h3>🔢 Examples: Addition</h3>
+<div class="codehilite"><pre><span></span><code><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w">             </span><span class="c1">// 8 (int)</span>
+<span class="mf">2.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">4.0</span><span class="w">         </span><span class="c1">// 6.0 (double)</span>
+<span class="mf">4.2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w">           </span><span class="c1">// 7.2 (int is promoted to double)</span>
+</code></pre></div>
+
+<h3>🔤 Examples: Concatenation</h3>
+<div class="codehilite"><pre><span></span><code><span class="s">&quot;Hello&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="w">   </span><span class="c1">// &quot;Hello World&quot;</span>
+<span class="s">&quot;Score: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="w">           </span><span class="c1">// &quot;Score: 100&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>⚠️ Java will <strong>implicitly convert</strong> non-strings (e.g., int, double) to strings when used in concatenation.</p>
+</blockquote>
+<hr />
+<h2>✅ Summary Recap</h2>
+<h3>🎯 Classes &amp; Methods</h3>
+<ul>
+<li>Use <strong><code>ClassName.methodName()</code></strong> for static methods.</li>
+<li>Use <strong><code>objectName.methodName()</code></strong> for non-static methods.</li>
+<li>Understand method headers (access, return, name, parameters).</li>
+</ul>
+<h3>🎯 Strings</h3>
+<ul>
+<li>Strings are objects and immutable.</li>
+<li>Use <code>.equals()</code> to compare values, not <code>==</code>.</li>
+<li>Use <code>substring()</code>, <code>length()</code>, and <code>compareTo()</code> for manipulation.</li>
+</ul>
+<h3>🎯 Operators</h3>
+<ul>
+<li><code>+</code> can mean <strong>addition</strong> (for numbers) or <strong>concatenation</strong> (for strings).</li>
+<li>Java automatically handles type conversion during concatenation.</li>
+</ul>
+<hr />
+<p>Let me know if you want <strong>practice questions</strong>, <strong>diagrams</strong>, or <strong>code samples</strong> for any part of this guide!</p>
+    <script src="darkmode.js"></script>
+</body>
+</html>

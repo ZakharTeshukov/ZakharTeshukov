@@ -1,0 +1,760 @@
+in this Java tutorial for AP Computer
+Science a unit 9 you'll learn about
+inheritance polymorphism and
+Constructors the first four topics
+will'll cover are how methods are
+inherited and how to use inherited
+methods next we'll cover polymorphism
+finally we'll learn how to write
+Constructors in both Standalone classes
+and classes that are part of a hierarchy
+in this first lesson on inheritance in
+Java you'll learn how methods are
+inherited by subclasses from their super
+classes important facts about inheriting
+methods a class that inherits is called
+a subclass in this diagram tiger is a
+subclass of animal a class that is
+inherited from is called a super class
+animal is a super class of tiger
+subclasses are in an is a relationship
+with their super class we can say tiger
+is a animal a Java class can have many
+subclasses but only one super class in
+this updated diagram both tiger and bear
+are subclasses of animals
+anything with a private modifier like a
+field or method is not inherited but can
+be indirectly accessed from a
+subclass here we have an example of a
+worker class the worker class does not
+explicitly extend anything so it is not
+explicitly a subass however it
+implicitly extends object so it is a
+subass of the Java object class the
+extends keyword is how we tell Java that
+the class we are writing is a subass of
+another class any class where we don't
+explicitly use the extends keyword
+implicitly becomes a subass of the Java
+object class worker has two methods do
+work is a public method which means one
+it will be inherited by subclasses and
+two it can be directly accessed from
+other classes earn minimum wage is a
+private method which means one it will
+not be inherited by subclasses and two
+it can't be directly accessed from other
+classes our next class is trades person
+trades person is a subclass of worker
+trades person inherits due work but will
+not inherit the private earn minimum
+wage additionally trades person will add
+a new method do skilled work our third
+class is carpenter carpenter is a
+subclass of Trades person Carpenter will
+indirectly inherit doe work directly
+inherit doe skilled work and at its own
+method do woodwork to clarify the
+relationships worker is a object Trad
+person is a worker Carpenter is a trades
+person let's look at a new class work
+site work site is not in an inheritance
+relationship with worker trades person
+or Carpenter we've declared a worker
+variable Alex and initialized it with a
+new instance of the worker class if we
+tried to call alex. earn minimum wage
+from the work site class we'd get an
+error earn minimum wage is private so it
+can only be called from another method
+inside the worker class however we we
+can call do work from Alex indirectly we
+are calling the private method earn
+minimum wage which is okay because the
+actual call happens inside the worker
+class the output will be does unskilled
+work and earns minimum wage let's look
+at the next class work site 2 we've got
+worker Alex initialized as a new worker
+tradesperson Barbara initialized as a
+new trades person Carpenter Carol
+initialized as a new Carpenter for Alex
+calling doe work is legal because do
+work is public and thus accessible in
+the work site 2 class for Barbara
+calling do work is also legal because
+the method is directly inherited for
+Carol calling do work is legal because
+the method is indirectly inherited let's
+look at a final class work site 3 again
+Alex is a worker Barbara is a
+tradesperson and Carol is a carpenter it
+is illegal for the Alex variable which
+is pointing at a worker object to call
+called the do woodwork method super
+classes can't inherit from subclasses so
+a worker object can't access the do
+woodwork method in the carpenter class
+for the same reason Barbara which points
+at a tradesperson object also can't
+access the do woodwork method the Carol
+variable points at an instance of
+carpenter so it can call the do wwor
+method next we're going to learn about
+overriding methods four important things
+to know about overriding overriding
+replac is a method instead of inheriting
+it from the super class only non-static
+methods can be overridden there is
+something similar called hiding that can
+be done with static methods though we
+won't discuss it here private methods
+can't be truly overridden though they
+can be replaced let's look at alternate
+versions of the worker tradesperson and
+Carpenter classes in worker the do work
+method is public so it could be
+overridden in a subass if we don't
+override it it would simply be inherent
+ited for security reasons earn wage is
+private we don't want programmers to be
+able to call it directly from outside
+worker because they could create a
+Payday without doing any work being
+private it will not be inherited to a
+subass in trades person we've overridden
+do work so it behaves more appropriately
+for a trades person the override
+annotation is optional but it's a good
+practice we've created a new method to
+handle the payment called earn Union
+wage in Carpenter we again can override
+do work if we hadn't overridden do work
+Carpenter would have inherited the do
+work from tradesperson again we created
+a unique payment method this time called
+earn Carpenters wage let's look at the
+diagram of class relationships worker is
+implicitly a subclass of object
+tradesperson is a subclass of worker
+Carpenter is a subclass of
+tradesperson let's look at this
+unrelated class work site the main
+method will execute from top to bottom
+but we're going to jump around a bit to
+focus on one variable at a time we start
+by declaring a variable Albert of type
+worker then initializing it with a new
+instance of the worker class let's skip
+down a few lines to where we call the do
+work method from the Albert variable
+this method outputs does unskilled work
+next the method calls another method
+earn wage earn wage is private but since
+the call comes from inside the same
+class this is legal the earn wage method
+outputs earns minimum
+wage next let's look at tradesperson the
+Bob variable is pointing at a new
+tradesperson object we skip down and
+call do work from the object that the
+Bob variable is pointing at Java goes to
+the overridden version of do work which
+outputs do skilled work then it calls
+the earn Union wage method which outputs
+earns Union
+wage finally the carpenter variable
+Cynthia which is initialized to a new
+Carpenter object later we call the do
+work method from the Cynthia variable
+Java goes to the overridden version of
+do work and outputs does woodwork then
+it calls the method earn Carpenter wage
+which outputs earns Carpenters wage
+remember if we do not overwrite a public
+method in a subass the most recent
+version of it will be inherited from a
+super
+class next we're going to talk about
+using the super keyword to call methods
+in super class some important facts
+about using the super keyword we can use
+the super keyword to call methods in a
+super class that have been overridden in
+the subass super can also be used in a
+Constructor to call a Constructor in the
+super class we won't learn about this
+second use right now we have two sample
+classes the first is the car class here
+we Define the method apply brakes and
+here we Define the method check
+surroundings the second class
+self-driving car is a subclass of car
+here instead of inheriting apply brakes
+from car we override it and here instead
+of inheriting check surroundings from
+car we override it emergency override is
+a new method unique to self-driving car
+inside the emergency override method
+there is a call to super. apply brakes
+this is instructing Java to call the
+apply brakes method from the superclass
+car even if there is an overridden
+version of the method in the
+self-driving car class we're going to
+look at three different method calls the
+three examples may feel a bit redundant
+but it's important to understand how the
+rules apply in each circumstance now
+let's add a new class highway highway
+isn't in an inheritance relationship
+with either car or self-driving car in
+Highway's main method we create a
+variable called Ford Mustang and
+initialize it with a new instance of the
+car class next we create a variable
+called kit and initialize it with a new
+instance of the self driving car class
+finally we call the method apply brakes
+from the variable Ford Mustang Ford
+Mustang is pointing at a car object so
+we don't even need to think about the
+self-driving car class we call apply
+brakes it outputs driver applies brakes
+it calls another method check
+surroundings it outputs driver check
+surroundings and the program completes
+let's look at the Country Road class the
+first two lines in the main method are
+the same we declare and initialize the
+Ford Mustang and kit variables this time
+on the third line we call apply brakes
+from the kit variable we have two
+possible apply break methods we might
+call looking back at the earlier code we
+see that kit is pointing at a
+self-driving car object so we'll use the
+most recent version of that method which
+is in the self-driving car class Java
+outputs computer applies brakes next the
+method calls another method check
+surroundings again there are two
+different versions of the called method
+since kit points at a self-driving car
+object we'll use the most recent version
+of check surroundings which is in the
+self-driving car class Java outputs
+computer check surroundings and the
+program completes let's look at a third
+example again we have the variables Ford
+Mustang and kit here we call emergency
+override from kit the emergency override
+call is unique to the self driving car
+class first Java outputs driver takes
+control next there is a call to super.
+apply brakes kit is pointing at a
+self-driving car object but super means
+we want to call the apply brakes method
+in the super Class Car Java outputs
+driver applies brakes next a call to
+check surroundings this frequently
+confuses programmers because they assume
+since they are already up in the
+superclass car they'll stay there and
+use cars version of check
+surroundings however let's use the same
+criteria that we used in the last two
+examples kit is pointing at a
+self-driving car object so we're going
+to use the most recent version of check
+surroundings that version is in the
+self-driving car class Java outputs
+computer check surroundings and the
+program completes there's two important
+things to remember first in this context
+super specifically looks in the super
+class to call a method second by default
+Java uses the most recently overridden
+version of a method based on the object
+type next we're going to talk about
+accessing private fields in a super
+class two important facts to know we
+cannot directly access the private
+fields in a super class from a subass we
+can however indirectly access them if
+there are getter and Setter methods in
+the super class let's take a look at
+these two classes here animal and bird
+animal has a private field numb of legs
+since numb of legs is private it can't
+be inherited to a subass and can't be
+accessed outside the animal class in our
+subclass bird we have another private
+field feather color which wouldn't be
+inherited to a subass of bird and can't
+be accessed outside the bird class we
+have a method in the bird class report
+stats let's look at it line by line
+first we output the value of the feather
+color variable feather color is private
+but we can still access it from a method
+inside the bird class on the next line
+we output the value of the num of legs
+variable being private it isn't
+inherited thus isn't accessible to the
+methods inside the bird class let's see
+what we can do to make this work first
+we're going to make some changes to the
+animal class we create public gter and
+Setter methods these public methods are
+inherited to bird and thus accessible to
+methods inside the bird class
+back in the bird class the report stats
+method still can't directly access the
+numb of legs variable we replace the
+variable name with a call to the gter
+method to retrieve the value of the numb
+of legs field remember just because a
+private method or field isn't inherited
+doesn't mean it's not there private
+fields or methods in the animal class
+are still part of a bird object they
+just aren't accessible from bird methods
+however sometimes programmers give us
+other methods to indirectly access those
+private fields and
+methods next we'll learn about
+polymorphism some important things to
+know about polymorphism reference
+variables such as the Athena variable
+here can point to an object of the same
+class Athena a variable of type animal
+is pointing at a new animal object or an
+object of a subass the Simba variable of
+type animal is pointing at a new lion
+object if a variable is pointing at an
+object of a subass only method methods
+that exist in the variables class will
+be available we'll talk more about this
+later let's look at this hierarchy of
+classes for our purposes let's assume
+all the methods in these classes are
+public and non-static we have animal at
+the top then animal has two subclasses
+mammal and reptile mammal has two
+subclasses lion and bat reptile has one
+subclass dragon in some cases we'll be
+adding new methods to the subclasses in
+other cases we'll be overriding wrting
+methods from Super classes let's write
+some code we declare a variable Alex of
+type animal since Alex is an animal type
+variable it can point to an object of
+either animal or any of animal's
+subclasses here we have Alex point at a
+new instance of the lion class let's
+think about which methods the Alex
+variable can access Alex is an animal
+variable so it can access any methods
+that originate an animal we may have
+overridden those methods in Lion but as
+long as they exist an animal it'll be
+accessible by the Alex variable let's
+look at the animal class animal contains
+the methods eat and sleep so both
+methods will be accessible from the Alex
+variable next let's look at Mammal
+Mammal adds the control temp method
+which will be inherited by lion however
+since there is no control temp method in
+the animal class it will not be
+accessible through the Alex variable in
+the lion class we override the Sleep
+Method since there is a Sleep Method in
+the animal class we can access the
+overridden method from the Alex variable
+the roar method is unique to the lion
+class since there is no Roar in the
+animal class we can't access it from the
+Alex variable because Alex is an animal
+type variable let's write some more code
+we call the eat method from the Alex
+variable the lion object runs the eat
+method that is inherited from animal
+next we call alex. Sleep the variable
+type in this case animal determines
+which methods we can run since the
+animal class contains the Sleep Method
+it is accessible from Alex the object
+type in this case lion determines which
+version of the method is run Java runs
+the version of sleep that was overridden
+in the lion class finally we call alex.
+control temp while the method exists in
+the lion object we can't call it from
+the Alex variable so it generates an
+error if we change the Alex variable to
+either a mammal type or a lion type the
+call to control temp would be legal at
+this point people usually ask why
+wouldn't I always just declare Alex as a
+lion and have access to all the methods
+in this example you probably would but
+I'm going to show you two examples where
+polymorphism is useful here we create an
+array of animal called Zoo perhaps zoo
+is a list of all the enclosures
+available and we can populate each with
+an animal we initialize index zero with
+a lion index one with a reptile and an
+index two with a bat now let's go back
+to our hierarchy later on the zoo
+acquires an alligator and their
+programmer writes a new class for it we
+can simply initialize index 3 as an
+alligator without changing anything
+else let's look at another example here
+we have a Zoo class with a lion Kitty
+and a dragon Sparky in the main method
+we also have a veterinarian class the
+veterinarian class has a diagnose method
+that can take in any animal or animal
+subass and return a diagnosis this is
+powerful because instead of having a
+different method for each type of animal
+we can pass in any animal to this one
+method and get a diagnosis here's an
+example of how we could pass Kitty and
+Sparky to the method and output their
+medical
+condition in this section on class
+Constructors we'll start by reviewing
+how to write Constructors for Standalone
+classes when we aren't considering class
+inheritance so first what is a
+Constructor a Constructor is a series of
+instructions that run when you create a
+new object in essence they construct the
+data in the new object a Constructor
+only runs when we create a new object
+while not methods Constructors behave
+similarly to non-static methods let's
+look at this example we start with a
+robot class it has a class variable
+robot count and an instance variable
+name here's our Constructor Constructors
+are usually public the constructors name
+must be exactly the same as a class name
+a Constructor must not have a return
+type in this case there are no
+parameters in the parenthesis the first
+line adds one to robot count each time
+we create a new robot object robot count
+increases by one as a class variable
+there is only one shared copy of robot
+count so we can use this variable to
+keep track of how many total robot
+objects have been created the next line
+calls the random name method the random
+random name method generates a random
+number from 1 to three and sets the
+instance variable name to either Bender
+H 9,000 or Gort as an instance variable
+each robot object has its own copy of
+the name variable now let's look at the
+space station class in the main method
+we declare a variable of type robot
+called X1 we set X1 to point at a newly
+created instance of robot creating the
+new robot object causes the robot class
+is Constructor to run robot count is
+updated to one the random name method
+assigns the string to the name instance
+variable the same thing happens with X2
+and
+X3 next let's look at another class that
+has overloaded Constructors a class with
+overloaded Constructors has two or more
+Constructors and Java chooses which one
+to call based on the number type or
+order of parameters now let's look at
+the Solaria class on the first first
+line of the main method we declare an
+Android variable Z1 and initialize it
+with a new Android object there are no
+arguments passed so Java uses the
+Constructor with no parameters on the
+first line of the Constructor we use the
+this keyword in this context this is
+referring to the current object and it's
+calling another Constructor in the same
+class in the parentheses we are passing
+one string argument Java will find a
+Constructor in the same class class with
+one string parameter the string literal
+R daniil Oliva gets passed to the
+parameter new name the name field is set
+to the value of the new name parameter
+and the admin password field gets set to
+the string literal abc1 23 now to the
+second line of the main method here we
+pass one string to the Constructor in
+this case Java goes directly to the
+second Constructor when creating the new
+Android
+object
+let's look at a situation where
+overloading Constructors causes problems
+the class confused robot has two
+Constructors each Constructor has a
+string parameter followed by an INT
+parameter the fact that the parameters
+have different variable names is
+irrelevant now on to the main method in
+the floating city class we are creating
+a new confused robot object and passing
+it a string followed by an INT Java has
+no way to determine which Constructor we
+want to call for this reason we would
+get an error if we tried to build the
+confused robot
+class let's look at a final example we
+see that the RoboCop class doesn't even
+have a Constructor in cases where the
+programmer doesn't write any
+Constructors Java will give us a freebie
+no parameter Constructor remember we
+only get this freebie if there are no
+other Constructors and it will always
+have no parameters for the time being we
+can think of the body of this
+Constructor as empty now let's look at
+at the Detroit class which contains a
+main method Detroit will also get a
+freebie Constructor but in this case we
+don't really need to think about it
+running the main method in Detroit won't
+create a Detroit object since we aren't
+creating a Detroit object no Constructor
+in the Detroit class is ever called
+frequently we don't create objects from
+classes that contain main methods in the
+main method we declare a Robocop
+variable named Alex Murphy and
+initialize it to point at a new Robocop
+object there are no argum passed so Java
+calls our freebie no parameter
+Constructor since we haven't specified
+values for our Fields they will
+initialize to their default values now
+let's suppose instead of having no
+arguments in the parentheses we have an
+INT argument in this case there is no
+matching Constructor so the Detroit
+class will generate an error when we run
+it to fix this we either need to write a
+Constructor in Robocop with an INT
+parameter or remove the int argument
+from the
+parenthesis next we'll learn how
+Constructors call Constructors in their
+super class here are four important
+things to know about Constructors for
+this lesson every class must have a
+Constructor every Constructor must call
+a Constructor in its super class
+Constructors are never inherited the
+Java compiler will sometimes write
+missing Constructor code for us let's
+look at this vehicle class the vehicle
+class doesn't explicitly extend any
+other class however implicitly it
+extends the Java object class while I've
+never seen it done technically you can
+write extends object looking at the
+vehicle class we see it has three
+Constructors suppose that somewhere else
+in the program we declared a vehicle
+variable and initialized it to a new
+vehicle object we aren't passing any
+arguments so Java looks for a
+Constructor with no parameters every
+Constructor must call a Constructor in
+its super class in this context super
+calls the no parameter Constructor in
+the object class the object object
+classes Constructor runs and sets up its
+portion of the new instance now let's
+look at another example here we declare
+a different vehicle variable and
+initialize it with another vehicle
+object in this case we are passing one
+string argument so Java looks for the
+Constructor with one string parameter in
+this context the this keyword is used to
+call another Constructor in the same
+class there are no arguments inside the
+parentheses so Java looks for the
+Constructor with no parameters this top
+Constructor has the Super keyword so
+indirectly the middle Constructor is
+calling a Constructor in the object
+class once we are finished with the call
+to the top Constructor we finish up the
+code in the middle Constructor finally
+let's look at this third example here we
+have a string argument followed by an
+INT argument Java finds a Constructor
+with a string parameter followed by an
+INT parameter we see that there is no
+call in this Constructor to a
+Constructor in the super class in this
+situation Java will insert a call to a
+no parameter Constructor in the super
+class for this to be successful there
+needs to be a no parameter Constructor
+in the super class which in this
+situation there is in situations where
+the superclass doesn't have a no
+parameter Constructor you can't depend
+on Java to insert the call for you let's
+look at another variation of this class
+here there is no Constructor at all Java
+will start by inserting a generic no
+parameter Constructor for us next it
+will add a call to a no parameter
+Constructor in the super class let's
+look at these three classes the vehicle
+class is implicitly a subclass of object
+airplane is a subclass of vehicle and
+F16 is a subclass of airplane there is
+only one Constructor and vehicle The
+Constructor doesn't have a call to the
+super class so Java inserts one airplane
+has two Constructors the first line
+calls the Constructor in the super class
+and passes a string followed by int
+those arguments get passed to the
+matching Constructor and the superclass
+the second Constructor has a call to a
+superclass Constructor and passes no
+arguments this will generate an error
+because there is no matching Constructor
+in the vehicle class we need to modify
+this call to pass a string followed by
+an INT so it will work with the
+available Constructor in the super class
+F-16 doesn't have any Constructor at all
+Java writes a basic no parameter
+Constructor the basic no parameter
+Constructor includes a call to a no
+parameter Constructor in the super class
+remember Java only creates a simple no
+parameter Constructor for us if there
+aren't any other Constructors in the
+class finally we'll learn how
+Constructors send information to their
+super class as we learned earlier every
+Constructor must call a Constructor in
+its super class often these calls are
+used to pass up important information to
+the super class let's look at the class
+Ghost and it's subclass Slimer ghost has
+two instance variables also known as
+non-static Fields a string color and a
+Boolean is scary in the Constructor we
+don't explicitly make a call to the
+super classes Constructor so Java will
+automatically add a call to a no
+parameter Constructor in the super class
+we notice that we have a field named
+color and also a parameter named color
+these are two separate variables that
+happen to have the same name also
+there's a field is scary and a parameter
+is scary if we don't specify which one
+we're referring to Java will assume
+we're talking about the parameter we can
+use the this keyword in either
+Constructors or non-static methods to
+specify that we're talking about the
+field in this object next we'll look at
+the subass Slimer Slimer has an instance
+variable Boolean is hungry Slimer
+Constructor has two Boolean parameters
+the Constructor starts by calling the
+super classes Constructor all slimers
+are green so we simply pass up the
+string literal green next it passes the
+value of the variable is scary up to the
+ghosts Constructor finally it sets the
+field is hungry to the value of the
+parameter is hungry now we'll Trace some
+code and see how the Constructor builds
+the object in memory piece by piece for
+the purpose of this tutorial we'll
+assume that the code we're writing is in
+a main method somewhere we start by
+declaring a reference variable Sam of
+type ghost the variable is placed on the
+stack and is currently
+uninitialized next we will initialize
+Sam with a new instance of ghost and
+pass the arguments white and true to the
+constructor's parameters The Constructor
+calls a no parameter Constructor in the
+object super class we don't need to
+worry about what the Constructor in the
+Java object class does now we set the
+instance variable color to the value of
+the par parameter color we see the value
+of color updated in the object on the
+Heap we set the instance variable is
+scary to the value of the parameter is
+scary the parameter held the value true
+which was copied to the instance
+variable and shows up in the object on
+the Heap we've finished the Declaration
+and initialization of the Sam variable
+next let's create an instance of a
+Slimer we declare a reference variable
+Sue of type Slimer Sue is initialized as
+a new climber and is pass the arguments
+true and false which go to the
+parameters is hungry and is scary the
+first thing we do is pass up to the
+super class the string literal green and
+the value in the parameter is scary in
+the super class ghosts Constructor we
+call the Constructor in the Java object
+class then we set the field color to the
+parameter color which was passed up as
+green next we set the field is scary to
+the value of the parameter is scary
+which was passed up as false both of
+those values end up in the object on the
+Heap this object has two parts that we
+are concerned with the top part is in
+the Ghost part the bottom part is in the
+Slimer part we see a line separating the
+two portions of the object on the Heap
+now that we've finished running the
+Constructor in ghost we can pick up
+where we left off in Slimer Constructor
+the parameter is hungry was past a value
+of Truth
+we set the instance variable is hungry
+to the value of the parameter is hungry
+we see the updated instance variable is
+reflected on the object on the Heap we
+end up with two reference variables on
+the stack Sue and Sam the reference
+variables are each pointing at an object
+on the Heap you're at the end and if you
+have a test coming up good luck tell me
+in the comments was the pace of this
+video too fast too slow or about right
+check out the other resources on the
+channel and I'll see you
+soon

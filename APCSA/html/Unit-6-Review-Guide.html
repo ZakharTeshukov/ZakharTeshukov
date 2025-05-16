@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unit-6-Review-Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html">AP CSA Review Guides</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+    </nav>
+    
+    <p><strong>AP Computer Science A — Unit 6 Review: Arrays in Java</strong></p>
+<hr />
+<h2>1. What Is an Array?</h2>
+<ul>
+<li>A <strong>variable</strong> holds one value; an <strong>array</strong> holds multiple values of the <strong>same</strong> type in indexed slots.</li>
+<li>Declared once but each element accessed by <strong>zero-based index</strong>.</li>
+<li><strong>Use case</strong>: Manage related data (e.g., runs per inning) with a single structure instead of many variables.</li>
+</ul>
+<hr />
+<h2>2. Declaring &amp; Initializing Arrays</h2>
+<h3>▶️ Fixed Size Declaration</h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">scores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">9</span><span class="o">]</span><span class="p">;</span>
+<span class="c1">// size 9, defaults to 0 for ints</span>
+</code></pre></div>
+
+<ul>
+<li>Syntax: <code>type[] name = new type[size];</code></li>
+<li>
+<p>Defaults:</p>
+</li>
+<li>
+<p><code>int</code> → 0, <code>double</code> → 0.0, <code>boolean</code> → false, object → null</p>
+</li>
+</ul>
+<h3>▶️ Literal Initialization</h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span>
+<span class="c1">// size 4, elements set explicitly</span>
+</code></pre></div>
+
+<hr />
+<h2>3. Accessing &amp; Modifying Elements</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">array</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newValue</span><span class="p">;</span><span class="w">   </span><span class="c1">// assign</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span><span class="w">      </span><span class="c1">// retrieve</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Index out of bounds</strong> if <code>index &lt; 0</code> or <code>index &gt;= array.length</code> → runtime exception.</li>
+</ul>
+<hr />
+<h2>4. Memory Model: Primitives vs. Arrays</h2>
+<ul>
+<li><strong>Primitives</strong> (<code>int a = 3;</code>) store value on the <strong>stack</strong>.</li>
+<li><strong>Array variables</strong> store a <strong>pointer</strong> on the stack, pointing to an array <strong>object</strong> on the heap.</li>
+<li>Assigning one array reference to another copies the <strong>pointer</strong> (both variables refer to same object).</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>Stack:  c ──▶ [1,2,3,4]
+        d ──▶ [1,2,3,4]
+
+Heap:   [1,2,99,4]
+</code></pre></div>
+
+<p><em>(Modifying via either reference affects the same heap object.)</em></p>
+<hr />
+<h2>5. Traversing Arrays</h2>
+<h3>▶️ <code>for</code> Loop</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Control start/end/update in header.</li>
+<li>Can modify <code>i</code> behavior (step size, start index).</li>
+</ul>
+<h3>▶️ <code>for-each</code> Loop</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Simpler syntax; <strong>no indexing</strong> and <strong>cannot</strong> modify original array elements.</li>
+</ul>
+<hr />
+<h2>6. Common Array Algorithms</h2>
+<h3>▶️ Reverse an Array In-Place</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="n">arr</span><span class="o">[</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Swap elements from ends toward center.</li>
+<li>Uses <code>length/2</code> as number of swaps.</li>
+</ul>
+<h3>▶️ Find Largest Element</h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">largest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Largest = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">largest</span><span class="p">);</span>
+</code></pre></div>
+
+<ul>
+<li>Initialize with <code>arr[0]</code>, compare each, update if larger.</li>
+<li>For <strong>smallest</strong>, invert comparison (<code>&lt;</code>).</li>
+</ul>
+<hr />
+<h2>7. Key Points &amp; Best Practices</h2>
+<ul>
+<li><strong>Zero-based indexing</strong>: first element at index 0.</li>
+<li>Always check bounds: <code>0 &lt;= index &lt; arr.length</code>.</li>
+<li>Use <code>arr.length</code>, <strong>not</strong> <code>arr.length()</code>, to get size.</li>
+<li>Choose <code>for</code> vs. <code>for-each</code> based on need to modify or skip indices.</li>
+<li>Avoid null-pointer errors by initializing arrays before use.</li>
+</ul>
+<hr />
+<p><strong>Master these patterns</strong> to handle AP CSA array questions efficiently!</p>
+    <script src="darkmode.js"></script>
+</body>
+</html>

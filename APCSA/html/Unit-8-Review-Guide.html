@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unit-8-Review-Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html">AP CSA Review Guides</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+    </nav>
+    
+    <p><strong>AP Computer Science A — Unit 8 Review: Two‑Dimensional Arrays</strong></p>
+<hr />
+<h2>1. Declaring &amp; Initializing 2D Arrays</h2>
+<h3>▶️ Fixed‑size Declaration</h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
+</code></pre></div>
+
+<ul>
+<li>Two sets of <code>[]</code> indicate a 2D array.</li>
+<li>Defaults: all <code>int</code> elements → 0.</li>
+<li>Conceptually <strong>3 rows</strong>, <strong>4 columns</strong>.</li>
+</ul>
+<h3>▶️ Literal Initialization</h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<ul>
+<li>Each inner <code>{ ... }</code> defines a row.</li>
+<li>Rows can vary in length (jagged arrays).</li>
+</ul>
+<hr />
+<h2>2. Underlying Memory Model</h2>
+<ul>
+<li>A 2D array is an <strong>array of arrays</strong>:</li>
+</ul>
+<p><code>text
+  heap: [row0Ref, row1Ref, row2Ref]
+         row0Ref ──▶ [ , , , ]
+         row1Ref ──▶ [ , , , ]
+         row2Ref ──▶ [ , , , ]</code>
+* Outer array holds references to <strong>inner 1D arrays</strong>.
+* Inner arrays hold actual elements.</p>
+<hr />
+<h2>3. Accessing &amp; Assigning Elements</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span><span class="w">  </span><span class="c1">// row 0, col 1</span>
+<span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w">                   </span><span class="c1">// set row 1, col 2</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">check</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+</code></pre></div>
+
+<ul>
+<li>First index = <strong>row</strong>, second = <strong>column</strong>.</li>
+</ul>
+<hr />
+<h2>4. Traversal with Nested Loops</h2>
+<h3>▶️ Traditional <code>for</code> Loops (row‑major order)</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">r</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><code>arr.length</code> → number of rows.</li>
+<li><code>arr[r].length</code> → length of row <code>r</code> (number of columns in that row).</li>
+<li>Can modify values inside loops (e.g., multiply elements).</li>
+<li>Can adjust increments (e.g., <code>r+=2</code>).</li>
+</ul>
+<hr />
+<h3>▶️ Enhanced <code>for</code> Loops</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">val</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><code>row</code> refers to each inner array in turn.</li>
+<li><code>val</code> is each element in <code>row</code>.</li>
+<li>Simpler but <strong>cannot modify</strong> original array elements.</li>
+</ul>
+<hr />
+<h2>5. Common Algorithms</h2>
+<h3>▶️ Double All Elements</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="o">++</span><span class="p">)</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">r</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="n">arr</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</code></pre></div>
+
+<h3>▶️ Reverse Each Row (In‑place)</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">r</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cols</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="n">arr</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">cols</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">c</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="n">arr</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">cols</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">c</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2>6. Temple of Arrays FRQ Pattern</h2>
+<p>Given a 2D <code>String[][] floor</code>, implement:</p>
+<ol>
+<li>
+<p><strong><code>lineOfIdentical(String[] row)</code></strong> → <code>boolean</code>:</p>
+</li>
+<li>
+<p>Return <code>true</code> if <strong>all</strong> entries in <code>row</code> are equal.</p>
+</li>
+<li>
+<p><strong><code>isFloorSafe(String[][] floor)</code></strong> → <code>boolean</code>:</p>
+</li>
+<li>
+<p>No entries equal to "X" or "Y".</p>
+</li>
+<li>Not <strong>all</strong> entries are identical.</li>
+<li>
+<p><strong><code>canCrossFloor(String[][] floor)</code></strong> → <code>boolean</code>:</p>
+</li>
+<li>
+<p><code>isFloorSafe(floor) == true</code> <strong>and</strong></p>
+</li>
+<li><strong>At least one</strong> row satisfies <code>lineOfIdentical(...)</code>.</li>
+</ol>
+<p><strong>Traversal tip</strong>: Use <strong>for</strong> loops over <code>floor.length</code> (rows) and <code>floor[r].length</code> (cols).</p>
+<hr />
+<h2>7. Key Takeaways</h2>
+<ul>
+<li>2D arrays are <strong>arrays of arrays</strong>; can be jagged.</li>
+<li>Always use <code>arr.length</code> for rows and <code>arr[r].length</code> for columns.</li>
+<li>Nested <code>for</code> loops (row-major) for full traversal.</li>
+<li>Enhanced <code>for</code> is concise but <strong>read-only</strong> for element assignments.</li>
+<li>Understand memory layout: stack holds references, heap holds inner arrays and data.</li>
+</ul>
+<hr />
+<p><strong>Master these patterns</strong> to ace AP CSA questions on two‑dimensional arrays!</p>
+    <script src="darkmode.js"></script>
+</body>
+</html>

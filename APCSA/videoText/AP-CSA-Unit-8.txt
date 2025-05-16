@@ -1,0 +1,308 @@
+hey all in this AP Computer Science a video we're going to cover Unit 8 two-dimensional arrays if you don't like
+the pace of the video adjust the
+playback speed in YouTube check the time
+stamps to jump to specific topics and
+check the video description for other
+resources in this lesson we'll learn
+about 2D arrays in Java let's start by
+declaring a variable a notice two sets
+of square brackets after the data type
+which indicate a will point at a 2d
+array of int next let's initialize the
+variable with a new array object the two
+numbers tell Java the dimensions of the
+array being an array of int the elements
+will default to zero here's the
+visualization we typically use for
+tracing the first number indicates the
+array will have three rows while the
+second number indicates it will have
+four columns this visualization is very
+useful for tracing but it isn't the most
+accurate representation of the data
+structure let's take a look at
+alternative visualizations that'll help
+us better understand how Java stores a
+2d array in memory the first number is
+in this case three creates a
+one-dimensional array of size three the
+second number in this case four creates
+a one-dimensional array of size four
+inside each of the indexes of the first
+array a two-dimensional array can be
+described as an array of arrays if we
+wanted we could carry this process
+deeper and create three four or five
+dimensional arrays now let's look at
+another way to create a two-dimensional
+array here we hardcode specific values
+into the array again let's look at an
+alternative of visualization the outer
+one-dimensional array contains two
+objects for its two indexes each of
+these objects is a one-dimensional array
+of size three since we primarily use the
+first visualization I prefer to code
+each of the inner arrays on its own line
+it's easy to look at the code and see
+the Top Line corresponding to row zero
+and the next line corresponding to row
+one now that we've created a couple of
+two dimensional arrays let's access them
+this line of code will print out the
+contents of the B array at row 0 column
+1 and output the int four this line of
+code will assign the value nine to the a
+array at Row 1 column 2 this code will
+print the evaluation of the Boolean
+expression array a at Row 2 column 0 is
+zero array B at Row 1 column 1 is four
+the expression 0 is less than four
+evaluates to
+true in this Java tutorial we're going
+to learn how to Traverse a two
+dimensional array we declare a
+two-dimensional array of type int the
+name of the variable is ARR and we've
+hard-coded the values now let's look at
+some code for traversing the array the
+outer for Loop traverses each of the
+rows in the 2D array and the inner for
+Loop traverses each column in a given
+Row in Java 2D arrays are row major the
+first number specifies the row and the
+second number specifies the column now
+we'll trace the code we set R to zero
+we'll continue the outer loop as long as
+R is less than AR rr. length when we
+take the length of a 2d array we are
+counting the number of elements in the
+outer array using the traditional
+visualization we are counting the number
+of rows for our current array we can
+think of this expression as R is less
+than two R is zero so this evaluates to
+true now we set C to zero we check if C
+is less than ARR index r. length let's
+talk about what this means ARR points to
+the 1D array like it did to lines up a r
+index R means we are pointing at the
+element at index R in this case r is
+zero so we are pointing at an inner
+array at index zero of the outer array
+we take the length of the inner array
+which is three if we want to use the
+traditional visualization we could say
+we are taking the length of row 0er of
+the 2D array for our current array we
+can think of this expression as C is
+less than three C is so it evaluates to
+true we output ARR row 0 column 0 which
+contains two increment C to 1 C is less
+than three so we continue we output ARR
+row 0 column 1 which contains three
+increment C to 2 C is less than three so
+we continue we output ARR row 0 column 2
+which contains one increment C to 3 C is
+not less than three so we terminate the
+inner loop we output a new line
+increment R to one R is less than two so
+we continue set C to zero now that R is
+1 we are checking the length of Row 1 C
+is less than three so we continue we
+output ARR Row 1 column 0 which contains
+8 increment C to 1 C is less than three
+so we continue we output ARR row 0
+column 1 which contains five in ment C
+to 2 C is less than three so we continue
+we output ARR Row 1 column 2 which
+contains six increment C to three C is
+not less than three so we terminate the
+inner loop we output a new line
+increment R to two R is not less than
+two so we terminate the outer loop and
+the program finishes when using for
+Loops we also have the option to modify
+the values in the loop this modification
+causes the code to double the value of
+each element in the array we can also
+modify the increment in this case r
+advances by two instead of one now let's
+look at another array we'll Traverse
+this array using for each Loops four
+each Loops are easier to write but they
+must Traverse every element in an array
+also while you can modify the values in
+the temporary variable doing so won't
+change the values in the array looking
+at the Outer Loop we see the name of the
+array following a colon this lets Java
+know which array to Traverse before the
+colon we see a temporary variable named
+row this variable must be able to hold
+the elements contained in the outer
+array the elements in the outer array
+are 1D arrays of int so we declared row
+as an array of int for the inner loop we
+are traversing each of the inner 1D
+arrays of int our temp variable is an
+INT so it can hold the int values let's
+trace the code first we create the row
+variable and have it point at the
+element in index zero currently row is
+pointing at the 1D array at index zero
+we could also say that row is pointing
+at Row 0er in the 2D array in the Inner
+Loop we create an INT variable value and
+initialize it with a copy of the element
+at index0 in row0 we output value which
+is four for our second time through the
+in Loop value is set to a copy of the
+element at index one in row zero we
+output value which is two we've
+traversed the entirety of row zero so we
+terminate the inner loop we output a new
+line next the row variable changes to
+point at the 1D array at index one we
+could also say that row is pointing at
+Row one in the 2D array in the Inner
+Loop we create an INT variable value and
+initialize it with a copy of the element
+at index0 in row one we output value
+which is six for the second time through
+the inner loop value is set to a copy of
+the element at index one in row one we
+output value which is three we've
+traversed the entirety of Row one so we
+terminate the inner loop we output a new
+line we've traversed all the rows in the
+array so we terminate the outer loop and
+the program
+ends Nevada Smith and the Temple of
+arrays
+for this AP Computer Science a style frq
+I recommend you do the problem using the
+linked PDF to jump ahead to the answers
+check the timestamps archaeologist
+Nevada Smith is on an adventure in a
+mysterious Temple he is in a room with a
+floor that changes symbols on its tiles
+every minute the floor is represented by
+a 2d array of strings each representing
+a symbol on the tile for the floor to be
+safe to cross the following conditions
+must be met one there must be at least
+one straight line of tiles from the left
+side of the floor to the right side
+where all the tiles in the line have the
+same symbol two the floor must not
+contain either X or Y which are danger
+symbols three not all symbols on the
+floor can be the same here the sample
+floor is encoded as a 2d array of
+string here is the Temple of arrays
+class with the three method bodies you
+will be writing
+part A write the line of identical
+method this method takes an array of
+string objects as a parameter
+representing a row of tiles on the floor
+each string in the array represents a
+symbol on a tile the method returns true
+if all the symbols in the array are the
+same otherwise it returns false pause
+here and complete the
+problem Part B write the is floor safe
+method this method takes a 2d array of
+string objects floor where each string
+represents a symbol on a floor tile the
+method returns true if the floor is safe
+based on the conditions below otherwise
+it returns false pause here and complete
+the
+problem part C write the can cross floor
+method this method takes a 2d array of
+string objects floor representing the
+Temple's floor where each string
+represents a symbol on a tile the method
+returns true if there is a safe path
+across the floor that meets both of the
+following conditions one at least one
+row will return true when passed to the
+line of identical method two the floor
+must be safe according to the is floor
+safe method complete the can cross floor
+method below which should utilize the
+line of identical and is floor safe
+methods you implement mented in part A
+and B pause here and complete the
+problem part A solution line of
+identical this for Loop traverses the
+entire array of string it Compares each
+value in each index to the contents of
+index zero since we are comparing
+strings we use the equals method we are
+actually looking for an index that is
+not equal to index Z but because there
+is no not equals method in the string
+class we use the equals method and then
+reverse the value with the not symbol as
+soon as we find a string that is
+different from index zero we immediately
+return false if we make it through the
+entire for Loop without finding a string
+that doesn't match index0 we return true
+because we've proved that the strings in
+the array are all
+identical Part B solution is for safe we
+start by storing the first value in the
+first row of the 2D array in the first
+symbol variable next we set all symbols
+same to true because we will assume all
+the symbols are the same until we find
+evidence to the contrary the outer for
+Loop pulls each 1D array out of the 2D
+array the inner for Loop pulls out each
+individual symbol from a 1D array we
+check if the symbol is either X or Y if
+it is the floor is unsafe so we we can
+immediately return false next we check
+if the current symbol is not equal to
+the first symbol if we find even one
+symbol that is not the same as the first
+we've proven that all symbols are not
+the same we can't immediately return
+true because even though we've proven
+that all the symbols aren't the same we
+can't be sure that there isn't a danger
+symbol later on in the array after we've
+traveled the entire 2D array we will
+return true as long as all symbols the
+same is false part C solution can cross
+floor first we call the is floor safe
+method and pass it the pointer to a 2d
+array in the floor variable if the
+method returns false we know the floor
+is unsafe and we can immediately return
+false if the method returns true we can
+continue on and check if there's a path
+of identical symbols that Nevada Smith
+can use across the bridge we know a 2d
+array is actually a 1D array with each
+compartment contain aing another 1D
+array this for Loop traverses the outer
+1D array each time we go through the for
+Loop we pull out one of the inner 1D
+arrays and pass it to line of identical
+if the method returns true we have found
+a path and can immediately return true
+if we finish the for Loop and never
+found a row of identical symbols then
+there is not a safe path and we return
+false you've reached the end and if you
+have a test coming up good luck tell
+tell me in the comments was the pace of
+this video too fast too slow or about
+right check out the other resources in
+the video description and on the channel
+and I'll see you soon
